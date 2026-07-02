@@ -1,0 +1,440 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{30}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Jacobson}{1968}]{Jacobson:1968}
+\begin{bbook}
+\bauthor{\bsnm{Jacobson}, \binits{N.}}:
+\bbtitle{Structure and Representations of Jordan Algebras}.
+\bpublisher{American Mathematical Society}, \blocation{???}
+(\byear{1968})
+\end{bbook}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Springer and Veldkamp}{2000}]{Springer:2000}
+\begin{bbook}
+\bauthor{\bsnm{Springer}, \binits{T.A.}},
+\bauthor{\bsnm{Veldkamp}, \binits{F.D.}}:
+\bbtitle{Octonions, Jordan Algebras and Exceptional Groups}.
+\bpublisher{Springer},
+\blocation{New York}
+(\byear{2000})
+\end{bbook}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{McCrimmon}{2004}]{McCrimmon:2004}
+\begin{bbook}
+\bauthor{\bsnm{McCrimmon}, \binits{K.}}:
+\bbtitle{A Taste of Jordan Algebras}.
+\bsertitle{Universitext}.
+\bpublisher{Springer},
+\blocation{New York}
+(\byear{2004})
+\end{bbook}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Slansky}{1981}]{Slansky:1981}
+\begin{barticle}
+\bauthor{\bsnm{Slansky}, \binits{R.}}:
+\batitle{Group theory for unified model building}.
+\bjtitle{Phys. Rept.}
+\bvolume{79},
+\bfpage{1}--\blpage{128}
+(\byear{1981})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Helgason}{1978}]{Helgason:1978}
+\begin{bbook}
+\bauthor{\bsnm{Helgason}, \binits{S.}}:
+\bbtitle{Differential Geometry, Lie Groups, and Symmetric Spaces}.
+\bpublisher{Academic Press},
+\blocation{New York}
+(\byear{1978}).
+\bcomment{Reprinted in the AMS Chelsea series, 2001}
+\end{bbook}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Sakharov}{1967}]{SakharovInducedGravity}
+\begin{barticle}
+\bauthor{\bsnm{Sakharov}, \binits{A.D.}}:
+\batitle{Vacuum quantum fluctuations in curved space and the theory of
+  gravitation}.
+\bjtitle{Dokl. Akad. Nauk SSSR}
+\bvolume{177},
+\bfpage{70}--\blpage{71}
+(\byear{1967})
+\doiurl{10.1023/A:1001947813563} .
+\bcomment{[Sov. Phys. Dokl. \textbf{12} (1968) 1040; Gen. Rel. Grav.
+  \textbf{32} (2000) 365]}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Adler}{1982}]{AdlerInducedGravity}
+\begin{barticle}
+\bauthor{\bsnm{Adler}, \binits{S.L.}}:
+\batitle{Einstein gravity as a symmetry breaking effect in quantum field
+  theory}.
+\bjtitle{Rev. Mod. Phys.}
+\bvolume{54},
+\bfpage{729}--\blpage{766}
+(\byear{1982})
+\doiurl{10.1103/RevModPhys.54.729} .
+\bcomment{[Erratum: Rev. Mod. Phys. \textbf{55} (1983) 837]}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Glimm and Jaffe}{1987}]{GlimmJaffe:1987}
+\begin{botherref}
+\oauthor{\bsnm{Glimm}, \binits{J.}},
+\oauthor{\bsnm{Jaffe}, \binits{A.}}:
+Quantum physics: A functional integral point of view.
+Springer
+(1987)
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Albert}{1934}]{Albert:1934}
+\begin{barticle}
+\bauthor{\bsnm{Albert}, \binits{A.A.}}:
+\batitle{On a certain algebra of quantum mechanics}.
+\bjtitle{Ann. Math.}
+\bvolume{35}(\bissue{1}),
+\bfpage{65}--\blpage{73}
+(\byear{1934})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Baez and Huerta}{2011}]{Baez:2010}
+\begin{barticle}
+\bauthor{\bsnm{Baez}, \binits{J.C.}},
+\bauthor{\bsnm{Huerta}, \binits{J.}}:
+\batitle{Division algebras and supersymmetry ii}.
+\bjtitle{Adv. Theor. Math. Phys.}
+\bvolume{15},
+\bfpage{1373}--\blpage{1410}
+(\byear{2011})
+\doiurl{10.4310/ATMP.2011.v15.n5.a2}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Callan et~al.}{1969}]{CWZ69}
+\begin{barticle}
+\bauthor{\bsnm{Callan}, \binits{C.G.}},
+\bauthor{\bsnm{Coleman}, \binits{S.R.}},
+\bauthor{\bsnm{Wess}, \binits{J.}},
+\bauthor{\bsnm{Zumino}, \binits{B.}}:
+\batitle{Structure of phenomenological lagrangians. ii}.
+\bjtitle{Phys. Rev.}
+\bvolume{177},
+\bfpage{2247}--\blpage{2250}
+(\byear{1969})
+\doiurl{10.1103/PhysRev.177.2247}
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Weinberg}{1996}]{Weinberg:1996kr}
+\begin{bbook}
+\bauthor{\bsnm{Weinberg}, \binits{S.}}:
+\bbtitle{The Quantum Theory of Fields. Vol. 2: Modern Applications}.
+\bpublisher{Cambridge University Press}, \blocation{???}
+(\byear{1996})
+\end{bbook}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Faddeev and Popov}{1967}]{FP67}
+\begin{barticle}
+\bauthor{\bsnm{Faddeev}, \binits{L.D.}},
+\bauthor{\bsnm{Popov}, \binits{V.N.}}:
+\batitle{Feynman diagrams for the yang--mills field}.
+\bjtitle{Phys. Lett. B}
+\bvolume{25},
+\bfpage{29}--\blpage{30}
+(\byear{1967})
+\doiurl{10.1016/0370-2693(67)90067-6}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Itzykson and Zuber}{1980}]{Itzykson:1980rh}
+\begin{bbook}
+\bauthor{\bsnm{Itzykson}, \binits{C.}},
+\bauthor{\bsnm{Zuber}, \binits{J.-B.}}:
+\bbtitle{Quantum Field Theory}.
+\bpublisher{McGraw--Hill},
+\blocation{New York}
+(\byear{1980})
+\end{bbook}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Peskin and Schroeder}{1995}]{Peskin:1995ev}
+\begin{bbook}
+\bauthor{\bsnm{Peskin}, \binits{M.E.}},
+\bauthor{\bsnm{Schroeder}, \binits{D.V.}}:
+\bbtitle{An Introduction to Quantum Field Theory}.
+\bpublisher{Westview Press},
+\blocation{Reading, MA}
+(\byear{1995})
+\end{bbook}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Machacek and
+  Vaughn}{1983}]{MachacekVaughn:1984}
+\begin{barticle}
+\bauthor{\bsnm{Machacek}, \binits{M.E.}},
+\bauthor{\bsnm{Vaughn}, \binits{M.T.}}:
+\batitle{Two loop renormalization group equations in a general quantum field
+  theory. 1. wave function renormalization}.
+\bjtitle{Nucl. Phys. B}
+\bvolume{222},
+\bfpage{83}--\blpage{103}
+(\byear{1983})
+\doiurl{10.1016/0550-3213(83)90610-7}
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Gross et~al.}{1985}]{GHMR:1985}
+\begin{barticle}
+\bauthor{\bsnm{Gross}, \binits{D.J.}},
+\bauthor{\bsnm{Harvey}, \binits{J.A.}},
+\bauthor{\bsnm{Martinec}, \binits{E.}},
+\bauthor{\bsnm{Rohm}, \binits{R.}}:
+\batitle{Heterotic string}.
+\bjtitle{Phys. Rev. Lett.}
+\bvolume{54},
+\bfpage{502}--\blpage{505}
+(\byear{1985})
+\doiurl{10.1103/PhysRevLett.54.502}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Maldacena}{1998}]{Maldacena:1997}
+\begin{barticle}
+\bauthor{\bsnm{Maldacena}, \binits{J.M.}}:
+\batitle{The large {N} limit of superconformal field theories and
+  supergravity}.
+\bjtitle{Adv. Theor. Math. Phys.}
+\bvolume{2},
+\bfpage{231}--\blpage{252}
+(\byear{1998})
+\doiurl{10.4310/ATMP.1998.v2.n2.a1}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Green and Schwarz}{1984}]{GreenSchwarz:1984}
+\begin{barticle}
+\bauthor{\bsnm{Green}, \binits{M.B.}},
+\bauthor{\bsnm{Schwarz}, \binits{J.H.}}:
+\batitle{Anomaly cancellation in supersymmetric {D=10} gauge theory and
+  superstring theory}.
+\bjtitle{Phys. Lett. B}
+\bvolume{149},
+\bfpage{117}--\blpage{122}
+(\byear{1984})
+\doiurl{10.1016/0370-2693(84)91565-X}
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Dixon et~al.}{1985}]{DHVW:1985}
+\begin{barticle}
+\bauthor{\bsnm{Dixon}, \binits{L.J.}},
+\bauthor{\bsnm{Harvey}, \binits{J.A.}},
+\bauthor{\bsnm{Vafa}, \binits{C.}},
+\bauthor{\bsnm{Witten}, \binits{E.}}:
+\batitle{Strings on orbifolds}.
+\bjtitle{Nucl. Phys. B}
+\bvolume{261},
+\bfpage{678}--\blpage{686}
+(\byear{1985})
+\doiurl{10.1016/0550-3213(85)90593-0}
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Narain}{1986}]{Narain:1986}
+\begin{barticle}
+\bauthor{\bsnm{Narain}, \binits{K.S.}}:
+\batitle{New heterotic string theories in ten dimensions}.
+\bjtitle{Phys. Lett. B}
+\bvolume{169},
+\bfpage{41}--\blpage{46}
+(\byear{1986})
+\doiurl{10.1016/0370-2693(86)90682-9}
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{{arXiv:1012.1690 authors, TO BE
+  CONFIRMED}}{2010}]{Z12Heterotic}
+\begin{botherref}
+\oauthor{\bsnm{{arXiv:1012.1690 authors, TO BE CONFIRMED}}}:
+Three-generation {$E_6$} grand unification from a {$\mathbb{Z}_{12}$}
+  asymmetric orbifold.
+arXiv preprint
+(2010)
+{\href{https://arxiv.org/abs/1012.1690}{{arXiv:1012.1690}}}
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Abbott}{1981}]{Abbott:1981ke}
+\begin{barticle}
+\bauthor{\bsnm{Abbott}, \binits{L.F.}}:
+\batitle{The background field method beyond one loop}.
+\bjtitle{Nucl.\ Phys.\ B}
+\bvolume{185},
+\bfpage{189}--\blpage{203}
+(\byear{1981})
+\doiurl{10.1016/0550-3213(81)90371-0}
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Vassilevich}{2003}]{Vassilevich:2003xt}
+\begin{barticle}
+\bauthor{\bsnm{Vassilevich}, \binits{D.V.}}:
+\batitle{Heat kernel expansion: User’s manual}.
+\bjtitle{Phys.\ Rept.}
+\bvolume{388},
+\bfpage{279}--\blpage{360}
+(\byear{2003})
+\doiurl{10.1016/j.physrep.2003.09.002}
+{\href{https://arxiv.org/abs/hep-th/0306138}{{hep-th/0306138}}}
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Hawking}{1977}]{Hawking:1977}
+\begin{barticle}
+\bauthor{\bsnm{Hawking}, \binits{S.W.}}:
+\batitle{Zeta function regularization of path integrals in curved space-time}.
+\bjtitle{Commun. Math. Phys.}
+\bvolume{55},
+\bfpage{133}--\blpage{148}
+(\byear{1977})
+\doiurl{10.1007/BF01626516}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Wetterich}{1993}]{Wetterich1993}
+\begin{barticle}
+\bauthor{\bsnm{Wetterich}, \binits{C.}}:
+\batitle{Exact evolution equation for the effective potential}.
+\bjtitle{Phys. Lett. B}
+\bvolume{301},
+\bfpage{90}--\blpage{94}
+(\byear{1993})
+\doiurl{10.1016/0370-2693(93)90726-X}
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Morris}{1994}]{Morris1994}
+\begin{barticle}
+\bauthor{\bsnm{Morris}, \binits{T.R.}}:
+\batitle{The exact renormalization group and approximate solutions}.
+\bjtitle{Int. J. Mod. Phys. A}
+\bvolume{9},
+\bfpage{2411}--\blpage{2450}
+(\byear{1994})
+\doiurl{10.1142/S0217751X94000972}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{Litim}{2001}]{Litim:2001}
+\begin{barticle}
+\bauthor{\bsnm{Litim}, \binits{D.F.}}:
+\batitle{Optimized renormalization group flows}.
+\bjtitle{Phys. Rev. D}
+\bvolume{64},
+\bfpage{105007}
+(\byear{2001})
+\doiurl{10.1103/PhysRevD.64.105007}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Percacci}{2017a}]{PercacciReview}
+\begin{botherref}
+\oauthor{\bsnm{Percacci}, \binits{R.}}:
+An introduction to covariant quantum gravity and asymptotic safety
+\textbf{3}
+(2017)
+\doiurl{10.1142/10369}
+\end{botherref}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Percacci}{2017b}]{Percacci2017}
+\begin{bbook}
+\bauthor{\bsnm{Percacci}, \binits{R.}}:
+\bbtitle{An Introduction to Covariant Quantum Gravity and Asymptotic Safety}.
+\bpublisher{World Scientific}, \blocation{???}
+(\byear{2017}).
+\doiurl{10.1142/10369}
+\end{bbook}
+\endbibitem
+
+\end{thebibliography}
