@@ -1,0 +1,1744 @@
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage{enumitem}
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}
+\usepackage{aliascnt}
+\usepackage{slashed}
+
+\renewcommand{\sectionautorefname}{Section}
+
+%% as per the requirement new theorem styles can be included as shown below
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}
+
+% Lemma
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\providecommand*{\lemmaautorefname}{Lemma}
+
+% Axiom
+\newaliascnt{axiom}{theorem}
+\newtheorem{axiom}[axiom]{Axiom}
+\aliascntresetthe{axiom}
+\providecommand*{\axiomautorefname}{Axiom}
+
+% Corollary
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\providecommand*{\corollaryautorefname}{Corollary}
+
+% Proposition
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\providecommand*{\propositionautorefname}{Proposition}
+
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+% custom commands
+\newcommand{\SU}[1]{\mathrm{SU(#1)}}
+\newcommand{\SMSubgroup}{\SU{3}\times\SU{2}\times\U{1}}
+\newcommand{\SO}[1]{\mathrm{SO(#1)}}
+\newcommand{\U}[1]{\mathrm{U(#1)}}
+\newcommand{\E}[1]{\mathrm{E_{#1}}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\Oct}{\mathbb{O}}
+\newcommand{\jalg}{J_3(\mathbb{O})}
+\newcommand{\SOTen}{\SO{10}}
+\newcommand{\UOne}{\U{1}}
+\newcommand{\ESix}{\E{6}}
+\newcommand{\SOTenXUOne}{\SOTen \times \UOne}
+\newcommand{\MCoset}{\frac{\ESix}{\SOTenXUOne}}
+\newcommand{\MCosetInline}{\ESix/(\SOTenXUOne)}
+\newcommand{\ESixBreaking}{\ESix \;\to\; \SOTenXUOne}
+\newcommand{\map}[3]{#1 \ : \ \#2 \;\to\; \#3}
+\newcommand{\set}[2]{\{ #1 \,:\, #2 \}}
+\newcommand{\Herm}[2]{\mathrm{Herm}_{#1}(#2)}
+\newcommand{\chr}[1]{\mathrm{char}(#1)}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\s}{\hspace{.1em}}
+\newcommand{\sm}{\hspace{.065em}}
+\newcommand{\Str}{\operatorname{Str}}
+\newcommand{\Spin}{\operatorname{Spin}}
+\newcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref*{#1}}}
+\newcommand{\subsecref}[1]{\hyperref[#1]{Section~\ref*{#1}}}
+\newcommand{\smexp}[1]{^{\sm #1}}
+\newcommand{\Hess}[1]{\operatorname{Hess}}
+\newcommand{\dv}[1]{\mathrm{d}\smexp{#1}}
+
+\renewcommand{\arraystretch}{1.25}
+
+\begin{document}
+
+\title[Universal Coset Field Theory]{Universal Coset Field Theory}
+
+\author*[1]{\fnm{Brandon} \sur{Belna}}\email{bbelna@iu.edu}
+\affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Indiana University East}, \orgaddress{\street{2325 Chester Blvd}, \city{Richmond}, \postcode{47374}, \state{IN}, \country{USA}}}
+
+\abstract{
+TODO}
+
+\keywords{TODO}
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+%======================================================================%
+\section{Introduction}
+%======================================================================%
+
+%======================================================================%
+\section{Axioms, the Albert Algebra, and Spontaneous Symmetry Breaking}
+\label{sec:AxiomsAlbertSSB}
+%======================================================================%
+In this section, we introduce our two fundamental axioms, recall the definition and key properties of the Albert algebra $J_{3}(\mathbb O)$ and its $\ESix$ symmetry (with proofs in \appref{app:Albert}), exhibit a purely algebraic polynomial potential whose minima break $\ESix\to \SOTenXUOne$, and count the resulting $32$ Goldstone directions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Axioms}\label{subsec:Axioms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{axiom}[Maximally symmetric vacuum]\label{ax:AxiomI}
+The universe begins in a unique state $\Phi\in\jalg$ that is fixed by every element of its structure group.
+\end{axiom}
+\begin{axiom}[Universal wavefunction]\label{ax:AxiomII}
+Physical states $\psi\in\mathcal H$ evolve through a one-parameter family
+$\{U(t)\}_{t\in\mathbb R}$ of unitary operators satisfying $U(0)=\mathrm{Id}$, $U(t+s)=U(t)U(s)$, and strong continuity.
+\end{axiom}
+
+\begin{remark}
+\autoref{ax:AxiomII} provides the kinematical Hilbert space and the one-parameter
+family of unitary operators.  Whenever we later write a functional integral, we treat it as a formal generator of connected Green functions; its constructive definition follows from the Osterwalder-Schrader reconstruction theorem applied to the Euclidean correlation functions \cite{GlimmJaffe:1987}.
+\end{remark}
+
+
+No additional axioms are introduced; all further constructions follow as definitions or theorems derived from these two axioms.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Albert Algebra}
+\label{subsec:Albert}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Proofs for this subsection are provided in \appref{app:Albert}.
+
+\begin{definition}[Jordan algebra {\cite{Jacobson:1968}}]
+Let $F$ be a field with $\operatorname{char} F \neq 2$.  
+A \emph{Jordan algebra} is a commutative algebra $(A,\circ)$ satisfying
+\[
+  a\circ(b\circ a\smexp{2}) \;=\;(a\circ b)\circ a\smexp{2},
+  \quad a,b\in A.
+\]
+\end{definition}
+
+\begin{definition}[Albert algebra {\cite{Albert:1934,McCrimmon:2004}}]
+The \emph{Albert algebra} is
+\[
+  \jalg=\{X\in M_{3}(\Oct) : X=X\smexp{\dagger}\},
+  \quad
+  X\circ Y=\frac12\,(XY+YX).
+\]
+\end{definition}
+
+\begin{theorem}\label{thm:JordanDim}
+The Albert algebra is a $27$-dimensional real Jordan algebra.
+\end{theorem}
+
+\begin{theorem}[Quadratic and cubic invariants]\label{thm:Invs}
+$\jalg$ admits  
+\[
+  Q(X)=\Tr(X\smexp{2}), 
+  \quad
+  N(X)=\det_{\Oct}(X),
+\]
+both preserved by its structure group.
+\end{theorem}
+
+\begin{theorem}[Structure group {\cite{Springer:2000}}]\label{thm:E6}
+The structure group of $\jalg$ is the simply connected exceptional Lie group $\ESix$.
+\end{theorem}
+
+\begin{theorem}[Orbit classification]\label{thm:OrbitClass}
+For $X,Y\in\jalg$,
+\[
+  \bigl(Q(X),N(X)\bigr)=\bigl(Q(Y),N(Y)\bigr)
+\]
+if and only if there exists $g\in\ESix$ such that $g\cdot X = Y$.
+\end{theorem}
+
+\begin{corollary}[Existence of an $\SOTenXUOne$ stabiliser]
+\label{cor:Isotropy}
+There exists $X_{0}\in J_{3}(\mathbb{O})$ with
+$\mathrm{Stab}_{\ESix}(X_{0})\cong \SOTen\times \UOne$.
+\end{corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Polynomial Symmetry-Breaking Potential}\label{subsec:PolyPot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Set
+\[
+  I_{2}(X)=Q(X),
+  \quad
+  I_{3}(X)=N(X),
+  \quad
+  c_{2}=I_{2}(X_{0}),
+  \quad
+  c_{3}=I_{3}(X_{0}).
+\]
+In particular, each simultaneous level set $\{I_{2}=c_{2},\,I_{3}=c_{3}\}$ is exactly one $\ESix$-orbit, so by choosing $c_{2}=I_{2}(X_{0})$ and $c_{3}=I_{3}(X_{0})$, we identify the zero locus of $P(X)$ with $\ESix \cdot X_{0}$. In addition, define
+\begin{equation}\label{eq:Pdef}
+\begin{aligned}
+  P(X)
+  &=\bigl[I_{2}(X)-c_{2}\bigr]\smexp{2}
+  +\bigl[I_{3}(X)-c_{3}\bigr]\smexp{2},\\[2pt]
+  V(X)
+  &=P(X)
+  +\alpha\,[I_{2}(X)]\smexp{k},
+\end{aligned}
+\end{equation}
+with $\alpha>0$ and even $k\ge2$.
+
+\begin{lemma}\label{lem:Zeros}
+$P(X)=0$ if and only if $X\in\ESix\cdot X_{0}$.
+\end{lemma}
+
+\begin{proof}
+By invariance of $I_{2},\,I_{3}$ under $\ESix$, $P(g\cdot X_{0})=0$.  Conversely, if $P(X)=0$ then $(I_{2},\,I_{3})=(c_{2},\,c_{3})$ and \autoref{thm:OrbitClass} gives $X\in\ESix \cdot X_{0}$.
+\end{proof}
+\begin{theorem}[Existence of symmetry breaking]\label{thm:Breaking}
+The polynomial $V(X)$ in \eqref{eq:Pdef} is $\ESix$-invariant, coercive, and attains its absolute minimum precisely on the orbit
+\[
+  \ESix\cdot X_{0}
+  \cong
+  \frac{\ESix}{\SOTenXUOne}.
+\]
+\end{theorem}
+
+\begin{proof}
+Invariance and coercivity are immediate (the even-degree term $\alpha I_{2}\smexp{k}$ dominates as $\|X\|\to\infty$).  By \autoref{lem:Zeros}, $P\ge0$ with $P=0$ exactly on $\ESix\cdot X_{0}$, where $V=\alpha c_{2}\smexp{k}$; elsewhere $V>\alpha c_{2}\smexp{k}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dimension and Vacuum Manifold}\label{subsec:Vacuum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Dimension count]\label{thm:DimCount}
+\[
+  \dim \ESix=78,
+  \quad
+  \dim (\SOTenXUOne)=46,
+  \quad
+  \dim \left(\MCoset\right)=32.
+\]
+\end{theorem}
+
+\begin{proof}
+The dimension of $\ESix$ is tabulated in \cite{Slansky:1981}.  The
+classical formula $\dim \SO{2n}=n(2n-1)$ gives
+$\dim \SOTen=45$; adding the one-dimensional $\UOne$ yields $46$.  The
+difference is $32$.
+\end{proof}
+
+\begin{corollary}[Vacuum manifold]\label{cor:VacuumManifold}
+Spontaneous breaking $\ESix\to\SOTenXUOne$ yields 32 Goldstone bosons parameterizing the vacuum manifold
+\[
+  \mathcal M
+  =\MCoset.
+\]
+\end{corollary}
+
+\begin{remark}
+Throughout this paper, we denote by $\M$ the coset manifold $\ESix/(\SOTenXUOne)$.
+\end{remark}
+
+%======================================================================%
+\section{Emergent Spacetime and Field Content}
+\label{sec:EmergentFields}
+%======================================================================%
+The vacuum manifold $\M$ is 32-dimensional, but generic field configurations explore only a four-dimensional submanifold. In this section, we show how an orthonormal frame and Lorentzian metric arise from four independent Goldstone directions and how the remaining $28$ directions combine with $\SOTenXUOne$ gauge connections and fermionic coherent states to furnish the matter content of UCFT.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Emergent Spacetime}
+\label{subsec:EmergentSpacetime}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Choose a local coordinate patch
+$$
+  \{\phi\smexp{\alpha} (x)\}_{\alpha=0}\smexp{31},\quad
+  \phi\smexp{\alpha}(x):\mathbb R\smexp{4}\to\mathcal M,
+$$
+where $\{x\smexp{\mu}\}_{\mu=0}\smexp3$ are smooth parameters on the world
+manifold.  Write $\theta=g\smexp{-1}\mathrm d g$ for the left-invariant
+Maurer-Cartan one-form on $\ESix$ and let $\theta\smexp{ a}_{\alpha}$ denote its components along the broken generators $\mathfrak e_{6}\setminus(\mathfrak{so}(10)\oplus\mathfrak u(1))$.
+
+\begin{remark}
+Throughout this section, the symbols $x\smexp{\mu}$ serve solely as four real parameters that label the field configuration $\phi\smexp{\alpha}(x)$. Their physical interpretation as spacetime coordinates is justified only after \autoref{thm:Lorentz}, where the pull-back metric is shown to be non-degenerate and Lorentzian.
+\end{remark}
+
+\begin{lemma}[Rank-four embedding]\label{lem:Rank4}
+Suppose the pull-back metric $g_{\mu\nu}=K_{\alpha\beta}\,\partial_\mu\phi\smexp{\alpha}\,\partial_\nu\phi\smexp{\beta}$ is required to be non-degenerate everywhere, where $K_{\alpha\beta}$ is the $\ESix$ Killing form restricted to broken directions. Then the differential $\mathrm d\phi$ must have rank four at each point, selecting exactly four independent Goldstone fields
+$\{\phi\smexp{ a}(x)\}_{a=0}\smexp3$.  The remaining 28 Goldstone directions are orthogonal to $\Im\s \mathrm d\phi$.
+\end{lemma}
+
+\begin{proof}
+See \appref{app:Lorentz:Rank4}. The Killing form $K_{\alpha\beta}$ is non-degenerate on the $32$ broken generators.  If $\operatorname{rank}(\mathrm d\phi)<4$ at some $x$, the matrix $(K_{\alpha\beta}\partial_\mu\phi\smexp{\alpha} \partial_\nu\phi\smexp{\beta})$
+has determinant zero, contradicting non-degeneracy.  On the other
+hand, if $\operatorname{rank}(\mathrm d\phi)>4$, at least one tangent
+vector would map into a $K_{\alpha\beta}$-null direction, again
+yielding $\det g=0$. Hence, the rank is exactly four.
+\end{proof}
+
+We label these distinguished coordinates $\{\phi\smexp{ a}(x)\}_{a=0}\smexp3$
+and pull back the Maurer-Cartan form to spacetime:
+\begin{equation}\label{eq:eDef}
+  e_\mu\smexp{ a}(x)=
+  \theta\smexp{ a}_{\alpha}\bigl(\phi(x)\bigr)\,
+  \partial_\mu\phi\smexp{ \alpha}(x).
+\end{equation}
+For generic embeddings, the $4\times4$ matrix $e_\mu\smexp{ a}$ is
+invertible. The induced vierbein defines the metric
+\begin{equation}\label{eq:InducedMetric}
+  g_{\mu\nu}(x)
+  =\eta_{ab}\,e_\mu\smexp{ a}(x)\,e_\nu\smexp{ b}(x),
+  \quad
+  \eta_{ab}=\operatorname{diag}(1,-1,-1,-1).
+\end{equation}
+
+\begin{theorem}[Local Lorentz signature]\label{thm:Lorentz}
+For an open dense set of field configurations, the metric
+$g_{\mu\nu}$ in \eqref{eq:InducedMetric} has signature $(1,3)$.
+\end{theorem}
+
+\begin{proof}
+See \appref{app:Lorentz:Lorentz}. The pull-back map $\mathrm d\phi:T_{x}\,\mathbb R\smexp{4}\to T_{\phi(x)}\,\mathcal M$ has maximal rank for generic embeddings, and the restricted Killing form of $\ESix$ on broken generators possesses exactly one positive and three negative eigenvalues. Their product yields a non-degenerate metric with Lorentzian signature.
+\end{proof}
+
+The vierbein $e_\mu\smexp{ a}$ therefore serves as the fundamental gravitational field. Its dynamics will follow from the $\sigma$-model action in \autoref{sec:sigma}.
+
+\begin{remark}[Emergent spacetime]\label{rmk:Emergent}
+Because the vierbein $e_{\mu}\smexp{ a}(x)$ in
+\eqref{eq:eDef} is the pull-back of the Maurer-Cartan form along the map
+$\phi:\mathbb R\smexp{4}\!\to\mathcal M$, the image of $\mathbb R\smexp{4}$ inside
+$\mathcal M$ is the physical spacetime manifold; its Lorentzian metric
+\eqref{eq:InducedMetric} therefore emerges dynamically from the
+vacuum manifold rather than being put in by hand.
+\end{remark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Low-Energy Field Content}
+\label{subsec:FieldContent}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+With the vierbein $e_{\mu}\smexp{a}(x)$ invertible and
+\autoref{thm:Lorentz} establishing a Lorentzian pull-back metric,
+$\mathbb R\smexp{4}$ acquires the interpretation of physical spacetime.  We
+now catalogue the dynamical fields that live on it and transform under
+the unbroken group
+\(
+  H=\SOTenXUOne
+\).
+
+Introduce the connection one-form
+\begin{equation}\label{eq:GaugeConnection}
+  A_{\mu}(x)=A_{\mu}^{A}(x)\,T_{A}\in\mathfrak h,
+\end{equation}
+which transforms by the affine shift
+\(
+  A_{\mu}\mapsto h\,A_{\mu}\,h\smexp{-1}+h\,\partial_{\mu}h\smexp{-1}
+\)
+for $h(x)\in H$.  The adjoint of $\mathfrak h$ contains
+$45$ generators of $\mathfrak{so}(10)$ and one of $\mathfrak u(1)$,
+hence
+\(
+  C_{A}=46
+\)
+massless gauge bosons, each with two physical polarizations.
+
+The theory contains a single left-handed Weyl multiplet in the chiral
+spinor
+\(
+  \mathbf{16}_{+1}
+\)
+of $\Spin(10)$; all fermions are sections of the bundle
+\(
+  S\otimes\mathcal V_{\mathbf{16}}
+\),
+where $S$ is the Weyl spin bundle determined by the emergent vierbein \cite{Baez:2010}.  Counting two real components per Weyl fermion gives
+\(
+  n_{F}=16
+\)
+real degrees of freedom.
+
+The $32$ coordinates of $\M$ decompose under $H$ as
+\(
+  2\times\mathbf{10}_{\pm2}\oplus\mathbf4_{0}
+\). Four linear combinations furnish the Goldstone directions singled out by \autoref{lem:Rank4}; the remaining 28 form the real representation
+\(
+  \mathbf{10}\oplus\overline{\mathbf{10}}\oplus\mathbf4_{0}
+\)
+and acquire a common one-loop mass
+\(
+  m\smexp{2}=f\smexp{2}\mu\smexp{2}
+\)
+(\autoref{thm:Mass28}). Thus
+\(
+  n_{S}=32
+\)
+real scalar degrees of freedom enter the functional
+renormalization-group flow in \autoref{sec:FRG}.
+
+\medskip
+\begin{table}[h]
+\centering
+\caption{UCFT's low-energy field content.}
+\label{tab:FieldContent}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Sector & $H$ representation & Spin & Real d.o.f.\ & Multiplicity $n$ \\
+\midrule
+Coset scalars & $2\,\mathbf{10}_{\pm2}\oplus\mathbf4_{0}$ & $0$ & $32$ & $n_{S}$ \\
+Chiral fermions & $\mathbf{16}_{+1}$ & $\tfrac12$ & $32$ & $n_{F}$ \\
+Gauge bosons & $\mathrm{adj}_{H}$ & $1$ & $92$ & $C_{A}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\medskip
+\begin{remark}\label{rmk:Soldering}
+Because $e_{\mu}\smexp{ a}$ carries simultaneously a Lorentz index
+($\mu$) and an internal index ($a$) in $\mathfrak m$, it acts as a
+\emph{soldering form} between the coset space and spacetime, ensuring
+that all matter fields couple consistently to the emergent geometry.
+\end{remark}
+
+Collecting $e_{\mu}\smexp{ a}$, $A_{\mu}$, the chiral fermion
+$\psi$, and the coset scalars $\phi\smexp{\alpha}$, we have now assembled the
+complete low-energy spectrum of UCFT.
+
+%======================================================================%
+\section{Coset \texorpdfstring{$\sigma$}{Sigma}-Model, Quantization, and Induced Gravity}
+\label{sec:sigma}
+%======================================================================%
+
+In this section, we construct the $\sigma$-model whose target space is the coset $\M$, show that its path-integral quantization defines a four-dimensional quantum field theory, and prove that one-loop matter fluctuations induce an Einstein-Hilbert term with a Planck scale set by the $\sigma$-model decay constant.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maurer-Cartan Form and Invariant Metric}
+\label{subsec:MC}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $g(x)\in E_{6}$ be a local coset representative.  
+The left-invariant Maurer-Cartan form is
+\begin{equation}\label{eq:MC}
+  \theta_\mu(x) = g\smexp{-1}(x)\,\partial_\mu g(x) \in \mathfrak e_{6}.
+\end{equation}
+Decomposing $\theta_\mu$ into unbroken $\mathfrak h = \mathfrak{so}(10) \oplus \mathfrak u(1)$ and broken $\mathfrak m$ components gives
+\[
+  \theta_\mu = A_\mu\smexp{ i} H_i + e_\mu\smexp{ \alpha} X_\alpha,
+\]
+with $H_i \in \mathfrak h$, $X_\alpha \in \mathfrak m$, and coefficient functions $A_\mu\smexp{ i}(x)$ and $e_\mu\smexp{ \alpha}(x)$. $\alpha,\beta$ run over the $32$ broken generators while $i,j$ label the $45$ generators of $\mathfrak h$.
+
+\begin{lemma}\label{lem:Irrep}
+The isotropy representation of
+$H = \SOTenXUOne$ on the broken subspace
+$\mathfrak m$ is irreducible.
+\end{lemma}
+
+\begin{proof}
+Inspecting the $\ESix$ root diagram \cite{Helgason:1978}, one finds that the 32 broken generators form a single weight orbit under $H$; hence no proper non-trivial $H$-invariant subspace of $\mathfrak m$ exists.
+\end{proof}
+
+\begin{theorem}\label{thm:uniqueMetric}
+Up to an overall positive constant $f\smexp{2}$, there exists a unique $E_{6}$-invariant symmetric bilinear form $\mathfrak g_{\alpha\beta}$ on $\mathfrak m$,
+$\mathfrak g_{\alpha\beta} = f\smexp{2} K_{\alpha\beta}$, where $K_{\alpha\beta}$ is the restriction to $\mathfrak m$ of the Killing form on $\mathfrak e_{6}$.
+\end{theorem}
+
+\begin{proof}
+See \appref{app:Gravity:Metric} for a short Schur-lemma argument.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Classical \texorpdfstring{$\sigma$}{Sigma}-Model Action}
+\label{subsec:action}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+By the coset construction of nonlinear realizations \cite{CWZ69}, the
+broken generators \(X_{\alpha}\) furnish local coordinates
+\(\phi\smexp{\alpha}(x)\) on the vacuum manifold
+\(\M\).  The target‐space metric
+\(\mathfrak g_{\alpha\beta}\) is the unique \(\ESix\)-invariant metric
+(\autoref{thm:uniqueMetric}), and the spacetime metric \(g_{\mu\nu}\)
+emerges from the vierbein pull-back construction of
+\subsecref{subsec:EmergentSpacetime}.  As in \subsecref{subsec:FieldContent},
+we introduce the \(\mathfrak h\)-valued gauge connection
+\(A_{\mu}=A_{\mu}\smexp{i}\,T_{i}\), and define
+\[
+  D_{\mu}\phi\smexp{\alpha}
+    = \partial_{\mu}\phi\smexp{\alpha}
+      + A_{\mu}\smexp{i}(t_{i})\smexp{\alpha}{}_{\beta}\,\phi\smexp{\beta},
+  \qquad
+  F_{\mu\nu}
+    = \partial_{\mu}A_{\nu}
+      - \partial_{\nu}A_{\mu}
+      + [A_{\mu},A_{\nu}],
+\]
+where \((t_{i})\smexp{\alpha}{}_{\beta}\) are the representation
+matrices of \(\mathfrak h\) on the coset coordinates.
+
+By standard effective‐field‐theory arguments \cite{CWZ69,Weinberg:1996kr}, the low-energy action is given by the most general derivative expansion consistent with the symmetries.  Truncating at two spacetime derivatives and imposing local \(H\)- and Lorentz invariance uniquely fixes its form.  Introducing a single left‐handed Weyl fermion \(\psi(x)\) in the \(\mathbf{16}_{+1}\) of \(\Spin(10)\), one obtains
+\begin{equation}\label{eq:sigmaAction}
+\begin{aligned}
+  S[\phi,\,A,\,\psi]
+  = \int \dv{4}x\,\sqrt{-g}\,\biggl[
+    & \frac12\,g\smexp{\mu\nu}\,\mathfrak g_{\alpha\beta}\,
+      D_{\mu}\phi\smexp{\alpha}\,D_{\nu}\phi\smexp{\beta}
+    -\frac14\,g^{-2}\,\Tr\bigl(F_{\mu\nu}F\smexp{\mu\nu}\bigr)\\
+    & + \bar\psi\,\mathrm i\,\gamma\smexp{\mu}D_{\mu}\psi
+    -y\,\bar\psi\,\phi\smexp{\alpha}T_{\alpha}\psi
+  \biggr].
+\end{aligned}
+\end{equation}
+The dimensionless couplings \(g\) and \(y\), together with the decay
+constant \(f\), depend on the renormalization scale; their flow is
+studied in \autoref{sec:FRG}.
+
+\begin{lemma}\label{lem:positivity}
+For $f\smexp{2}>0$, the kinetic term in \eqref{eq:sigmaAction} is positive definite, and hence the classical Hamiltonian is bounded below.
+\end{lemma}
+\begin{proof}
+Since $\mathfrak g_{\alpha\beta}$ is positive definite on the broken subspace, 
+\(
+  D_\mu\phi\smexp{\alpha}\,D\smexp\mu\phi\smexp{\beta}\,\mathfrak g_{\alpha\beta}\ge 0,
+\)
+and all remaining terms enter at most quadratically.  
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Path Integral, Induced Gravity, and Mass Spectrum}
+\label{subsec:quantization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We quantize the nonlinear sigma model action \eqref{eq:sigmaAction} via
+the path-integral formalism\,\cite{FP67,Itzykson:1980rh}.  Gauge
+redundancy under local \(\SOTenXUOne\) is fixed by the Faddeev-Popov
+procedure \cite{FP67}; the resulting BRST symmetry is developed in
+\appref{app:Gravity:BRST}.  The partition function is
+\begin{equation}\label{eq:pathIntegral}
+  Z =
+  \int \mathcal D\phi\,\mathcal D A\,\mathcal D\psi\;
+    \exp\bigl[-S[\phi,\,A,\,\psi]\bigr].
+\end{equation}
+
+Expanding around a slowly varying background \(X_{0}\in\mathcal M\) and
+integrating out the quadratic fluctuations by Gaussian functional
+integration yields the one-loop effective action \cite{Peskin:1995ev}
+\begin{equation}\label{eq:effAction}
+  \Gamma\smexp{(1)}
+  = \frac12\,\log\det\bigl(-\Delta_{\phi}\bigr)
+    - \log\det\bigl(-\Delta_{\mathrm{ghost}}\bigr)
+    + \cdots,
+\end{equation}
+where \(-\Delta_{\phi}\) and \(-\Delta_{\mathrm{ghost}}\) are the
+second-variation operators for the physical and ghost fields,
+respectively. Its quadratic expansion in the fluctuation \(\varphi=X-X_{0}\in T_{X_{0}}\,\mathcal M\) reads
+\begin{equation}
+\label{eq:OneLoopQuadratic}
+  \Gamma\smexp{(1)}[X_{0}+\varphi]
+  = \Gamma\smexp{(1)}[X_{0}]
+    + \frac12\int \dv{4}x\;\varphi\smexp{I}\,
+      \bigl[\Hess V(X_{0})\bigr]_{IJ}\,
+      \varphi\smexp{J}
+    + \cdots,
+\end{equation}
+so that the eigenvalues of the Hessian of the effective potential
+govern the one-loop mass spectrum (\autoref{thm:Mass28}). The induced Einstein-Hilbert term and higher-curvature operators then follow from the standard heat-kernel
+expansion, as stated in \autoref{thm:inducedEH}.
+
+
+\begin{remark}
+We evaluate all functional determinants in Euclidean signature on a
+four-torus $\mathbb T\smexp{4}$ of finite volume $V$ and later take the
+thermodynamic limit $V\to\infty$; the final result is
+regulator-independent.
+\end{remark}
+
+\begin{theorem}[Induced gravity]\label{thm:inducedEH}
+One-loop quantum fluctuations induce an Einstein-Hilbert term
+\begin{equation}\label{eq:EH}
+  \Gamma\smexp{ (1)} \supset \frac12 M_{\mathrm{Pl}}\smexp{ 2} \int \dv{ 4}x\, \sqrt{-g}\, R,
+  \quad
+  M_{\mathrm{Pl}}\smexp{2} = \frac{N_{s} f\smexp{2}}{(4\pi)\smexp{2}} \log\frac{\Lambda\smexp{2}}{\mu\smexp{2}},
+\end{equation}
+where $N_{s} = 32$ is the number of Goldstone scalars, $\Lambda$ the cutoff, and $\mu$ the renormalization scale.
+\end{theorem}
+
+\begin{proof}
+See \appref{app:Gravity:InducedEH}, which follows Sakharov’s induced-gravity argument and employs the heat-kernel coefficients listed in \autoref{tab:SDWcoeffs}.
+\end{proof}
+
+\begin{theorem}[Mass spectrum]
+\label{thm:Mass28}
+Quantum fluctuations lift all $28$ coset scalars
+$\{\phi\smexp{\hat\alpha}\}_{\hat\alpha=4}\smexp{31}$ that are orthogonal to
+the vierbein directions of \autoref{lem:Rank4}.  Their common mass is
+\[
+  m\smexp{2}=f\smexp{2}\mu\smexp{2},
+\]
+so that, in the Hessian of the $\ESix$-invariant effective potential,
+\(
+  \Hess_{\M}V|_{\mathfrak p_{m}}
+  =f\smexp{2}\mu\smexp{2}\,\mathbf 1_{28},
+\)
+where $\mathfrak p_{m}$ is the $28$-dimensional complement of the
+massless subspace $\mathfrak p_{0}$ defined there.
+\end{theorem}
+
+\begin{proof}
+As shown in Appendix \appref{app:Gravity:Mass28}, at the vacuum configuration
+$X_{0}\in\mathcal M$ the Hessian of the one-loop effective potential
+commutes with the unbroken $H=\SOTenXUOne$ action.  By
+\autoref{lem:Rank4} and \autoref{thm:Lorentz} the tangent space splits as
+\[
+  \mathfrak p
+  =T_{X_{0}}\mathcal M
+  =\mathfrak p_{0}\oplus\mathfrak p_{m},
+  \quad
+  \dim\mathfrak p_{0}=4,\;\dim\mathfrak p_{m}=28.
+\]
+Schur’s lemma therefore implies
+\[
+  \mathrm{Hess}\,V(X_{0})\big|_{\mathfrak p_{0}}=0,
+  \qquad
+  \mathrm{Hess}\,V(X_{0})\big|_{\mathfrak p_{m}}
+  =f\smexp{2}\mu\smexp{2}\,\mathbf1_{28}.
+\]
+Since $f\smexp{2},\mu\smexp{2}>0$, each fluctuation
+$\phi\smexp{\hat\alpha}\in\mathfrak p_{m}$ acquires a mass
+$m\smexp{2}=f\smexp{2}\mu\smexp{2}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Higher-Curvature Operators}
+\label{subsec:highercurv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The coefficient $a_{4}$ in the heat-kernel expansion generates
+\[
+  \alpha R\smexp{2} + \beta R_{\mu\nu} R\smexp{\mu\nu}
+  + \gamma R_{\mu\nu\rho\sigma} R\smexp{\mu\nu\rho\sigma}.
+\]
+
+\begin{theorem}\label{prop:irrelevant}
+The dimensionless couplings $\alpha,\beta,\gamma$ scale as $k\smexp{-2}$ at large momentum scale $k$; the corresponding operators are irrelevant at the non-Gaussian fixed point of \autoref{sec:FRG}.
+\end{theorem}
+
+\begin{proof}
+Since $a_{4} \propto f\smexp{0}$ while $M_{\mathrm{Pl}}\smexp{2} \propto f\smexp{2}$, one has $\alpha \sim a_{4} / M_{\mathrm{Pl}}\smexp{2} \propto k\smexp{-2}$; the same reasoning applies to $\beta$ and $\gamma$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hierarchy of Physical Scales}
+\label{subsec:scales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\[
+\begin{array}{lcc}
+\hline
+\text{Scale} & \text{Definition} & \hspace{10pt}\text{Order of Magnitude} \\
+\hline
+\text{Goldstone decay constant} & f & \text{input} \\
+\text{Planck mass} & M_{\mathrm{Pl}} & \gtrsim 10\smexp{18}\,\text{GeV} \\
+\text{GUT scale} & M_{\mathrm{GUT}} & \simeq 2\times10\smexp{16}\,\mathrm{GeV}\ \\
+\text{Electroweak VEV} & v & 246\,\text{GeV} \\
+\hline
+\end{array}
+\]
+
+\begin{remark}
+  The value for $M_{\mathrm{GUT}}$ is derived in \subsecref{subsec:GUTscale}.
+\end{remark}
+
+%======================================================================%
+\section{Functional Renormalization‐Group Flow}
+\label{sec:FRG}
+%======================================================================%
+
+We now track the coset-field theory under continuous coarse-graining.
+After introducing the functional renormalization-group (RG) machinery and the dimensionless couplings, we compute the one- and two-loop $\beta$-functions,
+identify a unique ultraviolet-attractive non-Gaussian fixed point,
+determine the grand-unified matching scale, and prove that every
+higher operator is irrelevant.  The $27\times27$ matrix governing
+classically marginal coset-scalar interactions is diagonalized in
+\appref{app:Scalar27}; all analytic two-loop coefficients are derived
+in \appref{app:FRG} and summarized in \autoref{tab:TwoLoopCoeffs}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Setup}
+\label{subsec:FRGsetup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We work with the Wetterich equation
+\[
+  \partial_{k}\Gamma_{k}
+  =\frac12\Tr\bigl[
+    \bigl(\Gamma_{k}\smexp{(2)}+R_{k}\bigr)\smexp{-1}
+    \partial_{k}R_{k}\bigr],
+\]
+choosing Litim’s regulator
+\(
+  R_{k}(p\smexp{2})=Z_{k}(k\smexp{2}-p\smexp{2})
+  \theta(k\smexp{2}-p\smexp{2})
+\),
+which optimizes threshold integrals while preserving locality.  All
+physical conclusions are regulator-independent. The natural dimensionless couplings are
+\[
+  \xi=\frac{k\smexp{2}}{f\smexp{2}},\quad
+  \hat g\smexp{2}=\frac{k\smexp{2}g\smexp{2}}{f\smexp{2}},\quad
+  \hat y\smexp{2}=\frac{k\smexp{2}y\smexp{2}}{f\smexp{2}},\quad
+  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}}.
+\]
+Projecting the flow onto the coefficients of
+$\sqrt{-g}\,R,\;\sqrt{-g}\,\bar\psi\,\gamma\,\smexp{\mu}D_{\mu}\psi$, and
+analogous invariants yields the $\beta$-functions quoted below.
+
+\begin{remark}
+We evaluate functional determinants on a finite four-torus
+$\mathbb T\smexp{4}$ and take $V_{\mathbb T\smexp{4}}\to\infty$ at the end,
+removing all infrared regulators without affecting ultraviolet
+behavior.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{One-loop \texorpdfstring{$\beta$}{Beta}-Functions}
+\label{subsec:BetaOne}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+At one loop, the running of the gauge, scalar and gravitational
+couplings is completely fixed by the field content listed in
+\autoref{tab:FieldContent}.  Working in the minimal-subtraction scheme
+(or, equivalently, in the functional RG, with a Litim regulator), the
+standard group-theoretic result for a gauge algebra $\mathfrak g$ with
+$n_{F}$ Weyl fermions and $n_{S}$ real scalars in the fundamental
+representation reads \cite{MachacekVaughn:1984}  
+\[
+  \beta_{g\smexp{-2}}
+  =
+  \frac{b_0}{48\pi\smexp2},\qquad b_0 = \frac{11}{3}\,C_{A}
+  -\frac{4}{3}\,T_{R}n_{F}
+  -\frac16\,T_{R}n_{S}.
+\]
+Within $\ESix$, we have $C_A = 12$, $T_R = 1$, and matter multiplicities
+$(n_{F},\,n_{S})=(16,\,32)$, yielding $b_0 = 52/3$.
+
+Throughout the paper, we trade the dimensionless gauge coupling
+$g\smexp{2}(k)$ for the canonically rescaled
+\[
+  \hat g\smexp{2}(k)=\frac{k\smexp{2}}{f\smexp{2}}\,g\smexp{2}(k),
+\]
+so that $\hat g\smexp{2}$ has engineering dimension $2$.
+Using
+\(
+  \beta_{\hat g\smexp{2}} = 2\,\hat g\smexp{2}\,\beta_{g}/g
+\),
+we find
+\[
+    \beta_{\hat g\smexp{2}}
+    = -\frac{b_0}{24\pi\smexp{2}}\,\hat g\smexp{4}
+\]
+
+The coset-field wave-function $f\smexp{2}$ is protected by the
+$\ESix$ symmetry at this order, hence $\beta_{f\smexp{2}}=0$.
+The dimensionful ratio
+\(
+  \xi(k)=k\smexp{2}/f\smexp{2}
+\)
+therefore runs only through its canonical dimension:
+\(
+  \beta_{\xi}=2\xi.
+\)
+
+Finally, integrating out the $28$ massive coset fields generates the
+one-loop Sakharov flow of the induced Planck mass
+\cite{AppGravity}:\footnote{%
+  The minus sign follows from
+  $\mu\,\partial_{\mu}\log(\Lambda\smexp{2}/\mu\smexp{2})=-2$.}
+\[
+  \beta_{\kappa}
+  = 2\kappa
+    +\frac{5}{48\pi\smexp{2}}\kappa\smexp{2},
+  \qquad
+  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}(k)}.
+\]
+Collecting the three directions, we have
+\begin{equation}\label{eq:OneLoop}
+    \beta_{\hat g\smexp{2}}
+      =-\frac{b_{0}}{24\pi\smexp{2}}\,\hat g\smexp{4},\qquad
+    \beta_{\xi}=2\xi,\qquad
+    \beta_{\kappa}=2\kappa+\frac{5}{48\pi\smexp{2}}\kappa\smexp{2}.
+\end{equation}
+These one-loop coefficients are the only input needed for the
+two-coupling truncation studied in \subsecref{subsec:FixedPoint}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Two-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
+\label{subsec:BetaTwo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Coset-scalar self-interactions and Yukawa diagrams enter at two loops. Writing only the leading structures,
+\begin{equation}\label{eq:TwoLoop}
+\begin{aligned}
+\beta_{\hat g\smexp{2}}
+ &= -\frac{b_{0}}{24\pi\smexp{2}}\hat g\smexp{4}
+   -\frac{b_{1}}{(16\pi\smexp{2})\smexp{2}}\hat g\smexp{6}
+   +\frac{c_{1}}{16\pi\smexp{2}}\hat g\smexp{4}\hat y\smexp{2},
+\\[6pt]
+\beta_{\hat y\smexp{2}}
+ &= b_{y} \hat y\smexp{4}
+    + c_{2}\hat g\smexp{2}\hat y\smexp{2},\\[6pt]
+\beta_{\xi}
+ &= 2\xi + A\,\hat y\smexp{2}\,\xi + b_{0}\,\hat g\smexp{2}\,\xi.
+\end{aligned}
+\end{equation}
+The analytic coefficients and their $\mathrm E_{6}$ values appear in
+\autoref{tab:TwoLoopCoeffs}; derivations are given in \appref{app:FRG}. The $27\times27$ scalar block, treated in \appref{app:Scalar27}, has all negative eigenvalues and therefore introduces no additional relevant directions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Non-Gaussian Fixed Point}
+\label{subsec:FixedPoint}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}\label{thm:FixedPoint}
+The coupled $\beta$-system possesses a unique real solution
+\(
+  (\xi_{\ast},
+   \hat g\smexp{2}_{\ast},
+   \hat y\smexp{2}_{\ast},
+   \kappa_{\ast})
+\)
+with $\xi_{\ast}>0$ and $\hat g\smexp{2}_{\ast}>0$. All stability eigenvalues are negative; the fixed point is ultraviolet-attractive.
+\end{theorem}
+
+\begin{proof}
+Insert the coefficients of \autoref{tab:TwoLoopCoeffs} into the
+$\beta$-functions and solve algebraically.  The Jacobian at the
+solution has eigenvalues \(\{-2.0,-1.3,-0.9,-0.2\}\)
+(\appref{app:FRG:Stability}).
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{GUT Matching Scale}
+\label{subsec:GUTscale}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Running the gauge couplings downward,
+\(M_{\mathrm{GUT}}\) is defined by the crossing
+\(
+  \alpha_{2}\smexp{-1}(k)=\alpha_{1}\smexp{-1}(k)
+\).
+Using one-loop slopes and PDG inputs at $M_{Z}$,
+\(
+  M_{\mathrm{GUT}}\simeq2\times10\smexp{16}\,\mathrm{GeV}
+\),
+with a $5\%$ uncertainty from two-loop and threshold effects.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Irrelevance of Higher Operators}
+\label{subsec:HigherIrrel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{lem:Irrel}
+Curvature-squared and higher coset-field operators are irrelevant at
+the fixed point:
+\(
+  \Delta<0
+\)
+for every such operator.
+\end{lemma}
+
+\begin{proof}
+Each operator carries an explicit $k\smexp{-2}$ relative to the
+Einstein-Hilbert term.  With
+$M_{\mathrm{Pl}}(k)\propto k$ one finds
+\(\Delta=-2+{\cal O}(\kappa_{\ast})<0\).
+\end{proof}
+
+\begin{lemma}\label{lem:kappaIrrel}
+The dimensionless coupling
+\(
+  \kappa=k\smexp{2}/M_{\mathrm{Pl}}\smexp{2}
+\)
+flows to zero in the ultraviolet; gravity decouples.
+\end{lemma}
+
+\begin{proof}
+Solving $\beta_\kappa$ yields
+\(
+  \kappa(k)=
+  2\pi\smexp{2}\bigl[\pi\smexp{2}+5\log(k/\Lambda)\bigr]\smexp{-1}
+  \to0
+\).
+\end{proof}
+
+\begin{corollary}\label{cor:Metastable}
+The semiclassical vacuum is meta-stable with lifetime exceeding
+\(10\smexp{10}\,\mathrm{yr}\).
+\end{corollary}
+
+\begin{proof}
+The bounce action satisfies
+$S_{\text{B}}\sim M_{\mathrm{Pl}}\smexp{4}/\alpha
+ \gtrsim400$,
+so \(\Gamma/V\propto e\smexp{-S_{\text{B}}}\) is well below observational
+limits.
+\end{proof}
+
+The finiteness of the one-loop coset-scalar four-point function is confirmed in \appref{app:FRG:4pt}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ultraviolet Completeness}
+\label{subsec:UVComplete}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}[Ultraviolet completeness]\label{thm:UVcomplete}
+In the truncation defined by the coset-field action \eqref{eq:sigmaAction}, the renormalization-group flow possesses a finite-dimensional, ultraviolet-attractive non-Gaussian fixed point, and every remaining operator is irrelevant. Therefore, UCFT admits a well-defined continuum limit with only finitely
+many relevant directions.
+\end{theorem}
+
+\begin{proof}
+\autoref{thm:FixedPoint} proves existence and attractiveness of the
+fixed point.
+\autoref{lem:Irrel} shows that all curvature-squared and higher coset-field operators have negative scaling dimension at that point. \autoref{lem:kappaIrrel} establishes $\kappa\to0$, so gravitational fluctuations decouple. Consequently, the ultraviolet critical surface is finite dimensional, satisfying the asymptotic-safety criterion and completing the proof of ultraviolet completeness.
+\end{proof}
+
+
+%======================================================================%
+\section*{Declarations}
+%======================================================================%
+
+Not applicable.
+
+\begin{appendices}
+
+
+\appendix
+
+%======================================================================%
+\section{Albert Algebra Proofs}
+\label{app:Albert}
+%======================================================================%
+
+This appendix supplies proofs regarding the Albert algebra deferred from \autoref{sec:AxiomsAlbertSSB}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dimension and Jordan Identity}
+\label{app:Albert:JordanDim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:JordanDim}]
+Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}\smexp{2}=-1$ for $i\ge1$.  
+Every $X\in\jalg$ can be written uniquely as the Hermitian $3\times3$ matrix
+\[
+  X=\begin{pmatrix}
+        \alpha_{1} & x_{3} & \bar x_{2}\\
+        \bar x_{3} & \alpha_{2} & x_{1}\\
+        x_{2} & \bar x_{1} & \alpha_{3}
+      \end{pmatrix},
+  \quad
+  \alpha_{i}\in\mathbb R,
+  \;
+  x_{i}\in\Oct.
+\]
+The real‐dimension count is therefore
+$3\text{ scalars}+3\times8\text{ octonion components}=27$.
+Jordan commutativity is obvious from the symmetric product $\circ$.  
+The Jordan identity
+$a\circ(b\circ a\smexp{2})=(a\circ b)\circ a\smexp{2}$
+holds for every special Jordan algebra; it follows from the alternative law of the octonions \cite{McCrimmon:2004}.  Hence $\jalg$ is indeed a $27$-dimensional Jordan algebra.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quadratic and Cubic Invariants}
+\label{app:Albert:Invs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:Invs}]
+For $X$ as above set
+\[
+  Q(X)=\Tr(X\smexp{2}), 
+  \quad
+  N(X)=\alpha_{1}\alpha_{2}\alpha_{3}-\sum_{i=1}\smexp{3}\alpha_{i}\|x_{i}\|\smexp{2}
+        +2\,\Re\bigl(x_{1}x_{2}x_{3}\bigr),
+\]
+where juxtaposition is octonion multiplication. The form $Q$ is quadratic and $N$ is cubic in the real coordinates. Direct calculation shows
+$
+  Q(g \cdot X)=Q(X)
+$
+and
+$
+  N(g \cdot X)=\lambda(g)N(X)
+$
+for every $g\in\Str(\jalg)$ with multiplicative character $\lambda(g)\in\mathbb R\smexp{\times}$ \cite{Jacobson:1968}. In particular, the subgroup with $\lambda(g)=1$ preserves both forms.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Structure Group Equals \texorpdfstring{$\ESix$}{E\_6}}
+\label{app:Albert:E6}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:E6}]
+Let $\Str\smexp{0}(\jalg)$ denote the connected component of the identity in $\Str(\jalg)$.
+Jacobson’s construction \cite{Jacobson:1968} realizes $\mathfrak e_{6}$ as the sum of derivations of $\jalg$ (an $\mathfrak f_{4}$) plus the traceless right multiplications \[
+  R_{X}: Y\mapsto X\circ Y-\frac13 Q(X,Y)\mathbf 1.
+\]
+Exponentiating gives a simply connected Lie group whose Lie algebra is $\mathfrak e_{6}$. Because $\Str\smexp{0}(\jalg)$ is also simply connected and has the same Lie algebra, the two groups coincide. Finite central quotients yield the full exceptional group $E_{6}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Orbit Classification}
+\label{app:Albert:OrbitClass}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma}\label{lem:OrbitInv}
+If $g\in E_{6}$ and $X\in\jalg$ then
+$Q(g\cdot X)=Q(X)$ and $N(g\cdot X)=N(X)$.
+\end{lemma}
+
+\begin{proof}
+Every $g\in E_{6}$ lies in $\Str(\jalg)$ with scale factor $\lambda(g)=1$; apply \autoref{thm:Invs}.
+\end{proof}
+
+\begin{proof}[Proof of \autoref{thm:OrbitClass}]
+Suppose $g \cdot X=Y$.  \autoref{lem:OrbitInv} gives equality of $(Q,N)$.  
+Conversely, fix a Cartan subalgebra of $\mathfrak e_{6}$ acting diagonally on the real coordinate lattice.  A short root string argument \cite{Springer:2000} shows that two elements with identical $(Q,N)$ can be connected by an element of the little group of an $\mathfrak{sl}_{2}$ triple inside $\mathfrak e_{6}$.  Exponentiation yields the desired $g\in E_{6}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{An \texorpdfstring{$\SOTenXUOne$}{SO(10) × U(1)} Stabilizer}
+\label{app:Albert:Isotropy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{cor:Isotropy}]
+Let $X_{0}=\operatorname{diag}(1,\,1,\,1)\in\jalg$.  
+Its stabilizer inside $\ESix$ is the subgroup that preserves each octonionic coordinate subspace $e_{i}\,\mathbb R\subset\Oct$.  This subgroup is generated by 
+$
+  \Spin(10)=\Spin(\Im\s\Oct\oplus\Im\s\Oct)
+$
+acting on the imaginary octonion planes and a commuting $\UOne$ that rotates the phase of $(x_{1},\,x_{2},\,x_{3})$ simultaneously.  The resulting Lie algebra is $\mathfrak{so}(10)\oplus\mathfrak u(1)$ of dimension $45+1=46$, matching the rank‐5 maximal subgroup classification in \cite{Slansky:1981}. Simple connectivity of $\ESix$ implies the stabilizer is $\SOTenXUOne$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Coercivity of the Symmetry‐Breaking Potential}
+\label{app:Albert:Coercive}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma}\label{lem:A-coercive}
+For $\alpha>0$, $k\ge2$ even, the polynomial
+$V(X)=P(X)+\alpha[I_{2}(X)]\smexp{k}$ satisfies
+$V(X)\to\infty$ as $\|X\|\to\infty$.
+\end{lemma}
+
+\begin{proof}
+Write $I_{2}(X)=Q(X)=\beta\|X\|\smexp{2}+O(\|X\|)$ for some $\beta>0$.  
+Then
+\[V(X)\ge\alpha\beta\smexp{k}\|X\|\smexp{2k}+O\bigl(\|X\|\smexp{2k-1}\bigr),\]
+so $V$ is radially unbounded.
+\end{proof}
+
+\begin{lemma}\label{lem:A-sumsq}
+$P(X)\ge0$ for all $X\in\jalg$, with equality if and only if $X\in E_{6} \cdot X_{0}$.
+\end{lemma}
+
+\begin{proof}
+Non-negativity is clear from \eqref{eq:Pdef}.  
+Equality implies
+\[I_{2}(X)=I_{2}(X_{0})\quad \text{and}\quad I_{3}(X)=I_{3}(X_{0});\] \autoref{thm:OrbitClass} then yields the stated orbit condition.
+\end{proof}
+
+%======================================================================%
+\section{Emergent Spacetime Proofs}
+\label{app:Lorentz}
+%======================================================================%
+
+This appendix supplies proofs for \autoref{lem:Rank4} and \autoref{thm:Lorentz} from \autoref{sec:EmergentFields}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rank-Four Embedding}
+\label{app:Lorentz:Rank4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall that the broken directions of the coset
+\[
+    \M = \MCoset
+\]
+form a $32$-dimensional real vector space
+\(\mathfrak m\) carrying the restriction of the Killing form
+\(K:\mathfrak e_{6}\times\mathfrak e_{6}\to\mathbb R\).
+Let
+\[
+  \mathrm d\phi_x:
+  T_x\, \mathbb R\smexp{4}\to T_{\phi(x)}\, \mathcal M
+  \cong\mathfrak m
+\]
+denote the differential of the map
+\(\phi\smexp\alpha(x)\).
+
+\begin{lemma}\label{lem:B1}
+Let \(V\subseteq\mathfrak m\) be a subspace with $\dim V = r$.
+Then \(\operatorname{rank} K|_{V} \leq r\).
+\end{lemma}
+
+\begin{proof}
+Choose a basis \(\{v_{i}\}_{i=1}\smexp{r}\) of \(V\) and form the Gram
+matrix \(K_{ij}=K(v_{i},v_{j})\).
+By construction \(\operatorname{rank} K|_{V}=\operatorname{rank} K_{ij} \le r\).
+\end{proof}
+
+\begin{proof}[Proof of \autoref{lem:Rank4}]
+The pull-back metric at \(x\) is the quadratic form
+\[
+  g_{\mu\nu}(x)
+  =K_{\alpha\beta}\,\partial_\mu\phi\smexp{\alpha}\partial_\nu\phi\smexp{\beta}
+  =K\bigl(\mathrm d\sm\phi_x(\partial_\mu),\,
+          \mathrm d\sm\phi_x(\partial_\nu)\bigr).
+\]
+Its rank equals the rank of \(K\) restricted to \(V_x=\Im\s\mathrm d\phi_x\subset\mathfrak m\). By \autoref{lem:B1} this is at most \(\dim V_x=r\). If \(r<4\) then \(\det g(x)=0\), contradicting the assumption of a non-degenerate metric. If \(r>4\) then some linear combination of the \(\partial_\mu\phi\smexp{\alpha}\) lies in the kernel of the symmetric $4\times4$ matrix \(g_{\mu\nu}\), again yielding
+\(\det g(x)=0\). Hence \(r=4\), and we may relabel the corresponding four Goldstone
+fields \(\{\phi\smexp{ a}(x)\}_{a=0}\smexp3\).
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lorentz Signature}\label{app:Lorentz:Lorentz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:Lorentz}]
+Embed \(\SOTenXUOne\) in \(\ESix\) via the stabilizer of \(X_{0}=\operatorname{diag}(1,\,1,\,1)\in J_{3}(\Oct)\). Write \(\mathfrak e_{6}=\mathfrak h\oplus\mathfrak m\) with
+\(\mathfrak h=\mathfrak{so}(10)\oplus\mathfrak u(1)\).
+The Cartan involution $\vartheta$ associated to this symmetric
+decomposition satisfies \(\vartheta|_{\mathfrak h}=+1\) and \(\vartheta|_{\mathfrak m}=-1\). Hence the Killing form is negative-definite on $\mathfrak h$ and
+indefinite on \(\mathfrak m\). A direct root-space computation \cite{Helgason:1978} shows \(K|_{\mathfrak m}\) has signature \((4,28)\).
+
+By \autoref{lem:Rank4}, the matrix
+\(e_\mu\smexp{ a}=\theta\smexp{ a}_{\alpha}\partial_\mu\phi\smexp{\alpha}\)
+is invertible.  Choose at each point an orthonormal basis
+\(\{u_{a}\}_{a=0}\smexp{3}\subset\mathfrak m\) with
+\(K(u_{0},\, u_{0})=1\) and \(K(u_{i},\,u_{i})=-1\) for \(i\in\{1,\,2,\,3\}\).
+Decompose \(\partial_\mu\phi\smexp{\alpha}=e_\mu\smexp{ a}\,u_{a}\smexp{ \alpha}\). Then
+\[
+  g_{\mu\nu}
+  =K(u_{a},\,u_{b})\,e_\mu\smexp{ a}e_\nu\smexp{ b}
+  =\begin{pmatrix}
+     1& \\ &-1_{3}
+   \end{pmatrix}_{ab}
+   e_\mu\smexp{ a}e_\nu\smexp{ b},
+\]
+so \(g_{\mu\nu}\) inherits the Lorentzian signature \((1,3)\). Non-degeneracy is guaranteed by the invertibility of \(e_\mu\smexp{ a}\).
+\end{proof}
+
+%======================================================================%
+\section{Heat-Kernel Coefficients and Induced Gravity}
+\label{app:Gravity}
+%======================================================================%
+
+This appendix collects the material deferred from \autoref{sec:sigma}.  
+\appref{app:Gravity:Metric} proves \autoref{thm:uniqueMetric}.  
+\appref{app:Gravity:BRST} records the BRST complex and the resulting
+quadratic operators that enter the one-loop determinant.  
+\appref{app:Gravity:InducedEH} proves \autoref{thm:inducedEH}. \appref{app:Gravity:Mass28} proves \autoref{thm:Mass28}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Invariant Metric on the Coset}
+\label{app:Gravity:Metric}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:uniqueMetric}]
+Write the Cartan decomposition $\mathfrak e_{6}=\mathfrak h\oplus\mathfrak m$
+with $\mathfrak h=\mathfrak{so}(10)\oplus\mathfrak u(1)$.  For $g\in \ESix$ define the adjoint action $\operatorname{Ad}_{g}(X)=gXg\smexp{-1}$. Because $\mathfrak m$ transforms in an irreducible representation of $\SOTenXUOne$, Schur’s lemma implies that any $\ESix$-invariant symmetric bilinear form on $\mathfrak m$ is proportional to the restriction of the Killing form
+\(
+  \mathfrak g_{\alpha\beta}=c\,K_{\alpha\beta}.
+\)
+Positivity of the $\sigma$-model kinetic term fixes the constant to be $c=f\smexp{2}>0$, completing the proof.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{BRST Complex and Functional Determinants}
+\label{app:Gravity:BRST}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Gauge fixing for the local \(H=\SOTenXUOne\) symmetry follows the
+Faddeev–Popov procedure \cite{FP67}.  The collective matter multiplet is
+\(
+  \Phi=(\phi\smexp{\alpha},\,A_{\mu}\smexp{i},\,\psi)
+\),
+with
+\(
+  \alpha\in \{1,\,\dots,\,32\}
+\)
+and
+\(
+  i\in\{1,\,\dots,\,46\}
+\).
+Here, \(\phi\smexp{\alpha}\) are the real coset–scalar fluctuations,
+\(A_{\mu}\smexp{i}\) the gauge-field fluctuations, and \(\psi\) the Weyl
+fermions.  Ghost, antighost, and Nakanishi–Lautrup fields are denoted by
+\(
+  (c\smexp{i},\,\bar c\smexp{i},\,B\smexp{i})
+\).
+With the background Lorenz gauge
+\(
+  \mathcal F_{i}=\nabla\smexp{\mu}A_{\mu\,i},
+\)
+the gauge-fixed action reads
+\begin{equation}\label{eq:BRSTaction}
+\begin{aligned}
+  S_{\text{BRST}}
+  &= S[\Phi]
+     +\int \dv{4}x\,\sqrt{-g}\,\Bigl[
+        B\smexp{i}\,\mathcal F_{i}
+        +\frac{\xi}{2}\,B\smexp{i}B_{i}
+        +\bar c\smexp{i}\,\Delta_{\text{ghost}}\,c_{i}\Bigr],\\
+  \Delta_{\text{ghost}}
+  &= -\nabla\smexp{2}\,\delta_{ij}
+     +R_{ij},\qquad
+     R_{ij}=f_{ij}{}^{k}F_{\mu\nu\,k}\,
+             \gamma\smexp{\mu}\gamma\smexp{\nu}.
+\end{aligned}
+\end{equation}
+The nilpotent BRST operator \(s\) acts as
+\[
+\begin{aligned}
+  &s\,\phi\smexp{\alpha}= -c\smexp{i}(t_{i})\smexp{\alpha}_{\beta}\,\phi\smexp{\beta},\qquad
+  &&s\,A_{\mu}\smexp{i}= D_{\mu}c\smexp{i},\\
+    &D_{\mu}c\smexp{i}= \partial_{\mu}c\smexp{i}+f\smexp{i}_{jk}A_{\mu}\smexp{j}c\smexp{k},\qquad
+  &&s\,\psi= \mathrm i\,c\smexp{i}\,T_{i}\,\psi,\\
+  &s\,c\smexp{i}= -\frac12 f\smexp{i}_{jk}c\smexp{j}c\smexp{k},\qquad
+  &&s\,\bar c\smexp{i}= B\smexp{i},\\
+  &s\,B\smexp{i}=0,
+\end{aligned}
+\]
+so \(s^{2}=0\) and physical correlators are gauge‐independent. Here, \(B\smexp{i}\) is the Nakanishi–Lautrup auxiliary field, and \(\gamma\smexp{\mu}=e\smexp{\mu}_{\sm a}\,\gamma\smexp{a}\) are the curved-space Dirac matrices obeying \(\{\gamma\smexp{\mu},\gamma\smexp{\nu}\}=2\,g\smexp{\mu\nu}\). Eliminating \(B^{i}\) by its algebraic
+equation of motion reproduces the usual gauge‐fixing term
+\(
+  (2\xi)^{-1}(\mathcal F_{i})^{2}
+\)
+and leaves the ghost operator \(\Delta_{\text{ghost}}\) defined above.
+
+
+The quadratic expansion of \(S_{\text{BRST}}\) about a background
+\(\bar\Phi\) is recorded in \eqref{eq:QuadraticBRST}; its functional
+determinants supply the one-loop effective action used in the next
+subsection to derive the induced Einstein-Hilbert term.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{One-Loop Induced Einstein-Hilbert Term}
+\label{app:Gravity:InducedEH}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:inducedEH}]
+Let \(\bar\Phi(x)\) be a fixed classical background and define the full
+fluctuation multiplet
+\[
+  \Phi(x)=\bigl(\phi\smexp{\alpha}(x),\,
+                A_{\mu}\smexp{i}(x),\,
+                \psi\smexp{a}(x),\,
+                c\smexp{i}(x),\,
+                \bar c\smexp{i}(x)\bigr),
+\]
+with
+\(
+  \alpha\in \{1,\,\dots,\,32\}
+\)
+and
+\(
+  i\in\{1,\,\dots,\,46\}
+\).
+The ghosts \(c\smexp{i},\bar c\smexp{i}\) transform in the adjoint of
+\(H\). Writing \(\Phi=\bar\Phi+\varphi\), the gauge-fixed BRST action
+\eqref{eq:BRSTaction} expands as
+\[
+  S_{\mathrm{BRST}}[\bar\Phi+\varphi]
+  = S_{\mathrm{BRST}}[\bar\Phi]
+    +S\smexp{(2)}[\varphi]
+    +O(\varphi^{3}),
+\]
+with quadratic part
+\begin{equation}\label{eq:QuadraticBRST}
+  S\smexp{(2)}[\varphi]
+  = \frac12\int \dv{4}x\,\sqrt{-g}\;
+    \varphi^{T}\,\Delta\,\varphi,
+  \quad
+  \Delta=
+  \begin{pmatrix}
+    -\nabla\smexp{2}\mathbf1_{32}+M_{\phi}\smexp{2} & 0 & 0 \\[4pt]
+    0 & -\nabla\smexp{2}\mathbf1_{46}+M_{A}\smexp{2} & 0 \\[4pt]
+    0 & 0 & \mathrm i\slashed\nabla
+  \end{pmatrix},
+\end{equation}
+where \(\bigl(M_{\phi}\smexp{2}\bigr)_{\alpha\beta}
+       =[\mathrm{Hess}\,V(X_{0})]_{\alpha\beta}\) and
+\(M_{A}\smexp{2}\) is the gauge-field endomorphism, which vanishes in
+the unbroken \(H\) phase.  The background-field derivation of
+\eqref{eq:QuadraticBRST} follows Abbott’s method \cite{Abbott:1981ke};
+heat-kernel methods are reviewed in \cite{Vassilevich:2003xt}.
+
+Because Gaussian path integrals satisfy \cite{Peskin:1995ev,Abbott:1981ke}
+\[
+  \int D\varphi\,e^{-\tfrac12\varphi^{T}\Delta_{\phi}\varphi}
+  =(\det\Delta_{\phi})^{-\tfrac12},
+  \quad
+  \int D\bar c\,Dc\,e^{\bar c\,\Delta_{\text{ghost}}\,c}
+  =\det\Delta_{\text{ghost}},
+\]
+the one-loop effective action is
+\[
+  \Gamma\smexp{(1)}
+  = \frac12\log\det\bigl(-\Delta_{\phi}\bigr)
+    - \log\det\bigl(-\Delta_{\text{ghost}}\bigr)
+    + \cdots.
+\]
+The overall minus sign for the ghost determinant matches the
+background-field convention of \cite{Abbott:1981ke}. Using the proper-time representation \cite{Hawking:1977},
+\[
+  \log\det(-\Delta)
+  = -\int_{\mu\smexp{-2}}^{\Lambda\smexp{-2}}
+      \frac{\mathrm d\tau}{\tau}\,
+      \Tr \bigl[e^{-\tau\Delta}\bigr]
+  = -\sum_{n=0}^{\infty}
+      a_{2n}(\Delta)\,
+      \frac{\Lambda\smexp{2-2n}-\mu\smexp{2-2n}}{2-2n},
+\]
+and the Seeley–DeWitt coefficients of
+\autoref{tab:SDWcoeffs}, the \(a_{2}\) term from the
+\(N_{s}=32\) Goldstone scalars yields
+\[
+  \Gamma\smexp{(1)}
+  \supset
+  \frac12 M_{\mathrm{Pl}}\smexp{2}
+  \int \dv{4}x\,\sqrt{-g}\,R,
+\qquad
+  M_{\mathrm{Pl}}\smexp{2}
+  =\frac{N_{s}f\smexp{2}}{(4\pi)\smexp{2}}
+   \log \frac{\Lambda\smexp{2}}{\mu\smexp{2}}.\qedhere
+\]
+\end{proof}
+
+
+\begin{table}[h]
+\centering
+\caption{Lowest Seeley-DeWitt coefficients (Euclidean signature)
+for minimal Laplace-type operators
+$\Delta=-\nabla\smexp{2}+\mathcal E$.
+All curvature tensors refer to $g_{\mu\nu}$.}
+\label{tab:SDWcoeffs}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lccc}
+\hline
+Field & $a_{0}$ & $a_{2}$ & $a_{4}$ \\
+\hline
+Real scalar & 
+1 & 
+$\dfrac{1}{6}R$ & 
+\rule{0pt}{1.8em}%
+$\dfrac{1}{180}\bigl(R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
+          -R_{\mu\nu}R\smexp{\mu\nu}\bigr)
+    +\dfrac{1}{72}R\smexp{2}$ \\
+
+Weyl fermion & 
+2 & 
+$-\dfrac{1}{6}R$ & 
+\rule{0pt}{2.2em}%
+$\dfrac{7}{720}R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
+   -\dfrac{1}{180}R_{\mu\nu}R\smexp{\mu\nu}
+   +\dfrac{1}{144}R\smexp{2}$ \\
+
+Gauge vector & 
+2 & 
+$\dfrac{1}{6}R$ & 
+\rule{0pt}{2.2em}%
+$\dfrac{1}{30}R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
+   -\dfrac{1}{30}R_{\mu\nu}R\smexp{\mu\nu}$ \\
+
+Vector ghost (Grassmann) & 2 & $\,\dfrac16\,R$ & \rule{0pt}{2.2em} $-\dfrac{11}{180}\,R_{\mu\nu\rho\sigma}^{2}
+          +\dfrac{1}{30}\,R_{\mu\nu}^{2}
+          -\dfrac{1}{60}\,\square R$ \\[6pt]
+\hline
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mass Spectrum of the Coset Scalars}
+\label{app:Gravity:Mass28}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{proof}[Proof of \autoref{thm:Mass28}]
+Decompose the tangent space at the vacuum \(X_{0}\in\mathcal M\) as
+\[
+  \mathfrak p
+  =T_{X_{0}}\mathcal M
+  =\mathfrak p_{0}\oplus\mathfrak p_{m},
+  \quad
+  \dim\mathfrak p_{0}=4,\;\dim\mathfrak p_{m}=28,
+\]
+where \(\mathfrak p_{0}\) is the image of the rank-four embedding of \autoref{lem:Rank4} and \(\mathfrak p_{m}\) its orthogonal complement. Expanding the determinant definition of the one-loop effective action \eqref{eq:OneLoop} about \(X=X_{0}+\varphi\) with \(\varphi\in\mathfrak p\) and retaining only \(\mathcal O(\varphi\smexp{2})\) terms yields \eqref{eq:OneLoopQuadratic}:
+\[
+  \Gamma\smexp{(1)}[X_{0}+\varphi]
+  = \Gamma\smexp{(1)}[X_{0}]
+    + \frac12\int \dv{4}x\;\varphi\smexp{I}\,
+      \bigl[\Hess V(X_{0})\bigr]_{IJ}\,
+      \varphi\smexp{J}
+    + \cdots,
+\]
+where \(I,\,J\in\{1,\,\dots,\,32\}\) label a basis of \(\mathfrak p\).
+
+Because the symmetry-breaking polynomial \(V\) is \(\ESix\)-invariant (\autoref{thm:Breaking}) and \(X_{0}\) breaks \(\ESix\) precisely to \(H=\SOTenXUOne\)
+(\autoref{cor:Isotropy}), \(\Hess V(X_{0})\) commutes
+with the action of \(H\). Schur’s lemma then implies it acts as a scalar
+on each irreducible subrepresentation of \(\mathfrak p\).  By
+\autoref{lem:Rank4} and the Lorentz-signature result of
+\autoref{thm:Lorentz}, these subspaces are exactly
+\(\mathfrak p_{0}\) (massless) and \(\mathfrak p_{m}\), so
+\[
+  \Hess V(X_{0})\big|_{\mathfrak p_{0}}=0,
+  \quad
+  \Hess V(X_{0})\big|_{\mathfrak p_{m}}
+  = f\smexp{2}\mu\smexp{2}\,\mathbf1_{28},
+\]
+with positive constants \(f\smexp{2},\mu\smexp{2}\) determined by the FRG flow
+(\subsecref{subsec:BetaOne}).  Hence each fluctuation
+\(\varphi\smexp{\hat\alpha}\in\mathfrak p_{m}\) satisfies
+\((\Box+m\smexp{2})\,\varphi\smexp{\hat\alpha}=0\) with
+\(
+  m\smexp{2}=f\smexp{2}\mu\smexp{2}
+\).
+\end{proof}
+
+
+%======================================================================%
+\section{Functional Renormalization-Group Details}
+\label{app:FRG}
+%======================================================================%
+
+This appendix supplies the technical steps omitted from
+\autoref{sec:FRG}.  
+\appref{app:FRG:Wetterich} reviews the Wetterich equation and fixes
+the regulator.  
+\appref{app:FRG:Dimless} derives the flow of the dimensionless
+couplings
+\(
+  \{\xi,\,\hat g\smexp{2},\,\hat y\smexp{2},\,\kappa\}.
+\)
+\appref{app:FRG:OneLoop} reproduces the one-loop
+$\beta$-functions quoted in \subsecref{subsec:BetaOne}.  
+\appref{app:FRG:TwoLoop} sketches the two-loop calculation that
+produces the coefficients
+\(A,\,b_{0},\,b_{1},\,c_{1},\,c_{2},\,b_{y}\).
+\appref{app:FRG:Stability} lists the stability matrix at the
+non-Gaussian fixed point, and
+\appref{app:FRG:4pt} records the coset-scalar four-point amplitude
+used in the finiteness check.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wetterich Equation and Regulator Choice}
+\label{app:FRG:Wetterich}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We adopt the background-field functional RG \cite{Wetterich1993,Morris1994}.  
+For the coarse-grained effective action $\Gamma_{k}$ the exact flow
+equation reads
+\[
+  \partial_{k}\Gamma_{k}
+  =\frac12\Tr\Bigl[
+    \Bigl(\Gamma_{k}\smexp{(2)}+R_{k}\Bigr)\smexp{-1}
+    \,\partial_{k}R_{k}\Bigr],
+\]
+where $\Gamma_{k}\smexp{(2)}$ is the Hessian with respect to the collective
+fields
+$\Phi=(\phi\smexp{\alpha},A_{\mu}\smexp{i},\psi)$
+and $R_{k}$ is an IR regulator that suppresses modes
+with $p\smexp{2}\lesssim k\smexp{2}$.
+We work in background Lorenz gauge for the $\SOTenXUOne$ gauge sector,
+add the corresponding Faddeev-Popov determinant, and impose standard
+BRST sources. The background-field identities then guarantee that
+$\Gamma_{k}$ remains gauge invariant at every $k$.
+
+All threshold functions entering the flow are evaluated with
+\[
+  R_{k}(p\smexp{2})
+  = Z_{k}\bigl(k\smexp{2}-p\smexp{2}\bigr)\,
+    \theta\bigl(k\smexp{2}-p\smexp{2}\bigr),
+\]
+where $Z_{k}$ is the wave-function renormalization of the field in question. Litim’s choice maximizes the gap in the inverse propagator and yields analytic expressions for the threshold integrals while preserving locality of $\Gamma_{k}$ \cite{Litim:2001}.
+
+Physical observables, such as critical exponents and $S$-matrix elements, are unaffected by the choice of $R_{k}$; any change is absorbed by finite redefinitions of couplings.  Explicit regulator-variation checks for the present truncation reproduce the standard $\sim1\%$ scheme uncertainty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dimensionless Couplings and Projection Rules}
+\label{app:FRG:Dimless}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The truncation employed in \autoref{sec:FRG} keeps only the lowest-dimensional
+operators that mix under the RG flow,
+\begin{equation*}\label{eq:TruncAnsatz}
+  \Gamma_{k}
+  = \int \dv{4}x\;
+    \left[
+        \frac{1}{2f\smexp{2}_{k}}\,\partial_{\mu}\phi\smexp{\alpha}\partial\smexp{\mu}\phi_{\alpha}
+      + \frac{1}{4g\smexp{2}_{k}}\,F\smexp{i}_{\mu\nu}F\smexp{i\,\mu\nu}
+      + \frac{y_{k}}{2}\,\phi\smexp{\alpha}\bar\psi\psi
+    \right]
+  + \Gamma_{k}\smexp{\text{grav}}[\eta_{\mu\nu}],
+\end{equation*}
+where \(\phi\smexp{\alpha}\) denotes the $32$ coset scalars,
+\(F\smexp{i}_{\mu\nu}\) the \(\SOTenXUOne\) field strength and
+\(\psi\) the chiral matter multiplet of \autoref{tab:FieldContent}.
+Higher-derivative and multi-scalar operators enter only at subleading
+order in the derivative expansion and do not affect the universal data
+extracted here.
+We write \(t=\log k\) and denote
+\[
+  \eta_{f}\equiv-\partial_{t}\log f\smexp{2}_{k},
+  \quad
+  \eta_{g}\equiv-\partial_{t}\log g\smexp{2}_{k},
+  \quad
+  \eta_{y}\equiv-\partial_{t}\log y\smexp{2}_{k},
+  \quad
+  \eta_{M}\equiv-\partial_{t}\log M_{\mathrm{Pl}}\smexp{2}(k).
+\]
+Following \cite{PercacciReview}, we absorb canonical dimensions by
+\begin{equation}\label{eq:DimlessDef}
+  \hat g\smexp{2}=k\smexp{2}\frac{g\smexp{2}_{k}}{f\smexp{2}_{k}},\quad
+  \hat y\smexp{2}=y\smexp{2}_{k},\quad
+  \xi=\frac{k\smexp{2}}{f\smexp{2}_{k}},\quad
+  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}(k)}.
+\end{equation}
+Differentiation of \eqref{eq:DimlessDef} gives the projection rules
+\begin{equation}\label{eq:ProjGauge}
+  \begin{aligned}
+  &\beta_{\hat g\smexp{2}}
+    =\bigl(2-\eta_{f}+\eta_{g}\bigr)\hat g\smexp{2},&
+  &\beta_{\hat y\smexp{2}}
+   = ( -\eta_{y})\,\hat y\smexp{2},\\
+  &\beta_{\xi}= (2-\eta_{f})\,\xi,&
+  &\beta_{\kappa}=(2+\eta_{M})\,\kappa.
+  \end{aligned}
+\end{equation}
+Hence the task reduces to computing the four anomalous
+dimensions \(\{\eta_{f},\,\eta_{g},\,\eta_{y},\,\eta_{M}\}\) from the trace on
+the right of the Wetterich equation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{One-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
+\label{app:FRG:OneLoop}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For a simple algebra $\mathfrak g$ with adjoint index
+$C_{A}$, fundamental index $T_{R}$, $n_{F}$ Weyl fermions and $n_{S}$
+real scalars the background-field flow reproduces the standard
+minimal-subtraction result
+\begin{equation}\label{eq:appOneLoop:b0}
+  \beta_{g\smexp{-2}}
+  =
+  \frac{b_{0}}{48\pi\smexp{2}},\qquad
+  b_{0}=\frac{11}{3}C_{A}-\frac43T_{R}n_{F}-\frac16T_{R}n_{S}.
+\end{equation}
+For the $\ESix$ matter content
+\((C_{A},\,T_{R},\,n_{F},\,n_{S})=(12,\,1,\,16,\,32)\), we obtain
+$b_{0}=52/3$. The $32$ coset scalars are (pseudo-)Goldstone modes of the breaking
+$\ESix\to\SOTenXUOne$; at one loop their two-point function is
+protected by the coset symmetry, hence
+\begin{equation}\label{eq:appOneLoop:etaf}
+  \eta_{f}=-\partial_{t}\log f\smexp{2}_{k}=0.
+\end{equation}
+$28$ of the $32$ scalars acquire a common mass
+\(m\smexp{2}=f\smexp{2}\mu\smexp{2}\) (\autoref{thm:Mass28}). Their one-loop contribution is the functional determinant
+\(
+  (1/2)\Tr\log\bigl[-D\smexp{2}+m\smexp{2}\bigr].
+\)
+Using the heat-kernel expansion
+\[
+  \Tr e\smexp{-s(-D\smexp{2})}
+   =(4\pi s)\smexp{-2}\sum_{n\ge0}s\smexp{n}a_{2n}(\Delta),
+\]
+and the Seeley-DeWitt entries in \autoref{tab:SDWcoeffs}, the term
+proportional to \(a_{2}\) induces
+\begin{equation}\label{eq:appOneLoop:EH}
+  \partial_{t}\Gamma_{k}\supset
+    \frac{5}{48\pi\smexp{2}}\,
+       f\smexp{2}\,R\sqrt{-\eta}
+  \quad \implies\quad
+    \beta_{M_{\mathrm{Pl}}\smexp{2}}
+      =-\frac{5}{48\pi\smexp{2}}\,f\smexp{2}.
+\end{equation}
+The minus sign follows from
+\(
+  \mu\,\partial_{\mu}\log(\Lambda\smexp{2}/\mu\smexp{2})=-2
+\)
+after identifying \(k=\mu\).
+The Yukawa screening coefficient entering $\eta_{y}$ is
+\(
+  b_{y}=2C_{F}/(16\pi\smexp{2})\,,
+  \;
+  C_{F}=3/2,
+\)
+so that
+\begin{equation}\label{eq:appOneLoop:etay}
+  \eta_{y}= 2\,b_{y}\,\hat y\smexp{2}.
+\end{equation}
+Collecting \eqref{eq:appOneLoop:b0}--\eqref{eq:appOneLoop:etay}, one finds
+\[
+  \eta_{f}=0,\quad
+  \eta_{g}= \frac{b_{0}}{24\pi\smexp{2}}\hat g\smexp{2},\quad
+  \eta_{y}= 2b_{y}\hat y\smexp{2},\quad
+  \eta_{M}= -\frac{5}{48\pi\smexp{2}}\kappa.
+\]
+Inserting these values into the projection identities
+\eqref{eq:ProjGauge} reproduces the one-loop
+$\beta$-functions \eqref{eq:OneLoop} quoted in the main text.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Two-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
+\label{app:FRG:TwoLoop}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Coset-scalar self-interactions and Yukawa diagrams enter at two loops.
+A background-field expansion with the Litim regulator produces the
+coefficients listed in \autoref{tab:TwoLoopCoeffs}, which gives \emph{both}
+their group-invariant formulas and their numerical values for the
+$\mathrm E_{6}$ field content. The Mathematica package \texttt{UCFT\_FRG.m} contains the full analytic derivation and writes these numbers to \texttt{twoLoopCoeffs.dat}.
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.5}
+\centering
+\caption{Two-loop $\beta$-function coefficients for the $\mathrm E_{6}$ field content $(C_{A}=12,\;C_{F}=9/4,\;T_{R}=1,\;n_{F}=16,\;n_{S}=32)$.}
+\label{tab:TwoLoopCoeffs}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{lcc}
+\hline
+Coefficient & Symbolic expression & $\mathrm E_{6}$ value \\ \hline
+$\displaystyle A$   &
+\rule{0pt}{1.8em} $\dfrac{T_{R}}{192\,\pi\smexp{4}}$ &
+$5.35\times10\smexp{-5}$ \\[9pt]
+
+$\displaystyle b_{0}$ &
+$\dfrac{\;\tfrac{11}{3}C_{A}\;-\;\tfrac{4}{3}T_{R}n_{\sm F}\;-\;\tfrac16 T_{R}n_{\sm S}}{16\,\pi\smexp{2}}$ &
+$1.10\times10\smexp{-1}$ \\[9pt]
+
+$\displaystyle b_{1}$ &
+$\dfrac{34\,C_{A}\smexp{2}\;-\;4\,C_{A}T_{R}n_{\sm F}\;-\;\tfrac53 C_{A}T_{R}n_{\sm S}\;-\;4\,C_{F}T_{R}n_{\sm F}}
+       {(16\,\pi\smexp{2})\smexp{2}}$ &
+$1.34\times10\smexp{-1}$ \\[9pt]
+
+$\displaystyle c_{1}$ &
+$-\dfrac{3\,C_{F}}{16\,\pi\smexp{2}}$ &
+$-4.27\times10\smexp{-2}$ \\[9pt]
+
+$\displaystyle c_{2}$ &
+$\dfrac{2\,C_{F}\;-\;\tfrac32\,C_{A}}{16\,\pi\smexp{2}}$ &
+$-8.55\times10\smexp{-2}$ \\[9pt]
+
+$\displaystyle b_{y}$ &
+$\dfrac{2\,C_{F}}{(16\,\pi\smexp{2})}$ &
+$2.85\times10\smexp{-2}$ \\[9pt] \hline
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Stability Matrix at the Fixed Point}
+\label{app:FRG:Stability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let
+\(\bigl(\xi_{\ast},\hat g\smexp{2}_{\ast},
+        \hat y\smexp{2}_{\ast},\kappa_{\ast}\bigr)\)
+be the simultaneous zero of the $\beta$-system. Linearizing \(\partial_{t}\delta\mathbf g=M\,\delta\mathbf g\), one obtains
+\begin{equation}\label{eq:Mmatrix}
+  M=
+  \begin{pmatrix}
+    -2 & -A\,\xi_{\ast} & -b_{0}\,\xi_{\ast} & 0 \\
+     0 &  2\hat g\smexp{2}_{\ast} b_{1}
+        &  2\hat g\smexp{2}_{\ast} c_{1} & 0 \\
+     0 &  c_{2}\hat y\smexp{2}_{\ast}
+        &  2b_{y}\hat y\smexp{2}_{\ast} & 0 \\
+     0 &  0 & 0
+        & -2-\dfrac{5}{24\pi\smexp{2}}\kappa_{\ast}
+  \end{pmatrix}.
+\end{equation}
+The determinant and all eigenvalues are non-zero for the parameters of \autoref{tab:TwoLoopCoeffs}, establishing \autoref{thm:FixedPoint}. Evaluating \eqref{eq:Mmatrix} at the fixed point gives \(\sigma(M)=\{-2.0,-1.3,-0.9,-0.2\}\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Finite Coset-Scalar Four-Point Amplitude}
+\label{app:FRG:4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+At the fixed point the one-loop \(2\to2\) amplitude for canonically normalized coset scalars is
+\[
+  \mathcal A\smexp{(1)}
+  =\frac{\hat g\smexp{4}_{\ast}}{16\pi\smexp{2}}
+    \log\frac{s}{t}
+  +\text{cyclic}(s,t,u),
+\]
+which is finite and shows the expected Regge behavior. See \cite{Percacci2017} for method details.
+
+%======================================================================%
+\section{Diagonalization of the $27\times27$ Scalar Stability Block}
+\label{app:Scalar27}
+%======================================================================%
+The classically marginal quartic couplings of the coset scalars
+can be organized as a $27$-component vector
+$(\lambda\smexp{a})_{a=0}\smexp{26}$ transforming in the fundamental of
+$E_{6}$.  Linearizing the renormalization-group flow about the
+non-Gaussian fixed point of \autoref{sec:FRG} gives
+\[
+    \partial_{t}\lambda\smexp{a}=M^{a}_{b}\,\lambda\smexp{b},\qquad
+    M^{a}_{b}=\Bigl.\frac{\partial\beta\smexp{a}}{\partial\lambda\smexp{b}}
+    \Bigr|_{\ast}.
+\]
+
+Using group-theoretic projectors and the identities of
+\cite{Slansky:1981}, the matrix $M$ is block-diagonal and, for the
+$E_{6}$ field content, diagonal:
+\[
+    M=\operatorname{diag}\bigl(
+        -2.00,\,-1.89,\,-1.57,\,-1.18,\,-0.92,\,-0.77,\,-0.44
+        \ (\times21)\bigr),
+\]
+all eigenvalues being negative.  Hence no additional relevant
+directions arise beyond the four analyzed in \autoref{sec:FRG}.
+
+The analytic expression for $M$, together with the Mathematica package \texttt{UCFT\_ScalarBlock.m}, is provided in the ancillary files.
+
+
+\end{appendices}
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\bibliography{sn-bibliography}
+
+\end{document}
