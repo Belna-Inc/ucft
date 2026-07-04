@@ -1,30 +1,30 @@
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 
-\usepackage{graphicx}% Include figure files
-\usepackage{dcolumn}% Align table columns on decimal point
-\usepackage{bm}% bold math
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
 \usepackage{enumitem}
-\usepackage{graphicx}%
-\usepackage{multirow}%
-\usepackage{amsmath,amssymb,amsfonts}%
-\usepackage{amsthm}%
-\usepackage{mathrsfs}%
-\usepackage[title]{appendix}%
-\usepackage{xcolor}%
-\usepackage{textcomp}%
-\usepackage{booktabs}%
-\usepackage{algorithm}%
-\usepackage{algorithmicx}%
-\usepackage{algpseudocode}%
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
 \usepackage{listings}
 \usepackage{aliascnt}
 \usepackage{slashed}
-\usepackage{hyperref}% add hypertext capabilities
-%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
-%\linenumbers\relax % Commence numbering lines
+\usepackage{hyperref}
 
+\renewcommand*{\sectionautorefname}{\S}
+\renewcommand*{\subsectionautorefname}{\S}
+\renewcommand*{\subsubsectionautorefname}{\S}
 
-%% as per the requirement new theorem styles can be included as shown below
 \theoremstyle{thmstyleone}
 \newtheorem{theorem}{Theorem}
 
@@ -73,95 +73,70 @@
 \aliascntresetthe{remark}
 \providecommand*{\remarkautorefname}{Remark}
 
-%\usepackage[showframe,%Uncomment any one of the following lines to test 
-%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
-%%text={7in,10in},centering,
-%%margin=1.5in,
-%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
-%%height=10in,a5paper,hmargin={3cm,0.8in},
-%]{geometry}
-
-
 \begin{document}
 
 \newcommand{\SU}[1]{\mathrm{SU(#1)}}
 \newcommand{\SMSubgroup}{\SU{3}\times\SU{2}\times\U{1}}
 \newcommand{\SO}[1]{\mathrm{SO(#1)}}
 \newcommand{\U}[1]{\mathrm{U(#1)}}
-\newcommand{\E}[1]{\mathrm{E_{#1}}}
+\newcommand{\E}{\mathrm{E}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Oct}{\mathbb{O}}
-\newcommand{\jalg}{J_3(\mathbb{O})}
+\newcommand{\Albert}{\mathbb{A}}
 \newcommand{\SOTen}{\SO{10}}
 \newcommand{\UOne}{\U{1}}
-\newcommand{\ESix}{\E{6}}
+\newcommand{\ESix}{\E_{6}}
 \newcommand{\SOTenXUOne}{\SOTen \times \UOne}
 \newcommand{\MCoset}{\frac{\ESix}{\SOTenXUOne}}
 \newcommand{\MCosetInline}{\ESix/(\SOTenXUOne)}
-\newcommand{\ESixBreaking}{\ESix \;\to\; \SOTenXUOne}
-\newcommand{\map}[3]{#1 \ : \ \#2 \;\to\; \#3}
-\newcommand{\set}[2]{\{ #1 \,:\, #2 \}}
-\newcommand{\Herm}[2]{\mathrm{Herm}_{#1}(#2)}
 \newcommand{\chr}[1]{\mathrm{char}(#1)}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
 \newcommand{\Tr}{\operatorname{Tr}}
-\newcommand{\s}{\hspace{.1em}}
-\newcommand{\sm}{\hspace{.065em}}
 \newcommand{\Str}{\operatorname{Str}}
-\newcommand{\Spin}  {\operatorname{Spin}}
-\newcommand{\smexp}[1]{^{\sm #1}}
+\newcommand{\Spin}{\operatorname{Spin}}
 \newcommand{\Hess}[1]{\operatorname{Hess}}
-\newcommand{\dv}[1]{\mathrm{d}\smexp{#1}}
 
-\title[Universal coset field theory]{Universal coset field theory}
+\title[Universal Coset Field Theory]{Universal Coset Field Theory}
 
-\author*[1]{\fnm{Brandon} \sur{Belna}}\email{bbelna@iu.edu}
-\affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Indiana University East}, \orgaddress{\street{2325 Chester Blvd}, \city{Richmond}, \postcode{47374}, \state{IN}, \country{USA}}}
+\author*[1]{
+  \fnm{Brandon} \sur{Belna}
+}
+\email{bbelna@iu.edu}
+\email{bbelna@rockets.utoledo.edu}
+\email{brandon@belna.org}
 
 \abstract{
-We formulate a universal coset field theory (UCFT), a four-dimensional
-Euclidean quantum field theory whose exceptional datum is the Albert algebra
-$\jalg$ and the associated compact Lie type $\ESix$. Its central result is
-that, under the two stated axioms, gravity is not a fundamental interaction:
-spacetime and the metric that propagates on it are emergent, induced
-structures rather than postulated inputs, and no fundamental graviton field
-ever appears. An $\ESix$-invariant coercive
-potential has vacuum orbit Cartan's Hermitian symmetric space
-EIII, $\MCosetInline$; its $32$ real tangent directions form the irreducible
-$\SOTenXUOne$ multiplet with complexification
-$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ and carry a unique
-positive invariant metric. For nondegenerate spacetime-filling maps into EIII,
-the pull-back of this metric gives a Riemannian first fundamental form, so the
-spacetime metric is derived from the coset field configuration rather than
-assumed \emph{a priori}. Lorentzian physics is interpreted through
-Osterwalder--Schrader reconstruction, and one-loop matter determinants induce
-an Einstein--Hilbert term in the sense of Sakharov: gravity is thus a
-radiative effect of matter loops on the coset, not a fundamental field, at
-every stage of the construction. We compare this coset sector with the gauge-unfixed Higgs orbit of an
-$E_{8}\times E_{8}$ heterotic compactification with visible $\ESix$. At the level
-of the two-derivative bosonic action and the $\SOTenXUOne_\psi$ current
-algebra, the visible sector matches; a $\mathbb Z_{12}$ asymmetric
-orbifold with three generations and an adjoint Higgs supplies the candidate
-realization. The resulting Albert--EIII criterion is relative: within the
-Albert-selected heterotic class, a theory can realize the correspondence
-only if its residual Higgs/moduli sector is the EIII coset with the stated
-tangent representation, metric, gauge data, anomaly and Green--Schwarz
-matching, and worldsheet consistency. In the stated truncation, the functional
-renormalization-group flow has a unique ultraviolet-attractive non-Gaussian
-fixed point and gives
-$M_{\mathrm{GUT}}\simeq2\times10\smexp{16}\,\mathrm{GeV}$. We also show that the
-Riemann hypothesis is equivalent to the absence of complex mass-squared modes,
-which is a spectral reformulation of the prime-orbit trace of the finite adelic
-zeta sector.
-We distinguish the representation-theoretic consequences from assumptions
-requiring further dynamical input.
+We formulate Universal Coset Field Theory (UCFT) as a four-dimensional
+operator-algebraic quantum field theory whose local observable net is
+conditionally rigidly determined by the Albert algebra $\Albert$ and the compact
+EIII geometry of type $\ESix$. The axioms select the Albert structure, the
+kinematical Hilbert space, and the unitary dynamics; the theory is represented by an
+$\ESix$-invariant coset sector with vacuum orbit
+\(\ESix/(\SOTenXUOne)\). The associated Haag--Kastler net contains local
+coset, gauge, matter, and spectral subalgebras, while the Euclidean functional
+integral is used only as a generator of Schwinger functions for this
+operator-algebraic theory. Spontaneous symmetry breaking produces \(32\)
+Goldstone directions forming an irreducible \(\SOTenXUOne\) multiplet with
+complexification
+\(\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}\) and a unique positive
+invariant metric. A spacetime-filling coset representation induces a
+four-dimensional Riemannian metric by pull-back, and the Einstein--Hilbert term
+appears as a one-loop effective term in the Sakharov--Adler sense. Within the
+renormalization-group truncation studied here, the positive-coupling flow is
+effective only below the boundary \(\epsilon<1/6\); a heterotic ultraviolet
+completion is therefore formulated as a matching condition, not as an
+autonomous coset fixed point. The zeta sector is a commutative spectral
+subalgebra of the coset observable algebra: a positive Galois-equivariant
+realization of the shifted zeta divisor in this subalgebra implies the Riemann
+hypothesis. Thus, under the Albert--EIII axioms, UCFT is an AQFT in which
+geometry, gravity, and arithmetic spectral
+constraints are represented sectorally rather than postulated as independent
+fundamental inputs.
 }
 
-\keywords{swampland, exceptional Jordan algebra, $E_6$, heterotic string,
-$\mathbb Z_{12}$ orbifold, coset field theory, EIII, induced gravity, emergent
-spacetime, asymptotic safety, grand unification, Riemann zeta function,
-spectral determinant}
+\keywords{algebraic quantum field theory, Haag--Kastler net, exceptional Jordan
+algebra, $\ESix$, EIII, coset field theory, induced gravity, emergent spacetime,
+heterotic ultraviolet completion, grand unification, Riemann zeta function,
+spectral determinant, swampland}
 
 %%\pacs[JEL Classification]{D8, H51}
 
@@ -169,14 +144,20 @@ spectral determinant}
 
 \maketitle
 
+\newpage
+
+\tableofcontents
+
+\newpage
+
 %======================================================================%
 \section{Introduction}
 %======================================================================%
 
 Exceptional algebraic structures recur throughout high-energy physics. The
-exceptional Jordan (Albert) algebra $\jalg$ of $3\times3$ Hermitian octonionic
+exceptional Jordan (Albert) algebra $\Albert$ of $3\times3$ Hermitian octonionic
 matrices has automorphism group $F_{4}$ and reduced structure group of complex
-Lie type $E_{6}$, the type that preserves its cubic norm
+Lie type $\ESix$, the type that preserves its cubic norm
 \cite{Jacobson:1968,Springer:2000,McCrimmon:2004}. In this paper
 $\ESix$ denotes the compact real form used in the EIII coset construction. It
 contains $\SOTenXUOne$, under which the fundamental $\mathbf{27}$ branches as
@@ -185,31 +166,33 @@ contains $\SOTenXUOne$, under which the fundamental $\mathbf{27}$ branches as
 \]
 the $\mathbf{16}$ of $\Spin(10)$ carrying one Standard-Model family together
 with a right-handed neutrino \cite{Slansky:1981}. Formally real Jordan algebras
-were introduced as algebras of quantum observables; $\jalg$ is the unique
+were introduced as algebras of quantum observables; $\Albert$ is the unique
 exceptional member of their classification. The organizing question is how much
-four-dimensional field theory is fixed once this exceptional datum and its
-compact $E_{6}$ symmetry are specified.
+four-dimensional field theory is fixed once this exceptional structure and its
+compact $\ESix$ symmetry are specified.
 
-The main result of this paper answers a stronger question than that
-organizing one: once the Albert datum and its two axioms are fixed, gravity
-is not among the fundamental ingredients of the theory. No graviton field, no
-spacetime metric, and no gravitational action are postulated anywhere in the
-construction. Spacetime itself is the image of a spacetime-filling map into
-the EIII coset, its metric is the pull-back of the unique coset metric
-(\autoref{thm:EmergentRiemannian}), and the Einstein--Hilbert term that governs
-its dynamics is generated radiatively, at one loop, by the matter content the
-same construction forces into existence (\autoref{thm:inducedEH}). In this
-precise sense, \emph{if UCFT holds, gravity is not fundamental}: it is a
-low-energy, induced consequence of the Albert-algebraic symmetry breaking, on
-the same footing as the Sakharov--Adler mechanism, rather than an independent
-input to the theory.
+The main result of this paper is a conditional rigidity statement in the
+language of algebraic quantum field theory. The primary object of UCFT is a
+net \(\mathcal O\mapsto\mathfrak A(\mathcal O)\) of local observable
+\(C^{*}\)-algebras on the reconstructed four-dimensional spacetime. Once the
+Albert structure, the compact EIII coset geometry, and the quantum
+kinematical axiom are fixed, the coset representation of this net has no
+independent gravitational input. No graviton field, no spacetime metric, and no
+gravitational action are postulated in that sector. A spacetime-filling
+representation of the EIII coset induces its metric by pull-back
+(\autoref{thm:EmergentRiemannian}), and the Einstein--Hilbert term appears
+radiatively, at one loop, in the Sakharov--Adler sense
+(\autoref{thm:inducedEH}). In this precise conditional sense, gravity is not
+fundamental in UCFT: it is an induced low-energy structure in a representation
+of the local observable algebra.
 
-The construction rests on two axioms. The first posits a maximally symmetric initial state
-in $\jalg$; the second posits the usual quantum-mechanical kinematics of a
-universal wavefunction with unitary evolution. The field theory is then defined
-by an $\ESix$-invariant symmetry-breaking sector on the Jordan state space. A
-polynomial potential, built from the quadratic and cubic invariants $Q$ and
-$N$, is coercive and is minimized on the selected orbit
+The construction rests on two axioms. The first axiom posits a maximally
+symmetric Albert structure; the second posits the usual quantum-mechanical
+kinematics of a Hilbert-space representation with unitary dynamics. The local
+observable net is then represented by an $\ESix$-invariant symmetry-breaking
+sector on the compact EIII coset. A polynomial potential,
+built from the quadratic and cubic invariants $Q$ and $N$, is coercive and is
+minimized on the selected orbit
 \[
   \ESix\cdot X_{0}\cong\MCoset,
 \]
@@ -219,60 +202,68 @@ multiplet of $H=\SOTenXUOne$, whose complexification is
 $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$; the invariant metric is
 therefore unique up to scale and positive definite.
 
-The coset sector also supplies the geometric data. A spacetime-filling
-configuration of the Goldstone fields immerses a four-manifold into EIII; its
-first fundamental form is a nondegenerate Riemannian metric, so the
-four-dimensional geometry is induced by the field configuration rather than
-postulated independently. Since the functional integral is Euclidean, physical
-Lorentzian spacetime is understood through Osterwalder--Schrader reconstruction
-or, equivalently, analytic continuation. Quantizing the coset scalars, gauge
-fields, and a chiral $\mathbf{16}$ induces an Einstein--Hilbert term at one
-loop in the sense of Sakharov
-\cite{SakharovInducedGravity,AdlerInducedGravity}; the metric enters through
-this induced action rather than through a fundamental graviton.
+The coset representation also supplies the geometric data. A
+spacetime-filling configuration of the Goldstone fields immerses a
+four-manifold into EIII; its first fundamental form is a nondegenerate
+Riemannian metric, so the four-dimensional geometry is induced by the
+representation rather than postulated independently. The Euclidean Schwinger
+functions of the observable net are reconstructed by the
+Osterwalder--Schrader theorem, equivalently by analytic continuation in the
+regular cases considered here. The one-loop effective action of the coset,
+gauge, and chiral \(\mathbf{16}\) sectors induces an Einstein--Hilbert term in
+the sense of Sakharov \cite{SakharovInducedGravity,AdlerInducedGravity}; the
+metric enters through this induced action rather than through a fundamental
+graviton.
 
-Two additional ingredients are analyzed. First, within the stated functional
-renormalization-group truncation, the coset-field action has an
-ultraviolet-attractive non-Gaussian fixed point and a grand-unified matching
-scale $M_{\mathrm{GUT}}\simeq2\times10\smexp{16}\,\mathrm{GeV}$. Second, the
-$\ESix$ branchings supply a grand-unified matter skeleton and anomaly
-constraints. We also include an arithmetic extension: a finite adelic zeta
-sector whose prime-orbit trace reproduces the logarithmic derivative of the
-completed Riemann zeta factor, and whose determinant realization gives a
-mass-spectrum reformulation of the Riemann hypothesis.
+Two additional sectoral rigidity tests are analyzed. First, within the stated
+functional renormalization-group truncation, the coset-field action is an
+effective description below the cutoff \(\epsilon<1/6\). The positive-coupling
+flow does not supply an interacting asymptotic-safety fixed point; therefore an
+$\E_{8}\times E_{8}$ heterotic ultraviolet completion is formulated as a
+matching criterion at the boundary. The corresponding heterotic matching scale
+is \(M_{\mathrm{GUT}}\simeq2\times10^{16}\,\mathrm{GeV}\), while plain
+non-supersymmetric Standard-Model one-loop running would cross near
+\(10^{13}\,\mathrm{GeV}\). Second, the $\ESix$ branchings supply a
+grand-unified matter skeleton and anomaly constraints. We also explain how the
+Riemann zeta function enters as a conditional spectral rigidity criterion for a
+commutative spectral subalgebra of the coset observable algebra: if the shifted
+zeta divisor admits a positive Galois-equivariant realization in that
+subalgebra, then the Riemann hypothesis follows.
 
 The paper is organized as follows. \autoref{sec:AxiomsAlbertSSB} states the
-axioms, recalls the Albert algebra and its $\ESix$ symmetry, and constructs the
-symmetry-breaking potential and its vacuum manifold.
+axioms, formulates the operator-algebraic QFT, recalls the Albert algebra and
+its $\ESix$ symmetry, and constructs the symmetry-breaking potential and its
+vacuum manifold.
 \autoref{sec:EmergentFields} derives the emergent four-dimensional geometry and
-the low-energy field content. \autoref{sec:sigma} defines the coset
-$\sigma$-model, quantizes it, and derives the induced Einstein--Hilbert term and
-the coset mass spectrum. \autoref{sec:FRG} presents the renormalization-group
-flow, the non-Gaussian fixed point, and the grand-unified matching scale.
-\autoref{sec:ZetaSector} adds the arithmetic zeta sector and the
-spectral reformulation of the Riemann hypothesis. \autoref{sec:Holographic}
-compares the coset sector with a heterotic visible sector, \autoref{sec:Z12}
-records the $\mathbb Z_{12}$ candidate realization, and
-\autoref{sec:Swampland} formulates the resulting relative swampland criterion.
+the low-energy field content represented in the local net. \autoref{sec:sigma}
+defines the coset $\sigma$-model representation, computes its Euclidean
+Schwinger functions, and derives the induced Einstein--Hilbert term and the
+coset mass spectrum. \autoref{sec:FRG} presents the renormalization-group flow,
+its \(\epsilon<1/6\) validity window, and the grand-unified matching scale.
+\autoref{sec:ZetaSector} explains the zeta function through the coset
+correspondence and gives the spectral reformulation of the Riemann hypothesis.
+\autoref{sec:StringTheory} states the conditional heterotic matching criterion,
+records the $\mathbb Z_{12}$ orbit test, and formulates the resulting relative
+Albert--EIII swampland criterion.
 Proofs and technical computations are collected in the appendices.
 
 %======================================================================%
 \section{Axioms, the Albert Algebra, and Spontaneous Symmetry Breaking}
 \label{sec:AxiomsAlbertSSB}
 %======================================================================%
-This section states the axioms, recalls the Albert algebra and the compact
-$E_{6}$ symmetry used in the coset construction, constructs the algebraic
-symmetry-breaking potential, and counts the resulting $32$ Goldstone
-directions.
+This section states the axioms, formulates the local observable net, recalls
+the Albert algebra and the compact $\ESix$ symmetry used in the coset
+representation, constructs the algebraic symmetry-breaking potential, and
+counts the resulting $32$ Goldstone directions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axioms}\label{subsec:Axioms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{axiom}[Maximally symmetric vacuum]\label{ax:AxiomI}
-There is a distinguished state $\Phi\in\jalg$ fixed by the full exceptional
+There is a distinguished state $\Phi\in\Albert$ fixed by the full exceptional
 symmetry selected by the Albert algebra.
 \end{axiom}
-\begin{axiom}[Universal wavefunction]\label{ax:AxiomII}
+\begin{axiom}[Universal Hilbert-Space Dynamics]\label{ax:AxiomII}
 Physical states $\psi\in\mathcal H$ evolve through a one-parameter family
 $\{U(t)\}_{t\in\mathbb R}$ of unitary operators satisfying
 $U(0)=\mathrm{Id}$, $U(t+s)=U(t)U(s)$, and strong continuity.
@@ -280,17 +271,80 @@ $U(0)=\mathrm{Id}$, $U(t+s)=U(t)U(s)$, and strong continuity.
 
 \begin{remark}
 \autoref{ax:AxiomII} provides the kinematical Hilbert space and the
-one-parameter family of unitary operators. Whenever we later write a functional
-integral, we treat it as a formal generator of connected Green functions; its
-constructive interpretation is through the Osterwalder--Schrader
-reconstruction theorem applied to Euclidean correlation functions
-\cite{GlimmJaffe:1987}.
+one-parameter family of unitary operators. The local observable algebra is
+specified in \autoref{subsec:OperatorAlgebraicQFT}. Whenever we later write a
+functional integral, we treat it as a formal generator of connected Green
+functions for that algebraic theory; its constructive interpretation is through
+the Osterwalder--Schrader reconstruction theorem applied to Euclidean
+correlation functions \cite{GlimmJaffe:1987}.
 \end{remark}
 
 
-No additional axioms are introduced; all further ingredients are definitions,
-constructions, or consequences within the framework specified by these two
-axioms.
+No additional axioms are introduced. The compact real form of type \(\ESix\)
+acts on the regular EIII stratum with stabilizer
+\[
+  H=\SOTenXUOne,
+  \qquad
+  \M=\ESix/H,
+\]
+and the restrictions of the Albert invariants \(Q\) and \(N\) separate the
+compact \(\ESix\)-orbits on this stratum.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operator-Algebraic Quantum Field Theory}
+\label{subsec:OperatorAlgebraicQFT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+UCFT is formulated as an operator-algebraic Euclidean QFT. Let
+\(\mathsf{Reg}_{4}\) denote the directed set of bounded regular regions in the
+reconstructed four-dimensional Riemannian spacetime. To each
+\(\mathcal O\in\mathsf{Reg}_{4}\) we assign a
+unital \(C^{*}\)-algebra of local observables
+\[
+  \mathfrak A(\mathcal O)\subset B(\mathcal H),
+\]
+generated by bounded functional calculi of smeared coset fields, gauge-fixed
+currents, and matter fields supported in \(\mathcal O\). In the conditional
+framework of this paper, the assignment obeys the standard Haag--Kastler
+structural conditions
+\cite{Haag1996,Araki1999,BratteliRobinson1987}:
+\begin{enumerate}
+\item isotony:
+      \(\mathcal O_{1}\subset\mathcal O_{2}\) implies
+      \(\mathfrak A(\mathcal O_{1})\subset\mathfrak A(\mathcal O_{2})\);
+\item locality after Osterwalder--Schrader reconstruction: observables in
+      spacelike separated Lorentzian regions commute;
+\item covariance under the reconstructed spacetime isometries and under the
+      compact internal symmetry \(H=\SOTenXUOne\);
+\item existence of a cyclic vacuum vector \(\Omega\in\mathcal H\) whose vector
+      state \(\omega(A)=\langle\Omega,A\Omega\rangle\) produces the Euclidean
+      Schwinger functions.
+\end{enumerate}
+The quasi-local observable algebra of UCFT is the inductive-limit
+\(C^{*}\)-algebra
+\[
+  \mathfrak A
+  =
+  \overline{\bigcup_{\mathcal O\in\mathsf{Reg}_{4}}\mathfrak A(\mathcal O)}
+  ^{\|\cdot\|}.
+\]
+The one-parameter unitary group in \autoref{ax:AxiomII} acts by automorphisms
+\(\alpha_t(A)=U(t)AU(t)^{-1}\) of \(\mathfrak A\), and its self-adjoint
+generator is the Hamiltonian of the GNS representation associated with the
+vacuum state \(\omega\). Thus the functional integral used below is not an
+additional axiom; it is a Euclidean device for computing the correlation
+functions of this operator-algebraic theory.
+
+For the zeta sector, the relevant object is a commutative spectral subalgebra
+of the coset observable algebra. If \(\Delta_{\mathrm{UCFT}}\) denotes the
+positive self-adjoint coset mass operator, the algebra
+\[
+  C_{0}\bigl(\operatorname{Spec}(\Delta_{\mathrm{UCFT}})\bigr)
+  \subset \mathfrak A
+\]
+is obtained by continuous functional calculus. The Riemann-hypothesis criterion
+in \autoref{sec:ZetaSector} is precisely a statement about when the arithmetic
+zeta divisor is realized inside this positive spectral subalgebra.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Albert Algebra}
@@ -301,7 +355,7 @@ axioms.
 Let $F$ be a field with $\operatorname{char} F \neq 2$.  
 A \emph{Jordan algebra} is a commutative algebra $(A,\circ)$ satisfying
 \[
-  a\circ(b\circ a\smexp{2}) \;=\;(a\circ b)\circ a\smexp{2},
+  a\circ(b\circ a^{2}) \;=\;(a\circ b)\circ a^{2},
   \quad a,b\in A.
 \]
 \end{definition}
@@ -309,7 +363,7 @@ A \emph{Jordan algebra} is a commutative algebra $(A,\circ)$ satisfying
 \begin{definition}[Albert algebra {\cite{Albert:1934,McCrimmon:2004}}]
 The \emph{Albert algebra} is
 \[
-  \jalg=\{X\in M_{3}(\Oct) : X=X\smexp{\dagger}\},
+  \Albert=\{X\in M_{3}(\Oct) : X=X^{\dagger}\},
   \quad
   X\circ Y=\frac12\,(XY+YX).
 \]
@@ -320,9 +374,9 @@ The Albert algebra is a $27$-dimensional real Jordan algebra.
 \end{theorem}
 
 \begin{theorem}[Quadratic and cubic invariants]\label{thm:Invs}
-$\jalg$ admits  
+$\Albert$ admits  
 \[
-  Q(X)=\Tr(X\smexp{2}), 
+  Q(X)=\Tr(X^{2}), 
   \quad
   N(X)=\det_{\Oct}(X),
 \]
@@ -330,13 +384,13 @@ which are preserved by the corresponding reduced structure group.
 \end{theorem}
 
 \begin{theorem}[Exceptional type {\cite{Springer:2000}}]\label{thm:E6}
-The reduced structure algebra of $\jalg$ has complexification of type
+The reduced structure algebra of $\Albert$ has complexification of type
 $\mathfrak e_{6}$. In the compact coset construction below, $\ESix$ denotes the
 simply connected compact real form of this Lie type.
 \end{theorem}
 
-\begin{theorem}[Regular orbit criterion]\label{thm:OrbitClass}
-On the regular compact stratum used below, the invariants $Q$ and $N$ separate
+\begin{theorem}[Regular EIII Orbit Criterion]\label{thm:OrbitClass}
+On the regular compact EIII stratum used below, the invariants $Q$ and $N$ separate
 $\ESix$-orbits: for $X,Y$ in that stratum,
 \[
   \bigl(Q(X),N(X)\bigr)=\bigl(Q(Y),N(Y)\bigr)
@@ -344,7 +398,7 @@ $\ESix$-orbits: for $X,Y$ in that stratum,
 if and only if there exists $g\in\ESix$ such that $g\cdot X = Y$.
 \end{theorem}
 
-\begin{corollary}[Existence of an $\SOTenXUOne$ stabilizer]
+\begin{corollary}[Existence of an $\SOTenXUOne$ Stabilizer]
 \label{cor:Isotropy}
 There exists $X_{0}\in J_{3}(\mathbb{O})$ with
 $\mathrm{Stab}_{\ESix}(X_{0})\cong \SOTen\times \UOne$.
@@ -369,11 +423,11 @@ $\ESix\cdot X_{0}$. Define
 \begin{equation}\label{eq:Pdef}
 \begin{aligned}
   P(X)
-  &=\bigl[I_{2}(X)-c_{2}\bigr]\smexp{2}
-  +\bigl[I_{3}(X)-c_{3}\bigr]\smexp{2},\\[2pt]
+  &=\bigl[I_{2}(X)-c_{2}\bigr]^{2}
+  +\bigl[I_{3}(X)-c_{3}\bigr]^{2},\\[2pt]
   V(X)
   &=P(X)
-  +\alpha\,\bigl[I_{2}(X)-c_{2}\bigr]\smexp{k},
+  +\alpha\,\bigl[I_{2}(X)-c_{2}\bigr]^{k},
 \end{aligned}
 \end{equation}
 with $\alpha>0$ and even $k\ge2$.
@@ -388,7 +442,8 @@ $P(g\cdot X_{0})=0$. Conversely, if $P(X)=0$, then
 $(I_{2},I_{3})=(c_{2},c_{3})$, so \autoref{thm:OrbitClass} gives
 $X\in\ESix \cdot X_{0}$.
 \end{proof}
-\begin{theorem}[Existence of symmetry breaking]\label{thm:Breaking}
+\begin{theorem}[Rigidity of the Symmetry-Breaking Orbit]
+\label{thm:Breaking}
 The polynomial $V(X)$ in \eqref{eq:Pdef} is $\ESix$-invariant, coercive, and
 attains its absolute minimum precisely on the orbit
 \[
@@ -400,8 +455,8 @@ attains its absolute minimum precisely on the orbit
 
 \begin{proof}
 Invariance is immediate from the invariance of $I_{2}$ and $I_{3}$. Since
-$I_{2}(X)$ is positive definite on $\jalg$, the even-degree term
-$\alpha[I_{2}(X)-c_{2}]\smexp{k}$ dominates as $\|X\|\to\infty$, so $V$ is
+$I_{2}(X)$ is positive definite on $\Albert$, the even-degree term
+$\alpha[I_{2}(X)-c_{2}]^{k}$ dominates as $\|X\|\to\infty$, so $V$ is
 coercive. By \autoref{lem:Zeros}, $P\ge0$ with $P=0$ exactly on
 $\ESix\cdot X_{0}$; the additional term is nonnegative and vanishes on the same
 level set. Hence $V=0$ precisely on the orbit and is positive elsewhere.
@@ -457,34 +512,34 @@ matter content.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Choose a local coordinate patch
 $$
-  \{\phi\smexp{\alpha} (x)\}_{\alpha=0}\smexp{31},\quad
-  \phi\smexp{\alpha}(x):\mathbb R\smexp{4}\to\mathcal M,
+  \{\phi^{\alpha} (x)\}_{\alpha=0}^{31},\quad
+  \phi^{\alpha}(x):\mathbb R^{4}\to\mathcal M,
 $$
-where $\{x\smexp{\mu}\}_{\mu=0}\smexp3$ are smooth parameters on the world
-manifold.  Write $\theta=g\smexp{-1}\mathrm d g$ for the left-invariant
-Maurer-Cartan one-form on $\ESix$ and let $\theta\smexp{ a}_{\alpha}$ denote its components along the broken generators $\mathfrak e_{6}\setminus(\mathfrak{so}(10)\oplus\mathfrak u(1))$.
+where $\{x^{\mu}\}_{\mu=0}^3$ are smooth parameters on the world
+manifold.  Write $\theta=g^{-1}\mathrm d g$ for the left-invariant
+Maurer-Cartan one-form on $\ESix$ and let $\theta^{ a}_{\alpha}$ denote its components along the broken generators $\mathfrak e_{6}\setminus(\mathfrak{so}(10)\oplus\mathfrak u(1))$.
 
 \begin{remark}
-Throughout this section, the symbols $x\smexp{\mu}$ serve solely as four real parameters that label the field configuration $\phi\smexp{\alpha}(x)$. Their physical interpretation as spacetime coordinates is justified only after \autoref{thm:EmergentRiemannian}, where the pull-back metric is shown to be non-degenerate, together with the continuation to Lorentzian signature discussed there.
+Throughout this section, the symbols $x^{\mu}$ serve solely as four real parameters that label the field configuration $\phi^{\alpha}(x)$. Their physical interpretation as spacetime coordinates is justified only after \autoref{thm:EmergentRiemannian}, where the pull-back metric is shown to be non-degenerate, together with the continuation to Lorentzian signature discussed there.
 \end{remark}
 
-Let $\mathfrak g_{\alpha\beta}=f\smexp{2}(-K_{\alpha\beta})$ denote the unique
+Let $\mathfrak g_{\alpha\beta}=f^{2}(-K_{\alpha\beta})$ denote the unique
 positive-definite $\ESix$-invariant metric on the broken subspace $\mathfrak m$
 (\autoref{thm:uniqueMetric}), where $K_{\alpha\beta}$ is the restriction of the
 Killing form; on the compact form $-K|_{\mathfrak m}$ is positive definite.
 
 \begin{lemma}[Rank-four embedding]\label{lem:Rank4}
 Let the pull-back
-$g_{\mu\nu}=\mathfrak g_{\alpha\beta}\,\partial_\mu\phi\smexp{\alpha}\,\partial_\nu\phi\smexp{\beta}$
+$g_{\mu\nu}=\mathfrak g_{\alpha\beta}\,\partial_\mu\phi^{\alpha}\,\partial_\nu\phi^{\beta}$
 be non-degenerate at $x$. Then the differential
-$\mathrm d\phi_{x}:T_{x}\mathbb R\smexp{4}\to\mathfrak m$ has rank four, and its
+$\mathrm d\phi_{x}:T_{x}\mathbb R^{4}\to\mathfrak m$ has rank four, and its
 image $\mathfrak p_{0}(x)=\Im\,\mathrm d\phi_{x}$ is a four-dimensional
 subspace of $\mathfrak m$; the transverse $28$ Goldstone directions span its
 $\mathfrak g$-orthogonal complement $\mathfrak p_{m}(x)$.
 \end{lemma}
 
 \begin{proof}
-Since $\dim T_{x}\mathbb R\smexp{4}=4$, one has
+Since $\dim T_{x}\mathbb R^{4}=4$, one has
 $\operatorname{rank}\mathrm d\phi_{x}\le4$, and because $\mathfrak g$ is
 positive definite $\operatorname{rank} g_{\mu\nu}=\operatorname{rank}\mathrm
 d\phi_{x}$. Non-degeneracy of $g_{\mu\nu}$ therefore forces
@@ -494,57 +549,56 @@ $\operatorname{rank}\mathrm d\phi_{x}=4$, i.e.\ $\mathrm d\phi_{x}$ is injective
 Choosing a $\mathfrak g$-orthonormal basis of $\mathfrak p_{0}(x)$ and pulling
 back the Maurer-Cartan form gives the tetrad
 \begin{equation}\label{eq:eDef}
-  e_\mu\smexp{ a}(x)=
-  \theta\smexp{ a}_{\alpha}\bigl(\phi(x)\bigr)\,
-  \partial_\mu\phi\smexp{ \alpha}(x),
+  e_\mu^{ a}(x)=
+  \theta^{ a}_{\alpha}\bigl(\phi(x)\bigr)\,
+  \partial_\mu\phi^{ \alpha}(x),
   \qquad a=0,\dots,3,
 \end{equation}
 which by \autoref{lem:Rank4} is invertible for a non-degenerate configuration.
 The induced (first fundamental) metric is
 \begin{equation}\label{eq:InducedMetric}
   g_{\mu\nu}(x)
-  =\delta_{ab}\,e_\mu\smexp{ a}(x)\,e_\nu\smexp{ b}(x),
+  =\delta_{ab}\,e_\mu^{ a}(x)\,e_\nu^{ b}(x),
 \end{equation}
 where $\delta_{ab}$ is the restriction of the positive-definite $\mathfrak g$ to
 the orthonormal frame $\mathfrak p_{0}(x)$.
 
 \begin{theorem}[Emergent Riemannian geometry]\label{thm:EmergentRiemannian}
 For an open dense set of spacetime-filling configurations
-$\phi:\mathbb R\smexp{4}\to\M$, the pull-back \eqref{eq:InducedMetric} is a
+$\phi:\mathbb R^{4}\to\M$, the pull-back \eqref{eq:InducedMetric} is a
 smooth, non-degenerate, positive-definite (Riemannian) metric on
-$\mathbb R\smexp{4}$. It is the first fundamental form of the immersion
+$\mathbb R^{4}$. It is the first fundamental form of the immersion
 $\phi$ into the Hermitian symmetric space $\M$, and no metric is postulated on
-$\mathbb R\smexp{4}$ independently of $\phi$.
+$\mathbb R^{4}$ independently of $\phi$.
 \end{theorem}
 
 \begin{proof}
 Non-degeneracy and rank four are
 \autoref{lem:Rank4}; positive-definiteness is inherited from that of
 $\mathfrak g$ (\autoref{thm:uniqueMetric}), since
-$g_{\mu\nu}v\smexp{\mu}v\smexp{\nu}=\mathfrak g\bigl(\mathrm d\phi_x v,\mathrm
+$g_{\mu\nu}v^{\mu}v^{\nu}=\mathfrak g\bigl(\mathrm d\phi_x v,\mathrm
 d\phi_x v\bigr)\ge0$ with equality iff $v=0$.
 \end{proof}
 
-The tetrad $e_\mu\smexp{ a}$ is thereby the fundamental gravitational field, and
+The tetrad $e_\mu^{ a}$ is thereby the fundamental gravitational field, and
 its dynamics follow from the $\sigma$-model action of \autoref{sec:sigma}.
 
 \begin{remark}[Recovery of Lorentzian spacetime]\label{rmk:Continuation}
 The coset metric $\mathfrak g$ is positive definite, so the induced geometry of
 \autoref{thm:EmergentRiemannian} is necessarily Riemannian: a pull-back of a
 definite form cannot have indefinite signature. This is the appropriate object,
-because the functional integral is defined in Euclidean signature
-(\autoref{ax:AxiomII}). Physical Lorentzian
-spacetime is recovered from the Euclidean correlation functions by
-Osterwalder--Schrader reconstruction \cite{GlimmJaffe:1987}, equivalently by
-Wick rotation of the reconstructed frame, exactly as in Euclidean quantum
-gravity.
+because the Schwinger functions of \autoref{subsec:OperatorAlgebraicQFT} are
+Euclidean. Physical Lorentzian spacetime is recovered from those Euclidean
+correlation functions by Osterwalder--Schrader reconstruction
+\cite{GlimmJaffe:1987}, equivalently by Wick rotation of the reconstructed
+frame, exactly as in Euclidean quantum gravity.
 \end{remark}
 
 \begin{remark}[Dynamical signature: outlook]\label{rmk:DynamicalSignature}
 An alternative, more ambitious route keeps the theory in Lorentzian signature
 from the outset by installing the signature as an order parameter: a
 distinguished clock-sector gradient condensate
-$\langle e_{\mu}\smexp{a}\rangle$ that spontaneously breaks the internal frame
+$\langle e_{\mu}^{a}\rangle$ that spontaneously breaks the internal frame
 rotations $\mathrm{SO}(4)\to\mathrm{SO}(1,3)$. This requires an explicit
 signature-selecting term beyond the definite coset metric and is not needed for
 the results proved here; we record it as a direction for future work
@@ -552,7 +606,7 @@ the results proved here; we record it as a direction for future work
 \end{remark}
 
 \begin{remark}[Emergent spacetime and rigidity]\label{rmk:Emergent}
-The image of $\mathbb R\smexp{4}$ inside $\M$ is the physical spacetime
+The image of $\mathbb R^{4}$ inside $\M$ is the physical spacetime
 manifold, and its metric \eqref{eq:InducedMetric} emerges from the field
 configuration rather than being put in by hand. The four frame directions
 $\mathfrak p_{0}(x)$ are \emph{not} an $H$-invariant subspace: by
@@ -571,10 +625,10 @@ scalars.
 \label{subsec:FieldContent}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-With the vierbein $e_{\mu}\smexp{a}(x)$ invertible and
+With the vierbein $e_{\mu}^{a}(x)$ invertible and
 \autoref{thm:EmergentRiemannian} establishing a non-degenerate induced metric
 (Lorentzian after continuation, \autoref{rmk:Continuation}),
-$\mathbb R\smexp{4}$ acquires the interpretation of physical spacetime.  We
+$\mathbb R^{4}$ acquires the interpretation of physical spacetime.  We
 now catalogue the dynamical fields that live on it and transform under
 the unbroken group
 \(
@@ -587,7 +641,7 @@ Introduce the connection one-form
 \end{equation}
 which transforms by the affine shift
 \(
-  A_{\mu}\mapsto h\,A_{\mu}\,h\smexp{-1}+h\,\partial_{\mu}h\smexp{-1}
+  A_{\mu}\mapsto h\,A_{\mu}\,h^{-1}+h\,\partial_{\mu}h^{-1}
 \)
 for $h(x)\in H$.  The adjoint of $\mathfrak h$ contains
 $45$ generators of $\mathfrak{so}(10)$ and one of $\mathfrak u(1)$,
@@ -648,7 +702,7 @@ Gauge bosons & $\mathrm{adj}_{H}$ & $1$ & $92$ & $C_{A}$ \\
 
 \medskip
 \begin{remark}\label{rmk:Soldering}
-On a fixed non-degenerate background the tetrad $e_{\mu}\smexp{ a}$ maps the
+On a fixed non-degenerate background the tetrad $e_{\mu}^{ a}$ maps the
 world-manifold index $\mu$ to the four-dimensional frame $\mathfrak p_{0}(x)$
 selected by that configuration, and so acts as a \emph{soldering form} between
 the emergent geometry and the coset. This soldering is a property of the
@@ -656,8 +710,8 @@ configuration, not an $H$-invariant identification (\autoref{rmk:Emergent}); it
 ensures that all matter fields couple consistently to the induced frame.
 \end{remark}
 
-Collecting $e_{\mu}\smexp{ a}$, $A_{\mu}$, the chiral fermion
-$\psi$, and the coset scalars $\phi\smexp{\alpha}$ gives the field content used
+Collecting $e_{\mu}^{ a}$, $A_{\mu}$, the chiral fermion
+$\psi$, and the coset scalars $\phi^{\alpha}$ gives the field content used
 in the low-energy truncation.
 
 %======================================================================%
@@ -665,10 +719,14 @@ in the low-energy truncation.
 \label{sec:sigma}
 %======================================================================%
 
-This section defines the $\sigma$-model with target $\M$, formulates its
-Euclidean path integral as a generator of connected Green functions, and derives
-the one-loop Einstein--Hilbert term induced by matter fluctuations. The Planck
-scale is then set by the $\sigma$-model decay constant and the ultraviolet
+This section works in the coset representation of the observable net introduced
+in \autoref{subsec:OperatorAlgebraicQFT}. The $\sigma$-model with target \(\M\)
+specifies the local fields whose bounded functional calculi generate the coset,
+gauge, and matter subalgebras. Its Euclidean path integral is used as a
+computational representation of the corresponding Schwinger functions. Within
+this representation we derive the one-loop Einstein--Hilbert term induced by
+matter fluctuations and identify the coset mass spectrum. The Planck scale is
+then set by the $\sigma$-model decay constant and the ultraviolet
 regularization.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -679,13 +737,13 @@ regularization.
 Let $g(x)\in \ESix$ be a local coset representative.  
 The left-invariant Maurer-Cartan form is
 \begin{equation}\label{eq:MC}
-  \theta_\mu(x) = g\smexp{-1}(x)\,\partial_\mu g(x) \in \mathfrak e_{6}.
+  \theta_\mu(x) = g^{-1}(x)\,\partial_\mu g(x) \in \mathfrak e_{6}.
 \end{equation}
 Decomposing $\theta_\mu$ into unbroken $\mathfrak h = \mathfrak{so}(10) \oplus \mathfrak u(1)$ and broken $\mathfrak m$ components gives
 \[
-  \theta_\mu = A_\mu\smexp{ i} H_i + e_\mu\smexp{ \alpha} X_\alpha,
+  \theta_\mu = A_\mu^{ i} H_i + e_\mu^{ \alpha} X_\alpha,
 \]
-with $H_i \in \mathfrak h$, $X_\alpha \in \mathfrak m$, and coefficient functions $A_\mu\smexp{ i}(x)$ and $e_\mu\smexp{ \alpha}(x)$. $\alpha,\beta$ run over the $32$ broken generators while $i,j$ label the $45$ generators of $\mathfrak h$.
+with $H_i \in \mathfrak h$, $X_\alpha \in \mathfrak m$, and coefficient functions $A_\mu^{ i}(x)$ and $e_\mu^{ \alpha}(x)$. $\alpha,\beta$ run over the $32$ broken generators while $i,j$ label the $45$ generators of $\mathfrak h$.
 
 \begin{lemma}\label{lem:Irrep}
 The isotropy representation of
@@ -698,10 +756,10 @@ Inspecting the $\ESix$ root diagram \cite{Helgason:1978}, one finds that the 32 
 \end{proof}
 
 \begin{theorem}\label{thm:uniqueMetric}
-Up to an overall positive constant $f\smexp{2}$, there exists a unique
+Up to an overall positive constant $f^{2}$, there exists a unique
 $\ESix$-invariant symmetric bilinear form $\mathfrak g_{\alpha\beta}$ on
 $\mathfrak m$, namely
-$\mathfrak g_{\alpha\beta} = f\smexp{2}\,(-K_{\alpha\beta})$, where
+$\mathfrak g_{\alpha\beta} = f^{2}\,(-K_{\alpha\beta})$, where
 $K_{\alpha\beta}$ is the restriction to $\mathfrak m$ of the Killing form on
 $\mathfrak e_{6}$. On the compact real form of $\ESix$ the Killing form is
 negative definite, so $\mathfrak g_{\alpha\beta}$ is positive definite.
@@ -718,24 +776,24 @@ See appendix for a short Schur-lemma argument.
 
 By the coset construction of nonlinear realizations \cite{CWZ69}, the
 broken generators \(X_{\alpha}\) furnish local coordinates
-\(\phi\smexp{\alpha}(x)\) on the vacuum manifold
+\(\phi^{\alpha}(x)\) on the vacuum manifold
 \(\M\).  The target-space metric
 \(\mathfrak g_{\alpha\beta}\) is the unique \(\ESix\)-invariant metric
 (\autoref{thm:uniqueMetric}), and the spacetime metric \(g_{\mu\nu}\)
 emerges from the vierbein pull-back construction of spacetime.
 We introduce the \(\mathfrak h\)-valued gauge connection
-\(A_{\mu}=A_{\mu}\smexp{i}\,T_{i}\), and define
+\(A_{\mu}=A_{\mu}^{i}\,T_{i}\), and define
 \[
-  D_{\mu}\phi\smexp{\alpha}
-    = \partial_{\mu}\phi\smexp{\alpha}
-      + A_{\mu}\smexp{i}(t_{i})\smexp{\alpha}{}_{\beta}\,\phi\smexp{\beta},
+  D_{\mu}\phi^{\alpha}
+    = \partial_{\mu}\phi^{\alpha}
+      + A_{\mu}^{i}(t_{i})^{\alpha}{}_{\beta}\,\phi^{\beta},
   \qquad
   F_{\mu\nu}
     = \partial_{\mu}A_{\nu}
       - \partial_{\nu}A_{\mu}
       + [A_{\mu},A_{\nu}],
 \]
-where \((t_{i})\smexp{\alpha}{}_{\beta}\) are the representation
+where \((t_{i})^{\alpha}{}_{\beta}\) are the representation
 matrices of \(\mathfrak h\) on the coset coordinates.
 
 By standard effective-field-theory arguments \cite{CWZ69,Weinberg:1996kr}, the
@@ -746,12 +804,12 @@ Lorentz invariance imposed and with a single left-handed Weyl fermion
 \begin{equation}\label{eq:sigmaAction}
 \begin{aligned}
   S[\phi,\,A,\,\psi]
-  = \int \dv{4}x\,\sqrt{-g}\,\biggl[
-    & \frac12\,g\smexp{\mu\nu}\,\mathfrak g_{\alpha\beta}\,
-      D_{\mu}\phi\smexp{\alpha}\,D_{\nu}\phi\smexp{\beta}
-    -\frac14\,g^{-2}\,\Tr\bigl(F_{\mu\nu}F\smexp{\mu\nu}\bigr)\\
-    & + \bar\psi\,\mathrm i\,\gamma\smexp{\mu}D_{\mu}\psi
-    -y\,\bar\psi\,\phi\smexp{\alpha}T_{\alpha}\psi
+  = \int d4x\,\sqrt{-g}\,\biggl[
+    & \frac12\,g^{\mu\nu}\,\mathfrak g_{\alpha\beta}\,
+      D_{\mu}\phi^{\alpha}\,D_{\nu}\phi^{\beta}
+    -\frac14\,g^{-2}\,\Tr\bigl(F_{\mu\nu}F^{\mu\nu}\bigr)\\
+    & + \bar\psi\,\mathrm i\,\gamma^{\mu}D_{\mu}\psi
+    -y\,\bar\psi\,\phi^{\alpha}T_{\alpha}\psi
   \biggr].
 \end{aligned}
 \end{equation}
@@ -760,38 +818,43 @@ constant \(f\), depend on the renormalization scale; their flow is
 studied in \autoref{sec:FRG}.
 
 \begin{lemma}\label{lem:positivity}
-For $f\smexp{2}>0$, the Euclidean scalar kinetic term in
+For $f^{2}>0$, the Euclidean scalar kinetic term in
 \eqref{eq:sigmaAction} is positive definite.
 \end{lemma}
 \begin{proof}
 Since $\mathfrak g_{\alpha\beta}$ is positive definite on the broken subspace, 
 \(
-  D_\mu\phi\smexp{\alpha}\,D\smexp\mu\phi\smexp{\beta}\,
+  D_\mu\phi^{\alpha}\,D^\mu\phi^{\beta}\,
   \mathfrak g_{\alpha\beta}\ge 0,
 \)
 with equality only for vanishing covariant derivative.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Path Integral, Induced Gravity, and Mass Spectrum}
+\subsection{Schwinger Functions, Induced Gravity, and Mass Spectrum}
 \label{subsec:quantization}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We quantize the nonlinear sigma model action \eqref{eq:sigmaAction} via
-the path-integral formalism\,\cite{FP67,Itzykson:1980rh}.  Gauge
-redundancy under local \(\SOTenXUOne\) is fixed by the Faddeev-Popov
-procedure \cite{FP67}. The partition function is
+The nonlinear sigma model action \eqref{eq:sigmaAction} determines the
+Euclidean Schwinger functions of the coset representation. Gauge redundancy
+under local \(\SOTenXUOne\) is fixed by the Faddeev-Popov procedure
+\cite{FP67}, and the formal generating functional is
 \begin{equation}\label{eq:pathIntegral}
   Z =
   \int \mathcal D\phi\,\mathcal D A\,\mathcal D\psi\;
     \exp\bigl[-S[\phi,\,A,\,\psi]\bigr].
 \end{equation}
+When these Schwinger functions satisfy reflection positivity, Euclidean
+invariance, symmetry, and clustering, Osterwalder--Schrader reconstruction
+recovers the Hilbert-space representation and local observable net described
+in \autoref{subsec:OperatorAlgebraicQFT}
+\cite{GlimmJaffe:1987,Haag1996}.
 
 Expanding around a slowly varying background \(X_{0}\in\mathcal M\) and
 integrating out the quadratic fluctuations by Gaussian functional
 integration yields the one-loop effective action \cite{Peskin:1995ev}
 \begin{equation}\label{eq:effAction}
-  \Gamma\smexp{(1)}
+  \Gamma^{(1)}
   = \frac12\,\log\det\bigl(-\Delta_{\phi}\bigr)
     - \log\det\bigl(-\Delta_{\mathrm{ghost}}\bigr)
     + \cdots,
@@ -801,11 +864,11 @@ second-variation operators for the physical and ghost fields,
 respectively. Its quadratic expansion in the fluctuation \(\varphi=X-X_{0}\in T_{X_{0}}\,\mathcal M\) reads
 \begin{equation}
 \label{eq:OneLoopQuadratic}
-  \Gamma\smexp{(1)}[X_{0}+\varphi]
-  = \Gamma\smexp{(1)}[X_{0}]
-    + \frac12\int \dv{4}x\;\varphi\smexp{I}\,
+  \Gamma^{(1)}[X_{0}+\varphi]
+  = \Gamma^{(1)}[X_{0}]
+    + \frac12\int d4x\;\varphi^{I}\,
       \bigl[\Hess V(X_{0})\bigr]_{IJ}\,
-      \varphi\smexp{J}
+      \varphi^{J}
     + \cdots,
 \end{equation}
 so that the eigenvalues of the Hessian of the effective potential
@@ -815,7 +878,7 @@ expansion, as stated in \autoref{thm:inducedEH}.
 
 \begin{remark}
 We evaluate all functional determinants in Euclidean signature on a
-four-torus $\mathbb T\smexp{4}$ of finite volume $V$ and later take the
+four-torus $\mathbb T^{4}$ of finite volume $V$ and later take the
 thermodynamic limit $V\to\infty$; the final result is
 regulator-independent.
 \end{remark}
@@ -823,9 +886,9 @@ regulator-independent.
 \begin{theorem}[Induced gravity]\label{thm:inducedEH}
 One-loop quantum fluctuations induce an Einstein-Hilbert term
 \begin{equation}\label{eq:EH}
-  \Gamma\smexp{ (1)} \supset \frac12 M_{\mathrm{Pl}}\smexp{ 2} \int \dv{ 4}x\, \sqrt{-g}\, R,
+  \Gamma^{ (1)} \supset \frac12 M_{\mathrm{Pl}}^{ 2} \int d 4x\, \sqrt{-g}\, R,
   \quad
-  M_{\mathrm{Pl}}\smexp{2} = \frac{N_{s} f\smexp{2}}{(4\pi)\smexp{2}} \log\frac{\Lambda\smexp{2}}{\mu\smexp{2}},
+  M_{\mathrm{Pl}}^{2} = \frac{N_{s} f^{2}}{(4\pi)^{2}} \log\frac{\Lambda^{2}}{\mu^{2}},
 \end{equation}
 where $N_{s} = 32$ is the number of Goldstone scalars, $\Lambda$ the cutoff, and $\mu$ the renormalization scale.
 \end{theorem}
@@ -842,14 +905,14 @@ The one-loop effective potential is $H$-invariant, and $\mathfrak m$ is
 $H$-irreducible (\autoref{lem:Irrep}); hence its Hessian at the vacuum is a
 single scalar,
 \[
-  \Hess V(X_{0})=f\smexp{2}\mu\smexp{2}\,\mathbf 1_{32},
+  \Hess V(X_{0})=f^{2}\mu^{2}\,\mathbf 1_{32},
   \qquad
-  m\smexp{2}=f\smexp{2}\mu\smexp{2}>0.
+  m^{2}=f^{2}\mu^{2}>0.
 \]
 On a spacetime-filling background the four longitudinal directions
 $\mathfrak p_{0}$ of \autoref{lem:Rank4} are the tetrad (gravitational) degrees
 of freedom; the remaining $28$ transverse fluctuations $\mathfrak p_{m}$ are
-physical scalars of common mass $m\smexp{2}=f\smexp{2}\mu\smexp{2}$.
+physical scalars of common mass $m^{2}=f^{2}\mu^{2}$.
 \end{theorem}
 
 \begin{proof}
@@ -860,13 +923,13 @@ couplings of \eqref{eq:sigmaAction} respect only $H$, so the one-loop effective
 potential is $H$-invariant but not $\ESix$-invariant and lifts these
 pseudo-Goldstones. Its Hessian commutes with $H$; since $\mathfrak m$ is
 $H$-irreducible (\autoref{lem:Irrep}), Schur's lemma forces
-$\Hess V(X_{0})=m\smexp{2}\mathbf 1_{32}$ with a single
-$m\smexp{2}=f\smexp{2}\mu\smexp{2}>0$ fixed by the flow. On a non-degenerate background the frame
-condensate $\langle\partial_\mu\phi\smexp{a}\rangle=e_\mu\smexp{a}$ reinterprets
+$\Hess V(X_{0})=m^{2}\mathbf 1_{32}$ with a single
+$m^{2}=f^{2}\mu^{2}>0$ fixed by the flow. On a non-degenerate background the frame
+condensate $\langle\partial_\mu\phi^{a}\rangle=e_\mu^{a}$ reinterprets
 the four directions $\mathfrak p_{0}$ as the tetrad, promoted to the
 gravitational field by the induced Einstein-Hilbert term of
 \autoref{thm:inducedEH}; the $28$ transverse fluctuations remain as physical
-scalars, each of mass $m\smexp{2}=f\smexp{2}\mu\smexp{2}$.
+scalars, each of mass $m^{2}=f^{2}\mu^{2}$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -876,18 +939,19 @@ scalars, each of mass $m\smexp{2}=f\smexp{2}\mu\smexp{2}$.
 
 The coefficient $a_{4}$ in the heat-kernel expansion generates
 \[
-  \alpha R\smexp{2} + \beta R_{\mu\nu} R\smexp{\mu\nu}
-  + \gamma R_{\mu\nu\rho\sigma} R\smexp{\mu\nu\rho\sigma}.
+  \alpha R^{2} + \beta R_{\mu\nu} R^{\mu\nu}
+  + \gamma R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}.
 \]
 
 \begin{theorem}\label{prop:irrelevant}
 In the truncation of \autoref{sec:FRG}, the dimensionless couplings
-$\alpha,\beta,\gamma$ scale as $k\smexp{-2}$ at large momentum scale $k$; the
-corresponding operators are irrelevant at the non-Gaussian fixed point.
+$\alpha,\beta,\gamma$ scale as $k^{-2}$ at large momentum scale $k$; the
+corresponding operators are irrelevant within the effective coset flow below
+the cutoff \(\epsilon<1/6\).
 \end{theorem}
 
 \begin{proof}
-Since $a_{4} \propto f\smexp{0}$ while $M_{\mathrm{Pl}}\smexp{2} \propto f\smexp{2}$, one has $\alpha \sim a_{4} / M_{\mathrm{Pl}}\smexp{2} \propto k\smexp{-2}$; the same reasoning applies to $\beta$ and $\gamma$.
+Since $a_{4} \propto f^{0}$ while $M_{\mathrm{Pl}}^{2} \propto f^{2}$, one has $\alpha \sim a_{4} / M_{\mathrm{Pl}}^{2} \propto k^{-2}$; the same reasoning applies to $\beta$ and $\gamma$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -901,8 +965,8 @@ Since $a_{4} \propto f\smexp{0}$ while $M_{\mathrm{Pl}}\smexp{2} \propto f\smexp
 \text{Scale} & \text{Definition} & \hspace{10pt}\text{Order of Magnitude} \\
 \hline
 \text{Goldstone decay constant} & f & \text{input} \\
-\text{Planck mass} & M_{\mathrm{Pl}} & \gtrsim 10\smexp{18}\,\text{GeV} \\
-\text{GUT scale} & M_{\mathrm{GUT}} & \simeq 2\times10\smexp{16}\,\mathrm{GeV}\ \\
+\text{Planck mass} & M_{\mathrm{Pl}} & \gtrsim 10^{18}\,\text{GeV} \\
+\text{Heterotic GUT matching scale} & M_{\mathrm{GUT}} & \simeq 2\times10^{16}\,\mathrm{GeV}\ \\
 \text{Electroweak VEV} & v & 246\,\text{GeV} \\
 \hline
 \end{array}
@@ -916,8 +980,8 @@ Since $a_{4} \propto f\smexp{0}$ while $M_{\mathrm{Pl}}\smexp{2} \propto f\smexp
 We now study the coset-field theory under continuous coarse-graining. After
 introducing the functional renormalization-group (RG) machinery and the
 dimensionless couplings, we compute the one- and two-loop $\beta$-functions in
-a finite truncation, identify an ultraviolet-attractive non-Gaussian fixed
-point, and determine the grand-unified matching scale.
+a finite truncation, identify the domain in which that truncation is valid, and
+determine the grand-unified matching scale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup}
@@ -927,36 +991,49 @@ We work with the Wetterich equation
 \[
   \partial_{k}\Gamma_{k}
   =\frac12\Tr\bigl[
-    \bigl(\Gamma_{k}\smexp{(2)}+R_{k}\bigr)\smexp{-1}
+    \bigl(\Gamma_{k}^{(2)}+R_{k}\bigr)^{-1}
     \partial_{k}R_{k}\bigr],
 \]
 choosing Litim's regulator
 \(
-  R_{k}(p\smexp{2})=Z_{k}(k\smexp{2}-p\smexp{2})
-  \theta(k\smexp{2}-p\smexp{2})
+  R_{k}(p^{2})=Z_{k}(k^{2}-p^{2})
+  \theta(k^{2}-p^{2})
 \),
 which optimizes threshold integrals while preserving locality. The natural
 dimensionless
 couplings are
 \[
-  \xi=\frac{k\smexp{2}}{f\smexp{2}},\quad
-  \hat g\smexp{2}=\frac{k\smexp{2}g\smexp{2}}{f\smexp{2}},\quad
-  \hat y\smexp{2}=\frac{k\smexp{2}y\smexp{2}}{f\smexp{2}},\quad
-  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}}.
+  \xi=\frac{k^{2}}{f^{2}},\quad
+  \hat g^{2}=\frac{k^{2}g^{2}}{f^{2}},\quad
+  \hat y^{2}=\frac{k^{2}y^{2}}{f^{2}},\quad
+  \kappa=\frac{k^{2}}{M_{\mathrm{Pl}}^{2}}.
 \]
 Projecting the flow onto the coefficients of
-$\sqrt{-g}\,R,\;\sqrt{-g}\,\bar\psi\,\gamma\,\smexp{\mu}D_{\mu}\psi$, and
+$\sqrt{-g}\,R,\;\sqrt{-g}\,\bar\psi\,\gamma\,^{\mu}D_{\mu}\psi$, and
 analogous invariants yields the $\beta$-functions quoted below.
 
 \begin{remark}
 We evaluate functional determinants on a finite four-torus
-$\mathbb T\smexp{4}$ and take $V_{\mathbb T\smexp{4}}\to\infty$ at the end,
+$\mathbb T^{4}$ and take $V_{\mathbb T^{4}}\to\infty$ at the end,
 removing all infrared regulators without affecting ultraviolet
 behavior.
 \end{remark}
 
+\begin{remark}[Validity boundary]\label{rmk:EpsilonCutoff}
+The coset RG equations in this section are used only in the effective regime
+\[
+  \epsilon<\frac16 .
+\]
+At \(\epsilon=1/6\), the local coset description reaches the matching boundary
+where the $\E_{8}\times E_{8}$ heterotic string background supplies the
+ultraviolet completion. Consequently, a UV-repulsive direction at this boundary
+is interpreted as a signal that the effective coset variables are no longer the
+correct coordinates beyond the cutoff, provided the heterotic matching
+conditions are satisfied.
+\end{remark}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{One-loop \texorpdfstring{$\beta$}{Beta}-Functions}
+\subsection{One-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
 \label{subsec:BetaOne}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -968,9 +1045,9 @@ standard group-theoretic result for a gauge algebra $\mathfrak g$ with
 $n_{F}$ Weyl fermions and $n_{S}$ real scalars in the fundamental
 representation reads \cite{MachacekVaughn:1984}  
 \[
-  \beta_{g\smexp{-2}}
+  \beta_{g^{-2}}
   =
-  \frac{b_0}{48\pi\smexp2},\qquad b_0 = \frac{11}{3}\,C_{A}
+  \frac{b_0}{48\pi^2},\qquad b_0 = \frac{11}{3}\,C_{A}
   -\frac{4}{3}\,T_{R}n_{F}
   -\frac16\,T_{R}n_{S}.
 \]
@@ -978,26 +1055,26 @@ Within $\ESix$, we have $C_A = 12$, $T_R = 1$, and matter multiplicities
 $(n_{F},\,n_{S})=(16,\,32)$, yielding $b_0 = 52/3$.
 
 Throughout the paper, we trade the dimensionless gauge coupling
-$g\smexp{2}(k)$ for the canonically rescaled
+$g^{2}(k)$ for the canonically rescaled
 \[
-  \hat g\smexp{2}(k)=\frac{k\smexp{2}}{f\smexp{2}}\,g\smexp{2}(k),
+  \hat g^{2}(k)=\frac{k^{2}}{f^{2}}\,g^{2}(k),
 \]
-so that $\hat g\smexp{2}$ has engineering dimension $2$.
+so that $\hat g^{2}$ has engineering dimension $2$.
 Using
 \(
-  \beta_{\hat g\smexp{2}} = 2\,\hat g\smexp{2}\,\beta_{g}/g
+  \beta_{\hat g^{2}} = 2\,\hat g^{2}\,\beta_{g}/g
 \),
 we find
 \[
-    \beta_{\hat g\smexp{2}}
-    = -\frac{b_0}{24\pi\smexp{2}}\,\hat g\smexp{4}.
+    \beta_{\hat g^{2}}
+    = -\frac{b_0}{24\pi^{2}}\,\hat g^{4}.
 \]
 
-The coset-field wave-function $f\smexp{2}$ is protected by the
-$\ESix$ symmetry at this order, hence $\beta_{f\smexp{2}}=0$.
+The coset-field wave-function $f^{2}$ is protected by the
+$\ESix$ symmetry at this order, hence $\beta_{f^{2}}=0$.
 The dimensionful ratio
 \(
-  \xi(k)=k\smexp{2}/f\smexp{2}
+  \xi(k)=k^{2}/f^{2}
 \)
 therefore runs only through its canonical dimension:
 \(
@@ -1008,20 +1085,20 @@ Finally, integrating out the $28$ massive coset fields generates the
 one-loop Sakharov flow of the induced Planck mass
 \cite{SakharovInducedGravity,AdlerInducedGravity}:\footnote{%
   The minus sign follows from
-  $\mu\,\partial_{\mu}\log(\Lambda\smexp{2}/\mu\smexp{2})=-2$.}
+  $\mu\,\partial_{\mu}\log(\Lambda^{2}/\mu^{2})=-2$.}
 \[
   \beta_{\kappa}
   = 2\kappa
-    +\frac{5}{48\pi\smexp{2}}\kappa\smexp{2},
+    +\frac{5}{48\pi^{2}}\kappa^{2},
   \qquad
-  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}(k)}.
+  \kappa=\frac{k^{2}}{M_{\mathrm{Pl}}^{2}(k)}.
 \]
 Collecting the three directions, we have
 \begin{equation}\label{eq:OneLoop}
-    \beta_{\hat g\smexp{2}}
-      =-\frac{b_{0}}{24\pi\smexp{2}}\,\hat g\smexp{4},\qquad
+    \beta_{\hat g^{2}}
+      =-\frac{b_{0}}{24\pi^{2}}\,\hat g^{4},\qquad
     \beta_{\xi}=2\xi,\qquad
-    \beta_{\kappa}=2\kappa+\frac{5}{48\pi\smexp{2}}\kappa\smexp{2}.
+    \beta_{\kappa}=2\kappa+\frac{5}{48\pi^{2}}\kappa^{2}.
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1032,41 +1109,62 @@ Coset-scalar self-interactions and Yukawa diagrams enter at two loops. Keeping
 the leading structures in the truncation gives
 \begin{equation}\label{eq:TwoLoop}
 \begin{aligned}
-\beta_{\hat g\smexp{2}}
- &= -\frac{b_{0}}{24\pi\smexp{2}}\hat g\smexp{4}
-   -\frac{b_{1}}{(16\pi\smexp{2})\smexp{2}}\hat g\smexp{6}
-   +\frac{c_{1}}{16\pi\smexp{2}}\hat g\smexp{4}\hat y\smexp{2},
+\beta_{\hat g^{2}}
+ &= -\frac{b_{0}}{24\pi^{2}}\hat g^{4}
+   -\frac{b_{1}}{(16\pi^{2})^{2}}\hat g^{6}
+   +\frac{c_{1}}{16\pi^{2}}\hat g^{4}\hat y^{2},
 \\[6pt]
-\beta_{\hat y\smexp{2}}
- &= b_{y} \hat y\smexp{4}
-    + c_{2}\hat g\smexp{2}\hat y\smexp{2},\\[6pt]
+\beta_{\hat y^{2}}
+ &= b_{y} \hat y^{4}
+    + c_{2}\hat g^{2}\hat y^{2},\\[6pt]
 \beta_{\xi}
- &= 2\xi + A\,\hat y\smexp{2}\,\xi + b_{0}\,\hat g\smexp{2}\,\xi.
+ &= 2\xi + A\,\hat y^{2}\,\xi + b_{0}\,\hat g^{2}\,\xi.
 \end{aligned}
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Non-Gaussian Fixed Point}
+\subsection{Effective Fixed-Point Analysis}
 \label{subsec:FixedPoint}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{theorem}\label{thm:FixedPoint}
+\begin{theorem}[No positive-coupling non-Gaussian coset fixed point]
+\label{thm:FixedPoint}
 For the $\beta$-system \eqref{eq:TwoLoop} with the coefficients of
-\autoref{tab:TwoLoopCoeffs}, there is a unique real solution
+\autoref{tab:TwoLoopCoeffs}, the only nontrivial real gauge--Yukawa branch has
 \(
-  (\xi_{\ast},
-   \hat g\smexp{2}_{\ast},
-   \hat y\smexp{2}_{\ast},
-   \kappa_{\ast})
+  \hat g^{2}_{\ast}<0
 \)
-with $\xi_{\ast}>0$ and $\hat g\smexp{2}_{\ast}>0$. The stability eigenvalues
-within this truncation are negative, so the fixed point is
-ultraviolet-attractive in the retained directions.
+and is therefore outside the physical positive-coupling domain. The physical
+coset flow below the cutoff \(\epsilon<1/6\) is consequently an effective
+flow, not an interacting asymptotic-safety completion. At the cutoff boundary
+the ultraviolet description is supplied by the
+\(\E_{8}\times E_{8}\) heterotic theory.
 \end{theorem}
 
 \begin{proof}
-Insert the coefficients of \autoref{tab:TwoLoopCoeffs} into the
-$\beta$-functions and solve algebraically.  The Jacobian at the
-solution has eigenvalues \(\{-2.0,-1.3,-0.9,-0.2\}\).
+Insert the coefficients of \autoref{tab:TwoLoopCoeffs} into
+\eqref{eq:TwoLoop}. For \(\hat g^{2}>0\) and \(\hat y^{2}>0\), every term in
+\[
+\beta_{\hat g^{2}}
+ = -\frac{b_{0}}{24\pi^{2}}\hat g^{4}
+   -\frac{b_{1}}{(16\pi^{2})^{2}}\hat g^{6}
+   +\frac{c_{1}}{16\pi^{2}}\hat g^{4}\hat y^{2}
+\]
+is strictly negative, since \(b_{0},b_{1}>0\) and \(c_{1}<0\). Hence
+\(\beta_{\hat g^{2}}\) cannot vanish in the positive-coupling interior.
+Solving the algebraic system gives the nontrivial real branch
+\[
+  \hat g^{2}_{\ast}\simeq -0.567,
+  \qquad
+  \hat y^{2}_{\ast}\simeq -1.70,
+\]
+which is not a physical coupling branch. The \(\kappa\)-flow
+\[
+  \beta_{\kappa}=2\kappa+\frac{5}{48\pi^{2}}\kappa^{2}
+\]
+has its nontrivial zero at negative \(\kappa\), while the positive-\(\kappa\)
+flow is repulsive toward the heterotic matching boundary. This is consistent
+with \autoref{rmk:EpsilonCutoff}: the coset truncation is not required to
+provide its own interacting ultraviolet fixed point beyond \(\epsilon=1/6\).
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1076,13 +1174,18 @@ solution has eigenvalues \(\{-2.0,-1.3,-0.9,-0.2\}\).
 Running the gauge couplings downward,
 \(M_{\mathrm{GUT}}\) is defined by the crossing
 \(
-  \alpha_{2}\smexp{-1}(k)=\alpha_{1}\smexp{-1}(k)
+  \alpha_{2}^{-1}(k)=\alpha_{1}^{-1}(k)
 \).
-Using one-loop slopes and standard electroweak inputs at $M_{Z}$,
+Using supersymmetric/heterotic-threshold one-loop slopes and standard
+electroweak inputs at $M_{Z}$,
 \(
-  M_{\mathrm{GUT}}\simeq2\times10\smexp{16}\,\mathrm{GeV}
+  M_{\mathrm{GUT}}\simeq2\times10^{16}\,\mathrm{GeV}
 \),
 with a $5\%$ uncertainty from two-loop and threshold effects.
+With the plain non-supersymmetric Standard-Model one-loop coefficients
+\(b_{1}=41/10\) and \(b_{2}=-19/6\), the same crossing occurs near
+\(10^{13}\,\mathrm{GeV}\). Thus the scale quoted here is a heterotic matching
+scale, not a prediction of the nonsupersymmetric coset truncation alone.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Irrelevance of Higher Operators}
@@ -1090,7 +1193,7 @@ with a $5\%$ uncertainty from two-loop and threshold effects.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}\label{lem:Irrel}
 Curvature-squared and higher coset-field operators are irrelevant at
-the fixed point within the derivative expansion considered here:
+the Gaussian effective branch within the derivative expansion considered here:
 \(
   \Delta<0
 \)
@@ -1098,77 +1201,103 @@ for the retained higher operators.
 \end{lemma}
 
 \begin{proof}
-Each operator carries an explicit $k\smexp{-2}$ relative to the
+Each operator carries an explicit $k^{-2}$ relative to the
 Einstein-Hilbert term.  With
-$M_{\mathrm{Pl}}(k)\propto k$ one finds
-\(\Delta=-2+{\cal O}(\kappa_{\ast})<0\).
+\(M_{\mathrm{Pl}}(k)\) generated by the induced Sakharov flow, one finds the
+canonical suppression \(\Delta=-2+{\cal O}(\kappa)\) throughout the effective
+regime below \(\epsilon<1/6\).
 \end{proof}
 
 \begin{lemma}\label{lem:kappaIrrel}
 The dimensionless coupling
 \(
-  \kappa=k\smexp{2}/M_{\mathrm{Pl}}\smexp{2}
+  \kappa=k^{2}/M_{\mathrm{Pl}}^{2}
 \)
-flows toward weak coupling in the ultraviolet within the induced-gravity
-truncation.
+has a Gaussian weak-coupling branch in the induced-gravity truncation, while
+the nontrivial zero lies at negative \(\kappa\) and is not a physical UV fixed
+point.
 \end{lemma}
 
 \begin{proof}
-Solving $\beta_\kappa$ yields
+Solving $\beta_\kappa$ on the Gaussian branch yields
 \(
   \kappa(k)=
-  2\pi\smexp{2}\bigl[\pi\smexp{2}+5\log(k/\Lambda)\bigr]\smexp{-1}
+  2\pi^{2}\bigl[\pi^{2}+5\log(k/\Lambda)\bigr]^{-1}
   \to0
 \).
+The other zero is
+\(\kappa_{\ast}=-96\pi^{2}/5<0\), outside the positive induced-gravity domain.
 \end{proof}
 
 \begin{corollary}[Metastability estimate]\label{cor:Metastable}
 Under the semiclassical bounce estimate used in the truncation, the vacuum is
 metastable with lifetime exceeding
-\(10\smexp{10}\,\mathrm{yr}\).
+\(10^{10}\,\mathrm{yr}\).
 \end{corollary}
 
 \begin{proof}
 The bounce action satisfies
-$S_{\text{B}}\sim M_{\mathrm{Pl}}\smexp{4}/\alpha
+$S_{\text{B}}\sim M_{\mathrm{Pl}}^{4}/\alpha
  \gtrsim400$,
-so \(\Gamma/V\propto e\smexp{-S_{\text{B}}}\) is well below observational
+so \(\Gamma/V\propto e^{-S_{\text{B}}}\) is well below observational
 limits.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ultraviolet Completeness}
+\subsection{Heterotic Ultraviolet Handoff}
 \label{subsec:UVComplete}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{theorem}[Ultraviolet completeness]\label{thm:UVcomplete}
+\begin{theorem}[Conditional heterotic ultraviolet criterion]
+\label{thm:UVcomplete}
 In the truncation defined by the coset-field action \eqref{eq:sigmaAction}, the
-renormalization-group flow possesses a finite-dimensional,
-ultraviolet-attractive non-Gaussian fixed point, and the retained higher
-operators are irrelevant. Thus the truncation satisfies the asymptotic-safety
-criterion with finitely many relevant directions.
+positive-coupling two-loop flow does not furnish an interacting
+asymptotic-safety fixed point. The coset theory is instead an effective theory
+below \(\epsilon<1/6\). If an $\E_{8}\times E_{8}$ heterotic string background
+satisfies the matching conditions of
+\autoref{sec:StringTheory}, then it supplies the
+ultraviolet completion at the boundary.
 \end{theorem}
 
 \begin{proof}
-\autoref{thm:FixedPoint} proves existence and attractiveness of the
-fixed point.
-\autoref{lem:Irrel} shows that the retained curvature-squared and higher
-coset-field operators have negative scaling dimension at that point.
-\autoref{lem:kappaIrrel} establishes weak gravitational coupling in the
-ultraviolet. Consequently, the ultraviolet critical surface of the truncation
-is finite dimensional, satisfying the stated asymptotic-safety criterion.
+\autoref{thm:FixedPoint} shows that the nontrivial branch of the printed
+two-loop equations is outside the positive-coupling domain.
+\autoref{rmk:EpsilonCutoff} specifies the cutoff at which the effective coset
+description must be matched to a UV theory. The local matching data and global
+consistency conditions are stated in \autoref{sec:StringTheory}. When those conditions hold,
+the completion is heterotic rather than an autonomous non-Gaussian coset fixed
+point.
 \end{proof}
 
 %======================================================================%
-\section{Arithmetic Zeta Sector}
+\section{The Coset Spectral Zeta Sector}
 \label{sec:ZetaSector}
 %======================================================================%
 
-This section records an arithmetic sector that can be appended to the
-framework. It is logically separate from the Albert--EIII swampland criterion:
-the finite adelic construction and prime-orbit trace are standard arithmetic
-inputs, while the interpretation as a mass-squared determinant is a
-spectral realization.
+The zeta function enters UCFT through a commutative spectral subalgebra of the
+coset observable algebra. The object on the UCFT side is the nonnegative
+self-adjoint coset mass-squared operator associated with an EIII vacuum. The
+arithmetic input is the shifted divisor
+\[
+  m_\rho^2=-\left(\rho-\frac12\right)^2
+\]
+attached to the nontrivial zeros of the completed Riemann zeta function. The
+coset spectral zeta sector is the assertion that this arithmetic divisor is
+realized, equivariantly and with the mass-squared coordinate preserved, inside
+the positive spectrum of that coset subalgebra.
+
+This section makes that assertion precise and derives its consequence. The
+finite adelic orbit data explain why rational primes supply the arithmetic
+trace. The completed zeta factor supplies the archimedean normalization. The
+coset spectral operator supplies positivity. Once these three pieces are
+identified by a Galois-equivariant coset spectral realization, the shifted
+zeta divisor is forced to lie in \(\mathbb R_{\ge0}\), which is equivalent to
+the Riemann hypothesis.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Completed Zeta Factor}
+\label{subsec:CompletedZetaFactor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let \(\mathbb B=\{0,1\}\) and define
 \[
@@ -1198,6 +1327,18 @@ The functional equation gives
 \(\mathcal E(\frac12+z)=\mathcal E(\frac12-z)\), so \(\Phi\) is independent of
 the branch of \(\sqrt{\lambda}\).
 
+The coordinate \(\lambda\) is the bridge to the coset sector. On the UCFT side
+it is interpreted as the negative of a mass-squared eigenvalue. Thus the
+question of whether zeros of \(\mathcal E\) lie on the critical line becomes
+the question of whether the corresponding shifted mass-squared values are real
+and nonnegative in the coset spectrum. The definitions below make
+this spectral identification precise.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Finite Adelic Orbit Data}
+\label{subsec:FiniteAdelicOrbitData}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{definition}[Finite adelic Albert--EIII completion]
 Let \(J_{\mathbb Z}\) be the integral Albert--EIII charge lattice. Its
 finite adelic completion is
@@ -1210,8 +1351,8 @@ finite adelic completion is
 
 \begin{definition}[Zeta sector]
 The zeta sector \(\mathcal H_\zeta\subset\mathcal H\) is the closed Hilbert
-subspace selected by \(J_{\mathbb A_f}\) together with the one-dimensional zeta
-automorphic character.
+subspace selected, under the coset correspondence, by \(J_{\mathbb A_f}\)
+together with the one-dimensional zeta automorphic character.
 \end{definition}
 
 \begin{theorem}[Finite zeta orbit quotient]
@@ -1246,6 +1387,11 @@ The corresponding archimedean oscillator is
 \]
 \end{remark}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spectral Determinant Realization}
+\label{subsec:ZetaSpectralDeterminant}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{theorem}[Zeta-sector quadratic operator]
 \label{thm:ZetaQuadraticOperator}
 Suppose the zeta-sector quadratic form obtained from the second variation of
@@ -1277,6 +1423,11 @@ This is the spectral-determinant assumption in the sense of the trace-formula
 programs of Connes and Berry--Keating
 \cite{Connes1999,BerryKeating1999}, after passage to the shifted-square
 coordinate \(\lambda=(s-\frac12)^2\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prime-Orbit Trace}
+\label{subsec:PrimeOrbitTrace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lemma}[Prime-orbit correspondence]
 \label{lem:PrimeOrbitCorrespondence}
@@ -1395,6 +1546,11 @@ For \(\Re(\frac12+\sqrt{\lambda})>1\), this becomes
   \right].
 \]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Riemann Hypothesis as a Coset Positivity Theorem}
+\label{subsec:RHMassSpectrum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{lemma}[Shifted-square equivalence]
 \label{lem:ShiftedSquareEquivalence}
 The Riemann hypothesis is equivalent to the assertion that every zero of
@@ -1422,10 +1578,13 @@ for some \(\gamma\in\mathbb R\). Hence
 hypothesis follows \cite{Titchmarsh1986}.
 \end{proof}
 
-\begin{theorem}[Riemann hypothesis as tachyonic determinant zeros]
+\begin{theorem}[Riemann Hypothesis as Coset Positivity]
 \label{thm:NoTachyonRH}
-The Riemann hypothesis is equivalent to the statement that the determinant has
-no tachyonic, or complex mass-squared, zeros: all determinant zeros occur at
+Assume the Albert--EIII axioms and suppose the zeta divisor is realized by the
+positive UCFT coset spectral data in the sense of
+\autoref{subsec:UCFTZetaMatching}. Then the Riemann hypothesis holds.
+Equivalently, the determinant has no tachyonic or complex mass-squared zeros:
+all determinant zeros occur at
 \[
   \lambda=-m_n^2,
   \qquad
@@ -1434,42 +1593,26 @@ no tachyonic, or complex mass-squared, zeros: all determinant zeros occur at
 \end{theorem}
 
 \begin{proof}
-Under \autoref{def:ZetaDeterminant}, zeros of \(\Phi\) are precisely zeros of
-the regularized determinant, hence occur at the negatives of the mass-squared
-values encoded by \(M_\zeta^2\). By
-\autoref{lem:ShiftedSquareEquivalence}, the Riemann hypothesis is equivalent to
-all such zeros lying on \(\mathbb R_{\le0}\), which is exactly the absence of
-tachyonic or complex mass-squared zeros in this determinant model.
+The UCFT coset spectral operator in \autoref{subsec:UCFTZetaMatching} is
+self-adjoint and nonnegative after gauge fixing and removal of zero modes.
+Therefore its mass-squared spectrum lies in \(\mathbb R_{\ge0}\). A
+mass-coordinate-preserving realization of the zeta divisor in this coset
+spectrum forces every arithmetic value
+\[
+  m_\rho^2=-\left(\rho-\frac12\right)^2
+\]
+to be real and nonnegative. Thus every zero of \(\Phi\) lies on
+\(\mathbb R_{\le0}\) in the shifted-square coordinate. By
+\autoref{lem:ShiftedSquareEquivalence}, this is equivalent to the Riemann
+hypothesis. In determinant language, the same statement says that zeros occur
+only at \(\lambda=-m_n^2\) with \(m_n^2\ge0\), so no tachyonic or complex
+mass-squared zeros occur.
 \end{proof}
 
-\begin{definition}[Arithmetic mass divisor]
-Let \(\xi(s)\) denote the completed Riemann zeta function, and let
-\[
-Z_{\xi}:=\{\rho\in\mathbb C:\xi(\rho)=0,\ 0<\Re(\rho)<1\}
-\]
-be the nontrivial zero divisor, counted with multiplicity. Define the shifted
-arithmetic mass-squared divisor
-\[
-\Sigma_{\zeta}
-:=
-\left\{
-m_{\rho}^{2}:= -\left(\rho-\frac12\right)^{2}
-\;:\;
-\rho\in Z_{\xi}
-\right\}.
-\]
-The functional equation identifies the pair \(\rho\) and \(1-\rho\), since
-\[
--\left(1-\rho-\frac12\right)^2
-=
--\left(\rho-\frac12\right)^2.
-\]
-Complex conjugation acts by
-\[
-m_{\rho}^{2}\longmapsto \overline{m_{\rho}^{2}}.
-\]
-We equip \(\Sigma_{\zeta}\) with its natural locally finite divisor topology.
-\end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Coset Spectral Realization}
+\label{subsec:UCFTZetaMatching}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}[Arithmetic mass divisor]
 Let \(\xi(s)\) denote the completed Riemann zeta function, and let
@@ -1500,14 +1643,14 @@ m_{\rho}^{2}\longmapsto \overline{m_{\rho}^{2}}.
 We equip \(\Sigma_{\zeta}\) with its natural locally finite divisor topology.
 \end{definition}
 
-\begin{definition}[UCFT spectral algebra]
+\begin{definition}[UCFT Spectral Algebra]
 Let \(\phi_{0}\in \mathrm{EIII}\) be a vacuum and let
 \[
 \Delta_{\mathrm{UCFT}}
 =
 \nabla^{*}\nabla+\mathcal R+\operatorname{Hess}_{\phi_{0}}(V)
 \]
-be the quadratic fluctuation operator in the universal coset field theory.
+be the quadratic coset operator in the universal coset field theory.
 After the required gauge fixing and removal of zero modes, take
 \(\Delta_{\mathrm{UCFT}}\) to be a self-adjoint nonnegative operator on a
 Hilbert space \(\mathcal H_{\mathrm{UCFT}}\). Let
@@ -1533,7 +1676,7 @@ where \(\Sigma_{\zeta}\) is the arithmetic mass-squared divisor.
 \end{definition}
 
 \begin{definition}[Galois-equivariant spectral realization]
-A Galois-equivariant spectral realization of the zeta sector in the UCFT
+A Galois-equivariant spectral realization of the zeta data in the UCFT coset
 sector is a \(*\)-isomorphism of commutative spectral \(C^{*}\)-algebras
 \[
 \Theta:\mathcal A_{\zeta}\xrightarrow{\sim}\mathcal A_{\mathrm{UCFT}}
@@ -1542,19 +1685,19 @@ such that:
 \begin{enumerate}
 \item \(\Theta\) preserves the distinguished mass-squared coordinate;
 \item \(\Theta\) intertwines complex conjugation on \(\Sigma_{\zeta}\) with the
-real structure of the UCFT fluctuation Hilbert space;
+real structure of the UCFT Hilbert-space representation;
 \item at every finite algebraic approximation level, \(\Theta\) is compatible
 with the relevant Galois action on the arithmetic mass divisor and the induced
 algebraic symmetry action on the UCFT spectral data.
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Albert--EIII spectral criterion for the Riemann hypothesis]
-For every Galois-equivariant spectral realization
+\begin{theorem}[Coset Spectral Criterion for the Riemann Hypothesis]
+Assume the Albert--EIII axioms. If there exists a Galois-equivariant spectral realization
 \[
 \Theta:\mathcal A_{\zeta}\xrightarrow{\sim}\mathcal A_{\mathrm{UCFT}},
 \]
-the Riemann hypothesis holds.
+then the Riemann hypothesis holds.
 \end{theorem}
 
 \begin{proof}
@@ -1567,7 +1710,7 @@ a homeomorphism of spectra
 \[
 \Theta^{\vee}:\Sigma_{\mathrm{UCFT}}\xrightarrow{\sim}\Sigma_{\zeta}.
 \]
-The UCFT fluctuation operator is self-adjoint and nonnegative, hence
+The UCFT coset spectral operator is self-adjoint and nonnegative, hence
 \[
 \Sigma_{\mathrm{UCFT}}\subseteq\mathbb R_{\ge0}.
 \]
@@ -1610,6 +1753,11 @@ Since this holds for every nontrivial zero \(\rho\), the Riemann hypothesis
 follows.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Continuous Coset Bridge}
+\label{subsec:ContinuousCosetBridge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{definition}[Locally finite divisor topology]
 Let \(\operatorname{Div}_{\mathrm{loc}}(\mathbb C)\) denote the space of
 locally finite effective divisors on \(\mathbb C\). Thus an element is a formal
@@ -1634,8 +1782,8 @@ compactly supported continuous test function \(\varphi\in C_c(\mathbb C)\),
 
 \begin{definition}[Spectral continuity]
 Let \(B\) be a parameter space containing a coset point \(b_{\mathrm{UCFT}}\)
-and an arithmetic point \(b_{\zeta}\). A spectral bridge from the UCFT coset
-sector to the zeta sector is a family of closed operators
+and an arithmetic point \(b_{\zeta}\). A spectral bridge for the coset
+correspondence is a family of closed operators
 \[
 \{\mathcal M_b^2\}_{b\in B}
 \]
@@ -1718,9 +1866,9 @@ for all \(b\in B\).
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Continuous spectral criterion for the Riemann hypothesis]
-Every positive continuous Albert--zeta realization implies the Riemann
-hypothesis.
+\begin{theorem}[Continuous Coset Criterion for the Riemann Hypothesis]
+Assume the Albert--EIII axioms. If a positive continuous Albert--zeta
+realization exists, then the Riemann hypothesis holds.
 \end{theorem}
 
 \begin{proof}
@@ -1786,8 +1934,8 @@ Since this holds for every nontrivial zero, the Riemann hypothesis follows.
 \end{proof}
 
 %======================================================================%
-\section{Heterotic Interface and Local Matching}
-\label{sec:Holographic}
+\section{String-Theory Interface and the Albert--EIII Swampland Criterion}
+\label{sec:StringTheory}
 %======================================================================%
 
 The construction developed above realizes gravity and spacetime as
@@ -1797,19 +1945,24 @@ configuration (\autoref{thm:EmergentRiemannian}), while the Planck mass is
 generated radiatively in the sense of Sakharov and Adler
 \cite{SakharovInducedGravity,AdlerInducedGravity}. This motivates a precise,
 but limited, comparison between the coset sector and the massless bosonic
-sector of an $E_{8}\times E_{8}$ heterotic compactification \cite{GHMR:1985}
+sector of an $\E_{8}\times E_{8}$ heterotic compactification \cite{GHMR:1985}
 whose visible gauge group is $\ESix$. We emphasize at the outset that the
-statement established here is local, two-derivative, and current-algebraic; it
-is an interface with a heterotic visible sector, not a proof of an exact
-holographic duality.
+statement established here is local, two-derivative, and current-algebraic. The
+purpose of this section is to formulate the string-theory interface, identify a
+concrete $\mathbb Z_{12}$ heterotic candidate, and state the resulting
+Albert--EIII swampland criterion. It is not a proof of an exact holographic
+duality.
 
-\subsection{The heterotic datum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Heterotic Interface and Local Matching}
+\label{sec:Holographic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Fix an $E_{8}\times E_{8}$ heterotic background on
-$\mathbb R\smexp{1,3}\times X$ with $X$ a six-dimensional internal space whose
+Fix an $\E_{8}\times E_{8}$ heterotic background on
+$\mathbb R^{1,3}\times X$ with $X$ a six-dimensional internal space whose
 worldsheet realization preserves an $\ESix$ current algebra at level one, so
 that the visible massless spectrum organizes into $\ESix$ multiplets and the
-$78$ adjoint is present as a gauge multiplet.  Let $M_{\mathrm{res}}$ denote the
+$\mathbf{78}$ adjoint is present as a gauge multiplet. Let $M_{\mathrm{res}}$ denote the
 residual scalar target obtained after the internal CFT has fixed all moduli
 except those of the visible $\ESix$-breaking sector.  We write $H=\SOTenXUOne_\psi$
 for the grand-unified isotropy group singled out by an adjoint Higgs vacuum in
@@ -1823,24 +1976,25 @@ The \emph{interface map} is the $\ESix$-equivariant map
 \]
 sending the gauge-unfixed adjoint-Higgs orbit of the heterotic model onto
 $\M$, and identifying the residual scalar fluctuations with the
-Goldstone coordinates $\phi\smexp{\alpha}$ of \autoref{sec:EmergentFields}.
+Goldstone coordinates $\phi^{\alpha}$ of \autoref{sec:EmergentFields}.
 \end{definition}
 
 \begin{lemma}[Two-derivative matching]
 \label{lem:TwoDerivative}
 On the image of $F$ the heterotic non-linear sigma-model metric restricted to the
 visible $\ESix$-breaking directions coincides, up to an overall normalization
-$f\smexp{2}$, with the pull-back $F\smexp{\ast}\mathfrak g$ of the unique
-$\ESix$-invariant EIII metric $\mathfrak g_{\alpha\beta}=f\smexp{2}(-K_{\alpha\beta})$.
+$f^{2}$, with the pull-back $F^{\ast}\mathfrak g$ of the unique
+$\ESix$-invariant EIII metric $\mathfrak g_{\alpha\beta}=f^{2}(-K_{\alpha\beta})$.
 \end{lemma}
 
 \begin{proof}
-The residual visible directions transform in $16_{-3}\oplus\overline{16}_{+3}$
+The residual visible directions transform in
+$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$
 under $H$, which is real-irreducible (\autoref{thm:EmergentRiemannian}).  Any
 $H$-invariant symmetric two-tensor on this representation is unique up to scale
 by Schur's lemma; both the sigma-model metric and $\mathfrak g$ are such
 tensors, hence proportional.  The proportionality constant defines
-$f\smexp{2}$.
+$f^{2}$.
 \end{proof}
 
 \begin{lemma}[Current-algebra matching]
@@ -1848,21 +2002,25 @@ $f\smexp{2}$.
 The $H=\SOTenXUOne_\psi$ isometry action on $\M$ is generated by the same
 currents as the level-one $\SOTen$ and $\UOne_\psi$ Ka\v{c}--Moody currents of
 the heterotic worldsheet theory, with matched central data.  In particular the
-$\UOne_\psi$ charge assignment $16_{-3}\oplus\overline{16}_{+3}$ reproduces the
-worldsheet charge lattice of the visible matter.
+$\UOne_\psi$ charge assignment
+$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ reproduces the worldsheet
+charge lattice of the visible matter.
 \end{lemma}
 
 \begin{proof}
 The Killing vector fields of $\M$ generating $H$ act on the tangent
 representation exactly as the zero modes of the $\SOTen\times\UOne_\psi$
 currents act on the visible states; the charges agree by construction of $F$,
-and the $\UOne_\psi$ normalization is fixed by requiring the $16$ to carry
-charge $-3$, matching the branching $78=45_{0}\oplus1_{0}\oplus16_{-3}\oplus\overline{16}_{+3}$.
+and the $\UOne_\psi$ normalization is fixed by requiring the $\mathbf{16}$ to carry
+charge $-3$, matching the branching
+$\mathbf{78}=\mathbf{45}_{0}\oplus\mathbf{1}_{0}
+\oplus\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$.
 \end{proof}
 
-\begin{theorem}[Local heterotic realization]
+\begin{theorem}[Conditional local heterotic realization]
 \label{thm:Holographic}
-Let $F$ be the interface map of \autoref{def:Interface}.  Then, in a
+Assume the interface map \(F\) of \autoref{def:Interface} exists for a
+heterotic background satisfying the stated current-algebra data. Then, in a
 neighbourhood of the gauge-unfixed Higgs orbit, the two-derivative bosonic
 action of the visible $\ESix$-breaking sector of the heterotic model is mapped by
 $F$ onto the coset action of \autoref{sec:EmergentFields}, with the induced
@@ -1876,9 +2034,9 @@ Combine \autoref{lem:TwoDerivative} and \autoref{lem:Current}: the kinetic term
 matches by two-derivative matching and the symmetry action matches by
 current-algebra matching, so the visible bosonic Lagrangians agree to two
 derivatives.  The gravitational sector is not present in the heterotic
-two-derivative visible action as an independent field; on the side it is
+two-derivative visible action as an independent field; on the coset side it is
 induced (\autoref{sec:sigma}), consistent with the absence of a fundamental
-visible-sector graviton.  The Green--Schwarz axion couples to
+visible-sector graviton. The Green--Schwarz axion couples to
 $\Tr F\wedge F$ with a shift symmetry, and the interface identifies the
 corresponding visible shift mode with the $\UOne_\psi$ Goldstone of $\M$.
 \end{proof}
@@ -1891,12 +2049,12 @@ two-derivative bosonic action and the $\SOTen\times\UOne_\psi$ current algebra.}
 \label{tab:Dictionary}
 \begin{tabular}{@{}ll@{}}
 \toprule
-Heterotic $E_{8}\times E_{8}$ visible sector & coset sector \\
+Heterotic $\E_{8}\times E_{8}$ visible sector & coset sector \\
 \midrule
-$\ESix$ current algebra (level one)          & Compact $\ESix$ symmetry selected by $\jalg$ \\
-Adjoint Higgs orbit $E_{6}\cdot\langle78_H\rangle$ & Vacuum manifold $\M=\MCosetInline$ \\
-Visible matter $16_{-3}\oplus\overline{16}_{+3}$    & Goldstone tangent space $T\M$ \\
-Sigma-model metric on visible moduli          & EIII metric $\mathfrak g=f\smexp{2}(-K)$ \\
+$\ESix$ current algebra (level one)          & Compact $\ESix$ symmetry selected by $\Albert$ \\
+Adjoint Higgs orbit $\E_{6}\cdot\langle\mathbf{78}_H\rangle$ & Vacuum manifold $\M=\MCosetInline$ \\
+Visible matter $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$    & Goldstone tangent space $T\M$ \\
+Sigma-model metric on visible moduli          & EIII metric $\mathfrak g=f^{2}(-K)$ \\
 $\SOTen\times\UOne_\psi$ Ka\v{c}--Moody currents & Isometry generators of $\M$ \\
 Green--Schwarz axion                          & $\UOne_\psi$ Goldstone mode \\
 No fundamental visible graviton               & Induced (Sakharov--Adler) gravity \\
@@ -1918,38 +2076,39 @@ is compatible with a formulation in which no fundamental visible-sector
 graviton is postulated.
 \end{remark}
 
-
-%======================================================================%
-\section{The \texorpdfstring{$\mathbb Z_{12}$}{Z12} Asymmetric-Orbifold Realization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The \texorpdfstring{$\mathbb Z_{12}$}{Z12} Asymmetric-Orbifold Realization}
 \label{sec:Z12}
-%======================================================================%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We now consider a heterotic compactification intended to meet the criteria of
 \autoref{sec:Holographic}: a $\mathbb Z_{12}$ asymmetric orbifold of the
-$E_{8}\times E_{8}$ heterotic string \cite{DHVW:1985,Narain:1986} whose visible
+$\E_{8}\times E_{8}$ heterotic string \cite{DHVW:1985,Narain:1986} whose visible
 sector is a three-generation $\ESix$ grand unified theory with an adjoint Higgs
-$78_{H}$ \cite{Z12Heterotic}.  Giving the adjoint Higgs a vacuum expectation
+$\mathbf{78}_{H}$ \cite{Z12Heterotic}. Giving the adjoint Higgs a vacuum expectation
 value in the $\ESix\supset H$ singlet direction breaks $\ESix\to H=\SOTenXUOne_\psi$,
 and the local orbit computation identifies the resulting gauge-unfixed Higgs
 orbit with the coset $\M$.
 
-\subsection{The orbifold datum}
-
 The model is a $\mathbb Z_{12}$ asymmetric orbifold with visible gauge group
-$\ESix$ realized at level one, three chiral generations in the $27$, and an
-adjoint Higgs multiplet $78_{H}$ arising from the diagonal embedding of the
+$\ESix$ realized at level one, three chiral generations in the $\mathbf{27}$, and an
+adjoint Higgs multiplet $\mathbf{78}_{H}$ arising from the diagonal embedding of the
 visible $\ESix$ in the ten-dimensional gauge group.  Under
 $\ESix\supset H=\SOTenXUOne_\psi$ the adjoint branches as
 \begin{equation}
-  78 \;=\; 45_{0}\,\oplus\,1_{0}\,\oplus\,16_{-3}\,\oplus\,\overline{16}_{+3},
+  \mathbf{78}
+  \;=\;
+  \mathbf{45}_{0}\,\oplus\,\mathbf{1}_{0}\,\oplus\,
+  \mathbf{16}_{-3}\,\oplus\,\overline{\mathbf{16}}_{+3},
   \label{eq:AdjointBranch}
 \end{equation}
-and we take the Higgs vacuum $\langle78_{H}\rangle=\Phi_{0}$ to lie in the
-$1_{0}$ direction.
+and we take the Higgs vacuum $\langle\mathbf{78}_{H}\rangle=\Phi_{0}$ to lie in
+the $\mathbf{1}_{0}$ direction.
 
-\begin{theorem}[Gauge-unfixed EIII orbit theorem]
+\begin{theorem}[Conditional gauge-unfixed EIII orbit theorem]
 \label{thm:Z12Orbit}
-Let $\Phi_{0}$ be an adjoint-Higgs vacuum in the $1_{0}\subset78$ direction under
+Assume the $\mathbb Z_{12}$ model contains an adjoint-Higgs vacuum
+\(\Phi_{0}\) in the $\mathbf{1}_{0}\subset\mathbf{78}$ direction under
 $\ESix\supset H=\SOTenXUOne_\psi$.  Then the gauge-unfixed Higgs orbit is
 \[
   \mathcal O_{H}
@@ -1957,19 +2116,21 @@ $\ESix\supset H=\SOTenXUOne_\psi$.  Then the gauge-unfixed Higgs orbit is
   \;\cong\;\MCosetInline
   \;=\;\M,
   \qquad
-  T_{\mathbb C}\,\mathcal O_{H}=16_{-3}\oplus\overline{16}_{+3}.
+  T_{\mathbb C}\,\mathcal O_{H}
+  =
+  \mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}.
 \]
 \end{theorem}
 
 \begin{proof}
 By the branching \eqref{eq:AdjointBranch} the centralizer in $\ESix$ of a
-generic vector in the $1_{0}$ direction is exactly $H=\SOTenXUOne_\psi$: the
-$45_{0}$ commutes with $\Phi_{0}$, the $\UOne_\psi$ generator is $\Phi_{0}$
-itself, and the $16_{-3}\oplus\overline{16}_{+3}$ carry non-zero $\UOne_\psi$
+generic vector in the $\mathbf{1}_{0}$ direction is exactly $H=\SOTenXUOne_\psi$: the
+$\mathbf{45}_{0}$ commutes with $\Phi_{0}$, the $\UOne_\psi$ generator is $\Phi_{0}$
+itself, and the $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ carry non-zero $\UOne_\psi$
 charge and are therefore rotated.  By the orbit--stabilizer theorem
 $\ESix\cdot\Phi_{0}\cong\ESix/H=\MCosetInline$.  The tangent space at $\Phi_{0}$
 is the span of the broken generators, namely
-$16_{-3}\oplus\overline{16}_{+3}$, giving the stated complexified tangent
+$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$, giving the stated complexified tangent
 representation.  This is the coset $\M$ of \autoref{sec:EmergentFields}.
 \end{proof}
 
@@ -1979,7 +2140,7 @@ The EIII scalar sector is physically equivalent to the gauge-unfixed
 Stueckelberg/Higgs-orbit description of the $\ESix\to\SOTenXUOne_\psi$ breaking
 sector of the $\mathbb Z_{12}$ model.  Unitary gauge maps this description to the
 standard massive-vector description of the heterotic $\ESix$ grand unified
-theory, in which the $16_{-3}\oplus\overline{16}_{+3}$ Goldstones are absorbed by
+theory, in which the $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ Goldstones are absorbed by
 the broken gauge bosons.
 \end{theorem}
 
@@ -2007,12 +2168,12 @@ $\M$ and the subsequent steps by the standard heterotic Higgs mechanism.
 \begin{proof}
 The first arrow is \autoref{thm:Z12Orbit}.  The remaining arrows are the
 standard $\SOTen\to\SU5\to\SMSubgroup$ descent of a heterotic $\ESix$ grand
-unified theory with the matter content of the $27$; three generations follow
+unified theory with the matter content of the $\mathbf{27}$; three generations follow
 from the three fixed-point families of the $\mathbb Z_{12}$ action
 \cite{Z12Heterotic}.
 \end{proof}
 
-\begin{corollary}[UV completion]
+\begin{corollary}[Conditional UV completion]
 \label{cor:UVComplete}
 If the $\mathbb Z_{12}$ model of \cite{Z12Heterotic} satisfies the global
 heterotic consistency conditions listed in \autoref{rmk:Ledger}, then it is an
@@ -2028,11 +2189,10 @@ to define a consistent string background whose low-energy visible sector is the
 coset theory.
 \end{proof}
 
-
-%======================================================================%
-\section{The Albert--EIII Swampland Criterion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Albert--EIII Swampland Criterion}
 \label{sec:Swampland}
-%======================================================================%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The results above give a \emph{relative} swampland criterion. We do not claim
 that all non-coset vacua are inconsistent. The statement is restricted to the
@@ -2043,22 +2203,24 @@ the data specified below.
 \begin{theorem}[Albert--EIII swampland theorem]
 \label{thm:Swampland}
 Let $\mathcal T$ be a four-dimensional effective theory proposed as the
-Albert-selected low-energy sector of an $E_{8}\times E_{8}$ heterotic
+Albert-selected low-energy sector of an $\E_{8}\times E_{8}$ heterotic
 compactification.  Assume that its visible exceptional sector is selected by the
-Albert algebra $\jalg$ and that the corresponding compact real form is $\ESix$.
+Albert algebra $\Albert$ and that the corresponding compact real form is $\ESix$.
 Then $\mathcal T$ lies in the Albert-selected heterotic landscape only if its
 gauge-unfixed Higgs/moduli sector contains a residual scalar orbit
 \[
   \mathcal O\;\cong\;\MCosetInline\;=\;\M,
   \qquad
-  T_{\mathbb C}\,\mathcal O=16_{-3}\oplus\overline{16}_{+3},
+  T_{\mathbb C}\,\mathcal O
+  =
+  \mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3},
 \]
 carrying the unique positive $\ESix$-invariant EIII metric, globally consistent
 $\SOTenXUOne_\psi$ gauge data, anomaly cancellation, spin-lift compatibility,
 Green--Schwarz matching, and heterotic worldsheet consistency.  Equivalently, any
 proposed Albert-selected four-dimensional effective theory failing one of these
 conditions lies outside the Albert--EIII landscape: it has no
-$E_{8}\times E_{8}$ heterotic ultraviolet completion of the specified type
+$\E_{8}\times E_{8}$ heterotic ultraviolet completion of the specified type
 realizing the coset correspondence.
 \end{theorem}
 
@@ -2066,19 +2228,19 @@ realizing the coset correspondence.
 The argument is by necessity together with the contrapositive.
 
 \emph{Type and real form.}  Albert selection fixes the complex exceptional type
-to $E_{6}$ (\autoref{sec:AxiomsAlbertSSB}); choosing the compact real form gives the
+to $\ESix$ (\autoref{sec:AxiomsAlbertSSB}); choosing the compact real form gives the
 compact $\ESix$ structure used in the EIII target and guarantees a
 positive-definite invariant metric (\autoref{thm:uniqueMetric}).
 
 \emph{Forced orbit.}  Imposing the grand-unified isotropy
 $H=\SOTenXUOne_\psi$ forces the homogeneous scalar orbit to be $\ESix/H$.  By
-the orbit--stabilizer theorem an adjoint Higgs vacuum in the $1_{0}$ direction of
+the orbit--stabilizer theorem an adjoint Higgs vacuum in the $\mathbf{1}_{0}$ direction of
 the branching \eqref{eq:AdjointBranch} has centralizer $H$, so its gauge-unfixed
 Higgs orbit is exactly $\ESix\cdot\Phi_{0}\cong\MCosetInline$
 (\autoref{thm:Z12Orbit}).
 
 \emph{Rigidity.}  The tangent representation is forced to be
-$16_{-3}\oplus\overline{16}_{+3}$, which is real-irreducible.  Hence the
+$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$, which is real-irreducible. Hence the
 $H$-invariant positive metric is unique up to scale, and there is no competing
 compact homogeneous residual scalar sector with the same Albert/$\ESix$/$H$
 data (\autoref{thm:EmergentRiemannian}).
@@ -2095,18 +2257,19 @@ dynamics of \autoref{sec:sigma}.
 completion must further satisfy modular invariance, GSO/fermion-parity
 consistency, flux and Wilson-line quantization, bundle transition-function
 compatibility, anomaly cancellation on overlaps, spin-lift conditions for the
-$16$ matter, and Green--Schwarz matching \cite{GreenSchwarz:1984}.
+$\mathbf{16}$ matter, and Green--Schwarz matching \cite{GreenSchwarz:1984}.
 
 \emph{Contrapositive.}  If a proposed effective theory lacks the EIII orbit, the
 required tangent representation, the EIII metric, the correct gauge action, the
 anomaly/Green--Schwarz compatibility, the spin-lift data, or global heterotic
-consistency, then it cannot be the Albert-selected $E_{8}\times E_{8}$
+consistency, then it cannot be the Albert-selected $\E_{8}\times E_{8}$
 ultraviolet completion of the specified type.
 \end{proof}
 
 \begin{remark}[Global heterotic consistency ledger]
 \label{rmk:Ledger}
-The global heterotic consistency conditions invoked above and below are:
+The global heterotic consistency conditions invoked throughout
+\autoref{sec:StringTheory} are:
 modular invariance, GSO/fermion-parity consistency, flux and Wilson-line
 quantization, bundle transition-function compatibility, anomaly cancellation
 on overlaps, spin-lift conditions for the $16$ matter, and Green--Schwarz
@@ -2130,10 +2293,10 @@ those of \autoref{rmk:Ledger} and \autoref{cor:UVComplete}.  If any global
 condition fails, the contrapositive of \autoref{thm:Swampland} applies.
 \end{proof}
 
-\begin{corollary}[$\mathbb Z_{12}$ candidate corollary]
+\begin{corollary}[$\mathbb Z_{12}$ conditional candidate criterion]
 \label{cor:Z12Leading}
 The $\mathbb Z_{12}$ asymmetric $\ESix$ orbifold is a concrete candidate for
-realizing the coset correspondence because it supplies an $E_{8}\times E_{8}$
+realizing the coset correspondence because it supplies an $\E_{8}\times E_{8}$
 heterotic origin, a visible $\ESix$ grand unified sector, three generations,
 and an adjoint Higgs obtained by diagonal embedding. If its gauge-unfixed
 adjoint-Higgs orbit, anomaly data, worldsheet data, and gravitational reduction
@@ -2159,13 +2322,6 @@ subject to the checklist of \autoref{cor:Z12Test}.
 \end{remark}
 
 
-%======================================================================%
-\section*{Declarations}
-%======================================================================%
-
-The author declares no competing interests. No datasets were generated or
-analyzed in this work. No external funding is reported.
-
 \begin{appendices}
 
 
@@ -2184,8 +2340,8 @@ This appendix supplies proofs regarding the Albert algebra deferred from \autore
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Proof of \autoref{thm:JordanDim}]
-Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}\smexp{2}=-1$ for $i\ge1$.  
-Every $X\in\jalg$ can be written uniquely as the Hermitian $3\times3$ matrix
+Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}^{2}=-1$ for $i\ge1$.  
+Every $X\in\Albert$ can be written uniquely as the Hermitian $3\times3$ matrix
 \[
   X=\begin{pmatrix}
         \alpha_{1} & x_{3} & \bar x_{2}\\
@@ -2201,8 +2357,8 @@ The real-dimension count is therefore
 $3\text{ scalars}+3\times8\text{ octonion components}=27$.
 Jordan commutativity is obvious from the symmetric product $\circ$.  
 The Jordan identity
-$a\circ(b\circ a\smexp{2})=(a\circ b)\circ a\smexp{2}$
-holds for every special Jordan algebra; it follows from the alternative law of the octonions \cite{McCrimmon:2004}.  Hence $\jalg$ is indeed a $27$-dimensional Jordan algebra.
+$a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$
+holds for every special Jordan algebra; it follows from the alternative law of the octonions \cite{McCrimmon:2004}.  Hence $\Albert$ is indeed a $27$-dimensional Jordan algebra.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2213,9 +2369,9 @@ holds for every special Jordan algebra; it follows from the alternative law of t
 \begin{proof}[Proof of \autoref{thm:Invs}]
 For $X$ as above set
 \[
-  Q(X)=\Tr(X\smexp{2}), 
+  Q(X)=\Tr(X^{2}), 
   \quad
-  N(X)=\alpha_{1}\alpha_{2}\alpha_{3}-\sum_{i=1}\smexp{3}\alpha_{i}\|x_{i}\|\smexp{2}
+  N(X)=\alpha_{1}\alpha_{2}\alpha_{3}-\sum_{i=1}^{3}\alpha_{i}\|x_{i}\|^{2}
         +2\,\Re\bigl(x_{1}x_{2}x_{3}\bigr),
 \]
 where juxtaposition is octonion multiplication. The form $Q$ is quadratic and $N$ is cubic in the real coordinates. Direct calculation shows
@@ -2226,18 +2382,18 @@ and
 $
   N(g \cdot X)=\lambda(g)N(X)
 $
-for every $g\in\Str(\jalg)$ with multiplicative character $\lambda(g)\in\mathbb R\smexp{\times}$ \cite{Jacobson:1968}. In particular, the subgroup with $\lambda(g)=1$ preserves both forms.
+for every $g\in\Str(\Albert)$ with multiplicative character $\lambda(g)\in\mathbb R^{\times}$ \cite{Jacobson:1968}. In particular, the subgroup with $\lambda(g)=1$ preserves both forms.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exceptional Type \texorpdfstring{$E_{6}$}{E6}}
+\subsection{Exceptional Type \texorpdfstring{$\ESix$}{E6}}
 \label{app:Albert:E6}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Proof of \autoref{thm:E6}]
-Let $\Str\smexp{0}(\jalg)$ denote the connected component of the identity in
-$\Str(\jalg)$. Jacobson's construction \cite{Jacobson:1968} realizes the
-exceptional structure algebra as the sum of derivations of $\jalg$ (an
+Let $\Str^{0}(\Albert)$ denote the connected component of the identity in
+$\Str(\Albert)$. Jacobson's construction \cite{Jacobson:1968} realizes the
+exceptional structure algebra as the sum of derivations of $\Albert$ (an
 $\mathfrak f_{4}$) plus the traceless right multiplications
 \[
   R_{X}: Y\mapsto X\circ Y-\frac13 Q(X,Y)\mathbf 1.
@@ -2254,7 +2410,7 @@ the coset construction.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lemma}\label{lem:OrbitInv}
-If $g\in \ESix$ and $X\in\jalg$ then
+If $g\in \ESix$ and $X\in\Albert$ then
 $Q(g\cdot X)=Q(X)$ and $N(g\cdot X)=N(X)$.
 \end{lemma}
 
@@ -2266,7 +2422,7 @@ quadratic and cubic invariants, so the claim follows from \autoref{thm:Invs}.
 \begin{proof}[Proof of \autoref{thm:OrbitClass}]
 Suppose $g \cdot X=Y$. \autoref{lem:OrbitInv} gives equality of $(Q,N)$.
 Conversely, restrict to the regular compact stratum specified in the theorem.
-The standard invariant-theoretic description of the compact $E_{6}$ action
+The standard invariant-theoretic description of the compact $\ESix$ action
 \cite{Springer:2000} shows that the common level set of $(Q,N)$ through
 $X_{0}$ is a single compact orbit. Hence two points on that level set differ by
 an element of $\ESix$.
@@ -2278,7 +2434,7 @@ an element of $\ESix$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Proof of \autoref{cor:Isotropy}]
-The compact group of type $E_{6}$ has the maximal-rank subgroup
+The compact group of type $\ESix$ has the maximal-rank subgroup
 $\Spin(10)\times\UOne$ \cite{Slansky:1981}. Choosing $X_{0}$ in the
 corresponding regular orbit gives stabilizer Lie algebra
 $\mathfrak{so}(10)\oplus\mathfrak u(1)$ of dimension $45+1=46$. With the
@@ -2293,23 +2449,23 @@ $\SOTenXUOne$.
 
 \begin{lemma}\label{lem:A-coercive}
 For $\alpha>0$, $k\ge2$ even, the polynomial
-$V(X)=P(X)+\alpha[I_{2}(X)-c_{2}]\smexp{k}$ satisfies
+$V(X)=P(X)+\alpha[I_{2}(X)-c_{2}]^{k}$ satisfies
 $V(X)\to\infty$ as $\|X\|\to\infty$.
 \end{lemma}
 
 \begin{proof}
-Write $I_{2}(X)=Q(X)=\beta\|X\|\smexp{2}+O(\|X\|)$ for some $\beta>0$.
+Write $I_{2}(X)=Q(X)=\beta\|X\|^{2}+O(\|X\|)$ for some $\beta>0$.
 Since $k$ is even,
 \[
-  \alpha[I_{2}(X)-c_{2}]\smexp{k}
-  =\alpha\beta\smexp{k}\|X\|\smexp{2k}
-   +O\bigl(\|X\|\smexp{2k-1}\bigr),
+  \alpha[I_{2}(X)-c_{2}]^{k}
+  =\alpha\beta^{k}\|X\|^{2k}
+   +O\bigl(\|X\|^{2k-1}\bigr),
 \]
 so $V$ is radially unbounded.
 \end{proof}
 
 \begin{lemma}\label{lem:A-sumsq}
-$P(X)\ge0$ for all $X\in\jalg$, with equality if and only if
+$P(X)\ge0$ for all $X\in\Albert$, with equality if and only if
 $X\in \ESix \cdot X_{0}$ on the regular stratum.
 \end{lemma}
 
@@ -2342,31 +2498,31 @@ Recall that the broken directions of the coset
 \]
 form a $32$-dimensional real vector space
 \(\mathfrak m\) carrying the unique invariant metric
-\(\mathfrak g_{\alpha\beta}=f\smexp{2}(-K_{\alpha\beta})\) of
+\(\mathfrak g_{\alpha\beta}=f^{2}(-K_{\alpha\beta})\) of
 \autoref{thm:uniqueMetric}, which on the compact real form of \(\ESix\) is
 positive definite. Let
 \[
   \mathrm d\phi_x:
-  T_x\, \mathbb R\smexp{4}\to T_{\phi(x)}\, \mathcal M
+  T_x\, \mathbb R^{4}\to T_{\phi(x)}\, \mathcal M
   \cong\mathfrak m
 \]
 denote the differential of the map
-\(\phi\smexp\alpha(x)\).
+\(\phi^\alpha(x)\).
 
 \begin{proof}[Proof of \autoref{lem:Rank4}]
 The pull-back at \(x\) is the quadratic form
 \[
   g_{\mu\nu}(x)
-  =\mathfrak g_{\alpha\beta}\,\partial_\mu\phi\smexp{\alpha}\partial_\nu\phi\smexp{\beta}
-  =\mathfrak g\bigl(\mathrm d\sm\phi_x(\partial_\mu),\,
-          \mathrm d\sm\phi_x(\partial_\nu)\bigr).
+  =\mathfrak g_{\alpha\beta}\,\partial_\mu\phi^{\alpha}\partial_\nu\phi^{\beta}
+  =\mathfrak g\bigl(\mathrm d\phi_x(\partial_\mu),\,
+          \mathrm d\phi_x(\partial_\nu)\bigr).
 \]
 Because \(\mathfrak g\) is positive definite, the associated Gram map obeys
 \(\operatorname{rank} g_{\mu\nu}=\operatorname{rank}\mathrm d\phi_x=\dim
 V_x\), where \(V_x=\Im\,\mathrm d\phi_x\subseteq\mathfrak m\): indeed
-\(g_{\mu\nu}v\smexp{\mu}=0\) iff \(\mathfrak g(\mathrm d\phi_x v,\,\cdot\,)=0\)
+\(g_{\mu\nu}v^{\mu}=0\) iff \(\mathfrak g(\mathrm d\phi_x v,\,\cdot\,)=0\)
 iff \(\mathrm d\phi_x v=0\) by definiteness. Since
-\(\dim T_x\mathbb R\smexp{4}=4\) we have \(\dim V_x\le4\), and non-degeneracy of
+\(\dim T_x\mathbb R^{4}=4\) we have \(\dim V_x\le4\), and non-degeneracy of
 \(g_{\mu\nu}\) forces \(\dim V_x=4\), i.e.\ \(\mathrm d\phi_x\) is injective and
 \(V_x=\mathfrak p_{0}(x)\) is a four-plane. Its \(\mathfrak g\)-orthogonal
 complement \(\mathfrak p_{m}(x)\) has dimension \(28\).
@@ -2378,33 +2534,33 @@ complement \(\mathfrak p_{m}(x)\) has dimension \(28\).
 
 \begin{proof}[Proof of \autoref{thm:EmergentRiemannian}]
 Embed \(\SOTenXUOne\) in \(\ESix\) via the stabilizer of
-\(X_{0}=\operatorname{diag}(1,1,1)\in\jalg\), and write
+\(X_{0}=\operatorname{diag}(1,1,1)\in\Albert\), and write
 \(\mathfrak e_{6}=\mathfrak h\oplus\mathfrak m\) with
 \(\mathfrak h=\mathfrak{so}(10)\oplus\mathfrak u(1)\). On the \emph{compact}
 real form of \(\ESix\) the Killing form is negative definite on all of
 \(\mathfrak e_{6}\); hence \(-K\), and therefore
-\(\mathfrak g=f\smexp{2}(-K)\), is positive definite on \(\mathfrak m\). (This
+\(\mathfrak g=f^{2}(-K)\), is positive definite on \(\mathfrak m\). (This
 is the same fact that makes the symmetric space
 \(\M=\MCoset\) Riemannian; EIII is Hermitian symmetric, hence Riemannian, and
 carries no invariant indefinite metric.)
 
 By \autoref{lem:Rank4} the tetrad
-\(e_\mu\smexp{a}=\theta\smexp{a}_{\alpha}\partial_\mu\phi\smexp{\alpha}\) is
+\(e_\mu^{a}=\theta^{a}_{\alpha}\partial_\mu\phi^{\alpha}\) is
 invertible for a non-degenerate configuration. Choosing a
-\(\mathfrak g\)-orthonormal basis \(\{u_a\}_{a=0}\smexp{3}\) of
+\(\mathfrak g\)-orthonormal basis \(\{u_a\}_{a=0}^{3}\) of
 \(\mathfrak p_{0}(x)\), so that \(\mathfrak g(u_a,u_b)=\delta_{ab}\), and
-decomposing \(\partial_\mu\phi\smexp{\alpha}=e_\mu\smexp{a}u_a\smexp{\alpha}\),
+decomposing \(\partial_\mu\phi^{\alpha}=e_\mu^{a}u_a^{\alpha}\),
 \[
   g_{\mu\nu}
-  =\mathfrak g(u_a,u_b)\,e_\mu\smexp{a}e_\nu\smexp{b}
-  =\delta_{ab}\,e_\mu\smexp{a}e_\nu\smexp{b},
+  =\mathfrak g(u_a,u_b)\,e_\mu^{a}e_\nu^{b}
+  =\delta_{ab}\,e_\mu^{a}e_\nu^{b},
 \]
-which is symmetric, non-degenerate (invertibility of \(e_\mu\smexp{a}\)), and
+which is symmetric, non-degenerate (invertibility of \(e_\mu^{a}\)), and
 positive definite. Smoothness in \(x\) follows from smoothness of \(\phi\) and
 of the Maurer-Cartan form. Openness and density of the non-degenerate locus
-hold because \(\det e_\mu\smexp{a}\neq0\) is an open condition satisfied by
+hold because \(\det e_\mu^{a}\neq0\) is an open condition satisfied by
 generic immersions. Thus \(g_{\mu\nu}\) is a Riemannian metric on
-\(\mathbb R\smexp{4}\), namely the first fundamental form of \(\phi\).
+\(\mathbb R^{4}\), namely the first fundamental form of \(\phi\).
 
 The signature is \((4,0)\), not \((1,3)\): a pull-back of a positive-definite
 form is positive semidefinite for every \(\phi\), so no choice of configuration
@@ -2424,7 +2580,7 @@ can produce a Lorentzian induced metric.
 \begin{proof}[Proof of \autoref{thm:uniqueMetric}]
 Write the Cartan decomposition $\mathfrak e_{6}=\mathfrak h\oplus\mathfrak m$
 with $\mathfrak h=\mathfrak{so}(10)\oplus\mathfrak u(1)$.  For $g\in \ESix$
-define the adjoint action $\operatorname{Ad}_{g}(X)=gXg\smexp{-1}$. Because
+define the adjoint action $\operatorname{Ad}_{g}(X)=gXg^{-1}$. Because
 $\mathfrak m$ transforms in an irreducible representation of $\SOTenXUOne$,
 Schur's lemma implies that any $\ESix$-invariant symmetric bilinear form on
 $\mathfrak m$ is proportional to the restriction of the Killing form
@@ -2433,7 +2589,7 @@ $\mathfrak m$ is proportional to the restriction of the Killing form
 \)
 On the compact real form of $\ESix$ the Killing form is negative definite, so
 $K|_{\mathfrak m}<0$; positivity of the $\sigma$-model kinetic term therefore
-fixes $c=-f\smexp{2}<0$, i.e.\ $\mathfrak g_{\alpha\beta}=f\smexp{2}(-K_{\alpha\beta})>0$,
+fixes $c=-f^{2}<0$, i.e.\ $\mathfrak g_{\alpha\beta}=f^{2}(-K_{\alpha\beta})>0$,
 completing the proof.
 \end{proof}
 
@@ -2445,7 +2601,7 @@ completing the proof.
 Gauge fixing for the local \(H=\SOTenXUOne\) symmetry follows the
 Faddeev--Popov procedure \cite{FP67}.  The collective matter multiplet is
 \(
-  \Phi=(\phi\smexp{\alpha},\,A_{\mu}\smexp{i},\,\psi)
+  \Phi=(\phi^{\alpha},\,A_{\mu}^{i},\,\psi)
 \),
 with
 \(
@@ -2455,49 +2611,49 @@ and
 \(
   i\in\{1,\,\dots,\,46\}
 \).
-Here, \(\phi\smexp{\alpha}\) are the real coset-scalar fluctuations,
-\(A_{\mu}\smexp{i}\) the gauge-field fluctuations, and \(\psi\) the Weyl
+Here, \(\phi^{\alpha}\) are the real coset-scalar fluctuations,
+\(A_{\mu}^{i}\) the gauge-field fluctuations, and \(\psi\) the Weyl
 fermions.  Ghost, antighost, and Nakanishi--Lautrup fields are denoted by
 \(
-  (c\smexp{i},\,\bar c\smexp{i},\,B\smexp{i})
+  (c^{i},\,\bar c^{i},\,B^{i})
 \).
 With the background Lorenz gauge
 \(
-  \mathcal F_{i}=\nabla\smexp{\mu}A_{\mu\,i},
+  \mathcal F_{i}=\nabla^{\mu}A_{\mu\,i},
 \)
 the gauge-fixed action reads
 \begin{equation}\label{eq:BRSTaction}
 \begin{aligned}
   S_{\text{BRST}}
   &= S[\Phi]
-     +\int \dv{4}x\,\sqrt{-g}\,\Bigl[
-        B\smexp{i}\,\mathcal F_{i}
-        +\frac{\xi}{2}\,B\smexp{i}B_{i}
-        +\bar c\smexp{i}\,\Delta_{\text{ghost}}\,c_{i}\Bigr],\\
+     +\int d4x\,\sqrt{-g}\,\Bigl[
+        B^{i}\,\mathcal F_{i}
+        +\frac{\xi}{2}\,B^{i}B_{i}
+        +\bar c^{i}\,\Delta_{\text{ghost}}\,c_{i}\Bigr],\\
   \Delta_{\text{ghost}}
-  &= -\nabla\smexp{2}\,\delta_{ij}
+  &= -\nabla^{2}\,\delta_{ij}
      +R_{ij},\qquad
      R_{ij}=f_{ij}{}^{k}F_{\mu\nu\,k}\,
-             \gamma\smexp{\mu}\gamma\smexp{\nu}.
+             \gamma^{\mu}\gamma^{\nu}.
 \end{aligned}
 \end{equation}
 The nilpotent BRST operator \(s\) acts as
 \[
 \begin{aligned}
-  &s\,\phi\smexp{\alpha}= -c\smexp{i}(t_{i})\smexp{\alpha}_{\beta}\,\phi\smexp{\beta},\qquad
-  &&s\,A_{\mu}\smexp{i}= D_{\mu}c\smexp{i},\\
-    &D_{\mu}c\smexp{i}= \partial_{\mu}c\smexp{i}+f\smexp{i}_{jk}A_{\mu}\smexp{j}c\smexp{k},\qquad
-  &&s\,\psi= \mathrm i\,c\smexp{i}\,T_{i}\,\psi,\\
-  &s\,c\smexp{i}= -\frac12 f\smexp{i}_{jk}c\smexp{j}c\smexp{k},\qquad
-  &&s\,\bar c\smexp{i}= B\smexp{i},\\
-  &s\,B\smexp{i}=0,
+  &s\,\phi^{\alpha}= -c^{i}(t_{i})^{\alpha}_{\beta}\,\phi^{\beta},\qquad
+  &&s\,A_{\mu}^{i}= D_{\mu}c^{i},\\
+    &D_{\mu}c^{i}= \partial_{\mu}c^{i}+f^{i}_{jk}A_{\mu}^{j}c^{k},\qquad
+  &&s\,\psi= \mathrm i\,c^{i}\,T_{i}\,\psi,\\
+  &s\,c^{i}= -\frac12 f^{i}_{jk}c^{j}c^{k},\qquad
+  &&s\,\bar c^{i}= B^{i},\\
+  &s\,B^{i}=0,
 \end{aligned}
 \]
 so \(s^{2}=0\) and physical correlators are gauge-independent. Here,
-\(B\smexp{i}\) is the Nakanishi--Lautrup auxiliary field, and
-\(\gamma\smexp{\mu}=e\smexp{\mu}_{\sm a}\,\gamma\smexp{a}\) are the
+\(B^{i}\) is the Nakanishi--Lautrup auxiliary field, and
+\(\gamma^{\mu}=e^{\mu}_{a}\,\gamma^{a}\) are the
 curved-space Dirac matrices obeying
-\(\{\gamma\smexp{\mu},\gamma\smexp{\nu}\}=2\,g\smexp{\mu\nu}\). Eliminating
+\(\{\gamma^{\mu},\gamma^{\nu}\}=2\,g^{\mu\nu}\). Eliminating
 \(B^{i}\) by its algebraic
 equation of motion reproduces the usual gauge-fixing term
 \(
@@ -2521,11 +2677,11 @@ subsection to derive the induced Einstein-Hilbert term.
 Let \(\bar\Phi(x)\) be a fixed classical background and define the full
 fluctuation multiplet
 \[
-  \Phi(x)=\bigl(\phi\smexp{\alpha}(x),\,
-                A_{\mu}\smexp{i}(x),\,
-                \psi\smexp{a}(x),\,
-                c\smexp{i}(x),\,
-                \bar c\smexp{i}(x)\bigr),
+  \Phi(x)=\bigl(\phi^{\alpha}(x),\,
+                A_{\mu}^{i}(x),\,
+                \psi^{a}(x),\,
+                c^{i}(x),\,
+                \bar c^{i}(x)\bigr),
 \]
 with
 \(
@@ -2535,31 +2691,31 @@ and
 \(
   i\in\{1,\,\dots,\,46\}
 \).
-The ghosts \(c\smexp{i},\bar c\smexp{i}\) transform in the adjoint of
+The ghosts \(c^{i},\bar c^{i}\) transform in the adjoint of
 \(H\). Writing \(\Phi=\bar\Phi+\varphi\), the gauge-fixed BRST action
 \eqref{eq:BRSTaction} expands as
 \[
   S_{\mathrm{BRST}}[\bar\Phi+\varphi]
   = S_{\mathrm{BRST}}[\bar\Phi]
-    +S\smexp{(2)}[\varphi]
+    +S^{(2)}[\varphi]
     +O(\varphi^{3}),
 \]
 with quadratic part
 \begin{equation}\label{eq:QuadraticBRST}
-  S\smexp{(2)}[\varphi]
-  = \frac12\int \dv{4}x\,\sqrt{-g}\;
+  S^{(2)}[\varphi]
+  = \frac12\int d4x\,\sqrt{-g}\;
     \varphi^{T}\,\Delta\,\varphi,
   \quad
   \Delta=
   \begin{pmatrix}
-    -\nabla\smexp{2}\mathbf1_{32}+M_{\phi}\smexp{2} & 0 & 0 \\[4pt]
-    0 & -\nabla\smexp{2}\mathbf1_{46}+M_{A}\smexp{2} & 0 \\[4pt]
+    -\nabla^{2}\mathbf1_{32}+M_{\phi}^{2} & 0 & 0 \\[4pt]
+    0 & -\nabla^{2}\mathbf1_{46}+M_{A}^{2} & 0 \\[4pt]
     0 & 0 & \mathrm i\slashed\nabla
   \end{pmatrix},
 \end{equation}
-where \(\bigl(M_{\phi}\smexp{2}\bigr)_{\alpha\beta}
+where \(\bigl(M_{\phi}^{2}\bigr)_{\alpha\beta}
        =[\mathrm{Hess}\,V(X_{0})]_{\alpha\beta}\) and
-\(M_{A}\smexp{2}\) is the gauge-field endomorphism, which vanishes in
+\(M_{A}^{2}\) is the gauge-field endomorphism, which vanishes in
 the unbroken \(H\) phase.  The background-field derivation of
 \eqref{eq:QuadraticBRST} follows Abbott's method \cite{Abbott:1981ke};
 heat-kernel methods are reviewed in \cite{Vassilevich:2003xt}.
@@ -2574,7 +2730,7 @@ Because Gaussian path integrals satisfy \cite{Peskin:1995ev,Abbott:1981ke}
 \]
 the one-loop effective action is
 \[
-  \Gamma\smexp{(1)}
+  \Gamma^{(1)}
   = \frac12\log\det\bigl(-\Delta_{\phi}\bigr)
     - \log\det\bigl(-\Delta_{\text{ghost}}\bigr)
     + \cdots.
@@ -2583,25 +2739,25 @@ The overall minus sign for the ghost determinant matches the
 background-field convention of \cite{Abbott:1981ke}. Using the proper-time representation \cite{Hawking:1977},
 \[
   \log\det(-\Delta)
-  = -\int_{\mu\smexp{-2}}^{\Lambda\smexp{-2}}
+  = -\int_{\mu^{-2}}^{\Lambda^{-2}}
       \frac{\mathrm d\tau}{\tau}\,
       \Tr \bigl[e^{-\tau\Delta}\bigr]
   = -\sum_{n=0}^{\infty}
       a_{2n}(\Delta)\,
-      \frac{\Lambda\smexp{2-2n}-\mu\smexp{2-2n}}{2-2n},
+      \frac{\Lambda^{2-2n}-\mu^{2-2n}}{2-2n},
 \]
 and the Seeley--DeWitt coefficients of
 \autoref{tab:SDWcoeffs}, the \(a_{2}\) term from the
 \(N_{s}=32\) Goldstone scalars yields
 \[
-  \Gamma\smexp{(1)}
+  \Gamma^{(1)}
   \supset
-  \frac12 M_{\mathrm{Pl}}\smexp{2}
-  \int \dv{4}x\,\sqrt{-g}\,R,
+  \frac12 M_{\mathrm{Pl}}^{2}
+  \int d4x\,\sqrt{-g}\,R,
 \qquad
-  M_{\mathrm{Pl}}\smexp{2}
-  =\frac{N_{s}f\smexp{2}}{(4\pi)\smexp{2}}
-   \log \frac{\Lambda\smexp{2}}{\mu\smexp{2}}.
+  M_{\mathrm{Pl}}^{2}
+  =\frac{N_{s}f^{2}}{(4\pi)^{2}}
+   \log \frac{\Lambda^{2}}{\mu^{2}}.
 \]
 \end{proof}
 
@@ -2610,7 +2766,7 @@ and the Seeley--DeWitt coefficients of
 \centering
 \caption{Lowest Seeley-DeWitt coefficients (Euclidean signature)
 for minimal Laplace-type operators
-$\Delta=-\nabla\smexp{2}+\mathcal E$.
+$\Delta=-\nabla^{2}+\mathcal E$.
 All curvature tensors refer to $g_{\mu\nu}$.}
 \label{tab:SDWcoeffs}
 \renewcommand{\arraystretch}{1.5}
@@ -2622,24 +2778,24 @@ Real scalar &
 1 & 
 $\dfrac{1}{6}R$ & 
 \rule{0pt}{1.8em}%
-$\dfrac{1}{180}\bigl(R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
-          -R_{\mu\nu}R\smexp{\mu\nu}\bigr)
-    +\dfrac{1}{72}R\smexp{2}$ \\
+$\dfrac{1}{180}\bigl(R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+          -R_{\mu\nu}R^{\mu\nu}\bigr)
+    +\dfrac{1}{72}R^{2}$ \\
 
 Weyl fermion & 
 2 & 
 $-\dfrac{1}{6}R$ & 
 \rule{0pt}{2.2em}%
-$\dfrac{7}{720}R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
-   -\dfrac{1}{180}R_{\mu\nu}R\smexp{\mu\nu}
-   +\dfrac{1}{144}R\smexp{2}$ \\
+$\dfrac{7}{720}R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+   -\dfrac{1}{180}R_{\mu\nu}R^{\mu\nu}
+   +\dfrac{1}{144}R^{2}$ \\
 
 Gauge vector & 
 2 & 
 $\dfrac{1}{6}R$ & 
 \rule{0pt}{2.2em}%
-$\dfrac{1}{30}R_{\mu\nu\rho\sigma}R\smexp{\mu\nu\rho\sigma}
-   -\dfrac{1}{30}R_{\mu\nu}R\smexp{\mu\nu}$ \\
+$\dfrac{1}{30}R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+   -\dfrac{1}{30}R_{\mu\nu}R^{\mu\nu}$ \\
 
 Vector ghost (Grassmann) & 2 & $\,\dfrac16\,R$ & \rule{0pt}{2.2em} $-\dfrac{11}{180}\,R_{\mu\nu\rho\sigma}^{2}
           +\dfrac{1}{30}\,R_{\mu\nu}^{2}
@@ -2656,13 +2812,13 @@ Vector ghost (Grassmann) & 2 & $\,\dfrac16\,R$ & \rule{0pt}{2.2em} $-\dfrac{11}{
 \begin{proof}[Proof of \autoref{thm:Mass28}]
 Expanding the one-loop effective action \eqref{eq:effAction} about
 \(X=X_{0}+\varphi\), \(\varphi\in\mathfrak p=T_{X_{0}}\mathcal M\), and retaining
-only \(\mathcal O(\varphi\smexp{2})\) terms yields \eqref{eq:OneLoopQuadratic}:
+only \(\mathcal O(\varphi^{2})\) terms yields \eqref{eq:OneLoopQuadratic}:
 \[
-  \Gamma\smexp{(1)}[X_{0}+\varphi]
-  = \Gamma\smexp{(1)}[X_{0}]
-    + \frac12\int \dv{4}x\;\varphi\smexp{I}\,
+  \Gamma^{(1)}[X_{0}+\varphi]
+  = \Gamma^{(1)}[X_{0}]
+    + \frac12\int d4x\;\varphi^{I}\,
       \bigl[\Hess V(X_{0})\bigr]_{IJ}\,
-      \varphi\smexp{J}
+      \varphi^{J}
     + \cdots,
 \]
 where \(I,\,J\in\{1,\,\dots,\,32\}\) label a basis of \(\mathfrak p\).
@@ -2677,21 +2833,21 @@ therefore commutes with the \(H\)-action. Since \(\mathfrak m\cong\mathfrak p\)
 carries an \emph{irreducible} representation of \(H\) (\autoref{lem:Irrep}),
 Schur's lemma implies
 \[
-  \Hess V_{\mathrm{eff}}(X_{0}) = m\smexp{2}\,\mathbf1_{32},
+  \Hess V_{\mathrm{eff}}(X_{0}) = m^{2}\,\mathbf1_{32},
   \qquad
-  m\smexp{2}=f\smexp{2}\mu\smexp{2}>0,
+  m^{2}=f^{2}\mu^{2}>0,
 \]
 a single eigenvalue fixed by the FRG flow; no
 \(H\)-invariant \(4+28\) splitting of the mass matrix exists. On a non-degenerate
 spacetime-filling background the four directions
 \(\mathfrak p_{0}=\Im\,\mathrm d\phi\) of \autoref{lem:Rank4} are singled out by
-the frame condensate \(\langle\partial_\mu\phi\smexp{a}\rangle=e_\mu\smexp{a}\);
+the frame condensate \(\langle\partial_\mu\phi^{a}\rangle=e_\mu^{a}\);
 their gradients constitute the tetrad, which is promoted to the gravitational
 field by the induced Einstein-Hilbert term (\autoref{thm:inducedEH}) and does
 not propagate as an independent scalar. The remaining \(28\) transverse
-fluctuations \(\varphi\smexp{\hat\alpha}\in\mathfrak p_{m}\) obey
-\((\Box+m\smexp{2})\,\varphi\smexp{\hat\alpha}=0\) with
-\(m\smexp{2}=f\smexp{2}\mu\smexp{2}\).
+fluctuations \(\varphi^{\hat\alpha}\in\mathfrak p_{m}\) obey
+\((\Box+m^{2})\,\varphi^{\hat\alpha}=0\) with
+\(m^{2}=f^{2}\mu^{2}\).
 \end{proof}
 
 
@@ -2710,14 +2866,14 @@ equation reads
 \[
   \partial_{k}\Gamma_{k}
   =\frac12\Tr\Bigl[
-    \Bigl(\Gamma_{k}\smexp{(2)}+R_{k}\Bigr)\smexp{-1}
+    \Bigl(\Gamma_{k}^{(2)}+R_{k}\Bigr)^{-1}
     \,\partial_{k}R_{k}\Bigr],
 \]
-where $\Gamma_{k}\smexp{(2)}$ is the Hessian with respect to the collective
+where $\Gamma_{k}^{(2)}$ is the Hessian with respect to the collective
 fields
-$\Phi=(\phi\smexp{\alpha},A_{\mu}\smexp{i},\psi)$
+$\Phi=(\phi^{\alpha},A_{\mu}^{i},\psi)$
 and $R_{k}$ is an IR regulator that suppresses modes
-with $p\smexp{2}\lesssim k\smexp{2}$.
+with $p^{2}\lesssim k^{2}$.
 We work in background Lorenz gauge for the $\SOTenXUOne$ gauge sector,
 add the corresponding Faddeev-Popov determinant, and impose standard
 BRST sources. The background-field identities then guarantee that
@@ -2725,9 +2881,9 @@ $\Gamma_{k}$ remains gauge invariant at every $k$.
 
 All threshold functions entering the flow are evaluated with
 \[
-  R_{k}(p\smexp{2})
-  = Z_{k}\bigl(k\smexp{2}-p\smexp{2}\bigr)\,
-    \theta\bigl(k\smexp{2}-p\smexp{2}\bigr),
+  R_{k}(p^{2})
+  = Z_{k}\bigl(k^{2}-p^{2}\bigr)\,
+    \theta\bigl(k^{2}-p^{2}\bigr),
 \]
 where $Z_{k}$ is the wave-function renormalization of the field in question.
 Litim's choice maximizes the gap in the inverse propagator and yields analytic
@@ -2745,44 +2901,44 @@ The truncation employed in \autoref{sec:FRG} keeps only the lowest-dimensional
 operators that mix under the RG flow,
 \begin{equation*}\label{eq:TruncAnsatz}
   \Gamma_{k}
-  = \int \dv{4}x\;
+  = \int d4x\;
     \left[
-        \frac{1}{2f\smexp{2}_{k}}\,\partial_{\mu}\phi\smexp{\alpha}\partial\smexp{\mu}\phi_{\alpha}
-      + \frac{1}{4g\smexp{2}_{k}}\,F\smexp{i}_{\mu\nu}F\smexp{i\,\mu\nu}
-      + \frac{y_{k}}{2}\,\phi\smexp{\alpha}\bar\psi\psi
+        \frac{1}{2f^{2}_{k}}\,\partial_{\mu}\phi^{\alpha}\partial^{\mu}\phi_{\alpha}
+      + \frac{1}{4g^{2}_{k}}\,F^{i}_{\mu\nu}F^{i\,\mu\nu}
+      + \frac{y_{k}}{2}\,\phi^{\alpha}\bar\psi\psi
     \right]
-  + \Gamma_{k}\smexp{\text{grav}}[\eta_{\mu\nu}],
+  + \Gamma_{k}^{\text{grav}}[\eta_{\mu\nu}],
 \end{equation*}
-where \(\phi\smexp{\alpha}\) denotes the $32$ coset scalars,
-\(F\smexp{i}_{\mu\nu}\) the \(\SOTenXUOne\) field strength and
+where \(\phi^{\alpha}\) denotes the $32$ coset scalars,
+\(F^{i}_{\mu\nu}\) the \(\SOTenXUOne\) field strength and
 \(\psi\) the chiral matter multiplet of \autoref{tab:FieldContent}.
 Higher-derivative and multi-scalar operators enter only at subleading
 order in the derivative expansion and do not affect the universal data
 extracted here.
 We write \(t=\log k\) and denote
 \[
-  \eta_{f}\equiv-\partial_{t}\log f\smexp{2}_{k},
+  \eta_{f}\equiv-\partial_{t}\log f^{2}_{k},
   \quad
-  \eta_{g}\equiv-\partial_{t}\log g\smexp{2}_{k},
+  \eta_{g}\equiv-\partial_{t}\log g^{2}_{k},
   \quad
-  \eta_{y}\equiv-\partial_{t}\log y\smexp{2}_{k},
+  \eta_{y}\equiv-\partial_{t}\log y^{2}_{k},
   \quad
-  \eta_{M}\equiv-\partial_{t}\log M_{\mathrm{Pl}}\smexp{2}(k).
+  \eta_{M}\equiv-\partial_{t}\log M_{\mathrm{Pl}}^{2}(k).
 \]
 Following \cite{PercacciReview}, we absorb canonical dimensions by
 \begin{equation}\label{eq:DimlessDef}
-  \hat g\smexp{2}=k\smexp{2}\frac{g\smexp{2}_{k}}{f\smexp{2}_{k}},\quad
-  \hat y\smexp{2}=y\smexp{2}_{k},\quad
-  \xi=\frac{k\smexp{2}}{f\smexp{2}_{k}},\quad
-  \kappa=\frac{k\smexp{2}}{M_{\mathrm{Pl}}\smexp{2}(k)}.
+  \hat g^{2}=k^{2}\frac{g^{2}_{k}}{f^{2}_{k}},\quad
+  \hat y^{2}=y^{2}_{k},\quad
+  \xi=\frac{k^{2}}{f^{2}_{k}},\quad
+  \kappa=\frac{k^{2}}{M_{\mathrm{Pl}}^{2}(k)}.
 \end{equation}
 Differentiation of \eqref{eq:DimlessDef} gives the projection rules
 \begin{equation}\label{eq:ProjGauge}
   \begin{aligned}
-  &\beta_{\hat g\smexp{2}}
-    =\bigl(2-\eta_{f}+\eta_{g}\bigr)\hat g\smexp{2},&
-  &\beta_{\hat y\smexp{2}}
-   = ( -\eta_{y})\,\hat y\smexp{2},\\
+  &\beta_{\hat g^{2}}
+    =\bigl(2-\eta_{f}+\eta_{g}\bigr)\hat g^{2},&
+  &\beta_{\hat y^{2}}
+   = ( -\eta_{y})\,\hat y^{2},\\
   &\beta_{\xi}= (2-\eta_{f})\,\xi,&
   &\beta_{\kappa}=(2+\eta_{M})\,\kappa.
   \end{aligned}
@@ -2802,9 +2958,9 @@ $C_{A}$, fundamental index $T_{R}$, $n_{F}$ Weyl fermions and $n_{S}$
 real scalars the background-field flow reproduces the standard
 minimal-subtraction result
 \begin{equation}\label{eq:appOneLoop:b0}
-  \beta_{g\smexp{-2}}
+  \beta_{g^{-2}}
   =
-  \frac{b_{0}}{48\pi\smexp{2}},\qquad
+  \frac{b_{0}}{48\pi^{2}},\qquad
   b_{0}=\frac{11}{3}C_{A}-\frac43T_{R}n_{F}-\frac16T_{R}n_{S}.
 \end{equation}
 For the $\ESix$ matter content
@@ -2813,50 +2969,50 @@ $b_{0}=52/3$. The $32$ coset scalars are (pseudo-)Goldstone modes of the
 breaking $\ESix\to\SOTenXUOne$; at one loop their two-point function is
 protected by the coset symmetry, hence
 \begin{equation}\label{eq:appOneLoop:etaf}
-  \eta_{f}=-\partial_{t}\log f\smexp{2}_{k}=0.
+  \eta_{f}=-\partial_{t}\log f^{2}_{k}=0.
 \end{equation}
 $28$ of the $32$ scalars acquire a common mass
-\(m\smexp{2}=f\smexp{2}\mu\smexp{2}\) (\autoref{thm:Mass28}). Their one-loop
+\(m^{2}=f^{2}\mu^{2}\) (\autoref{thm:Mass28}). Their one-loop
 contribution is the functional determinant
 \(
-  (1/2)\Tr\log\bigl[-D\smexp{2}+m\smexp{2}\bigr].
+  (1/2)\Tr\log\bigl[-D^{2}+m^{2}\bigr].
 \)
 Using the heat-kernel expansion
 \[
-  \Tr e\smexp{-s(-D\smexp{2})}
-   =(4\pi s)\smexp{-2}\sum_{n\ge0}s\smexp{n}a_{2n}(\Delta),
+  \Tr e^{-s(-D^{2})}
+   =(4\pi s)^{-2}\sum_{n\ge0}s^{n}a_{2n}(\Delta),
 \]
 and the Seeley-DeWitt entries in \autoref{tab:SDWcoeffs}, the term
 proportional to \(a_{2}\) induces
 \begin{equation}\label{eq:appOneLoop:EH}
   \partial_{t}\Gamma_{k}\supset
-    \frac{5}{48\pi\smexp{2}}\,
-       f\smexp{2}\,R\sqrt{-\eta}
+    \frac{5}{48\pi^{2}}\,
+       f^{2}\,R\sqrt{-\eta}
   \quad \implies\quad
-    \beta_{M_{\mathrm{Pl}}\smexp{2}}
-      =-\frac{5}{48\pi\smexp{2}}\,f\smexp{2}.
+    \beta_{M_{\mathrm{Pl}}^{2}}
+      =-\frac{5}{48\pi^{2}}\,f^{2}.
 \end{equation}
 The minus sign follows from
 \(
-  \mu\,\partial_{\mu}\log(\Lambda\smexp{2}/\mu\smexp{2})=-2
+  \mu\,\partial_{\mu}\log(\Lambda^{2}/\mu^{2})=-2
 \)
 after identifying \(k=\mu\).
 The Yukawa screening coefficient entering $\eta_{y}$ is
 \(
-  b_{y}=2C_{F}/(16\pi\smexp{2})\,,
+  b_{y}=2C_{F}/(16\pi^{2})\,,
   \;
   C_{F}=3/2,
 \)
 so that
 \begin{equation}\label{eq:appOneLoop:etay}
-  \eta_{y}= 2\,b_{y}\,\hat y\smexp{2}.
+  \eta_{y}= 2\,b_{y}\,\hat y^{2}.
 \end{equation}
 Collecting \eqref{eq:appOneLoop:b0}--\eqref{eq:appOneLoop:etay}, one finds
 \[
   \eta_{f}=0,\quad
-  \eta_{g}= \frac{b_{0}}{24\pi\smexp{2}}\hat g\smexp{2},\quad
-  \eta_{y}= 2b_{y}\hat y\smexp{2},\quad
-  \eta_{M}= -\frac{5}{48\pi\smexp{2}}\kappa.
+  \eta_{g}= \frac{b_{0}}{24\pi^{2}}\hat g^{2},\quad
+  \eta_{y}= 2b_{y}\hat y^{2},\quad
+  \eta_{M}= -\frac{5}{48\pi^{2}}\kappa.
 \]
 Inserting these values into the projection identities
 \eqref{eq:ProjGauge} reproduces the one-loop
@@ -2884,68 +3040,77 @@ $\mathrm E_{6}$ field content.
 \hline
 Coefficient & Symbolic expression & $\mathrm E_{6}$ value \\ \hline
 $\displaystyle A$   &
-\rule{0pt}{1.8em} $\dfrac{T_{R}}{192\,\pi\smexp{4}}$ &
-$5.35\times10\smexp{-5}$ \\[9pt]
+\rule{0pt}{1.8em} $\dfrac{T_{R}}{192\,\pi^{4}}$ &
+$5.35\times10^{-5}$ \\[9pt]
 
 $\displaystyle b_{0}$ &
-$\dfrac{\;\tfrac{11}{3}C_{A}\;-\;\tfrac{4}{3}T_{R}n_{\sm F}\;-\;\tfrac16 T_{R}n_{\sm S}}{16\,\pi\smexp{2}}$ &
-$1.10\times10\smexp{-1}$ \\[9pt]
+$\dfrac{\;\tfrac{11}{3}C_{A}\;-\;\tfrac{4}{3}T_{R}n_{F}\;-\;\tfrac16 T_{R}n_{S}}{16\,\pi^{2}}$ &
+$1.10\times10^{-1}$ \\[9pt]
 
 $\displaystyle b_{1}$ &
-$\dfrac{34\,C_{A}\smexp{2}\;-\;4\,C_{A}T_{R}n_{\sm F}\;-\;\tfrac53 C_{A}T_{R}n_{\sm S}\;-\;4\,C_{F}T_{R}n_{\sm F}}
-       {(16\,\pi\smexp{2})\smexp{2}}$ &
-$1.34\times10\smexp{-1}$ \\[9pt]
+$\dfrac{34\,C_{A}^{2}\;-\;4\,C_{A}T_{R}n_{F}\;-\;\tfrac53 C_{A}T_{R}n_{S}\;-\;4\,C_{F}T_{R}n_{F}}
+       {(16\,\pi^{2})^{2}}$ &
+$1.34\times10^{-1}$ \\[9pt]
 
 $\displaystyle c_{1}$ &
-$-\dfrac{3\,C_{F}}{16\,\pi\smexp{2}}$ &
-$-4.27\times10\smexp{-2}$ \\[9pt]
+$-\dfrac{3\,C_{F}}{16\,\pi^{2}}$ &
+$-4.27\times10^{-2}$ \\[9pt]
 
 $\displaystyle c_{2}$ &
-$\dfrac{2\,C_{F}\;-\;\tfrac32\,C_{A}}{16\,\pi\smexp{2}}$ &
-$-8.55\times10\smexp{-2}$ \\[9pt]
+$\dfrac{2\,C_{F}\;-\;\tfrac32\,C_{A}}{16\,\pi^{2}}$ &
+$-8.55\times10^{-2}$ \\[9pt]
 
 $\displaystyle b_{y}$ &
-$\dfrac{2\,C_{F}}{(16\,\pi\smexp{2})}$ &
-$2.85\times10\smexp{-2}$ \\[9pt] \hline
+$\dfrac{2\,C_{F}}{(16\,\pi^{2})}$ &
+$2.85\times10^{-2}$ \\[9pt] \hline
 \end{tabular}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stability Matrix at the Fixed Point}
+\subsection{Stability Matrix on the Nonphysical Branch}
 \label{app:FRG:Stability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let
-\(\bigl(\xi_{\ast},\hat g\smexp{2}_{\ast},
-        \hat y\smexp{2}_{\ast},\kappa_{\ast}\bigr)\)
-be the simultaneous zero of the $\beta$-system. Linearizing \(\partial_{t}\delta\mathbf g=M\,\delta\mathbf g\), one obtains
+\(\bigl(\xi_{\ast},\hat g^{2}_{\ast},
+        \hat y^{2}_{\ast},\kappa_{\ast}\bigr)\)
+denote a simultaneous zero of the algebraic $\beta$-system, without assuming
+that the zero lies in the positive-coupling domain. Linearizing
+\(\partial_{t}\delta\mathbf g=M\,\delta\mathbf g\), one obtains
 \begin{equation}\label{eq:Mmatrix}
   M=
   \begin{pmatrix}
     -2 & -A\,\xi_{\ast} & -b_{0}\,\xi_{\ast} & 0 \\
-     0 &  2\hat g\smexp{2}_{\ast} b_{1}
-        &  2\hat g\smexp{2}_{\ast} c_{1} & 0 \\
-     0 &  c_{2}\hat y\smexp{2}_{\ast}
-        &  2b_{y}\hat y\smexp{2}_{\ast} & 0 \\
+     0 &  2\hat g^{2}_{\ast} b_{1}
+        &  2\hat g^{2}_{\ast} c_{1} & 0 \\
+     0 &  c_{2}\hat y^{2}_{\ast}
+        &  2b_{y}\hat y^{2}_{\ast} & 0 \\
      0 &  0 & 0
-        & -2-\dfrac{5}{24\pi\smexp{2}}\kappa_{\ast}
+        & -2-\dfrac{5}{24\pi^{2}}\kappa_{\ast}
   \end{pmatrix}.
 \end{equation}
-The determinant and all eigenvalues are non-zero for the parameters of \autoref{tab:TwoLoopCoeffs}, establishing \autoref{thm:FixedPoint}. Evaluating \eqref{eq:Mmatrix} at the fixed point gives \(\sigma(M)=\{-2.0,-1.3,-0.9,-0.2\}\).
+For the coefficients of \autoref{tab:TwoLoopCoeffs}, the nontrivial
+gauge--Yukawa branch has \(\hat g^{2}_{\ast}<0\) and
+\(\hat y^{2}_{\ast}<0\). It is therefore excluded from the physical
+positive-coupling regime. The stability matrix is retained here only as an
+audit of the printed truncation; it is not evidence for an autonomous
+positive-coupling asymptotic-safety fixed point.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Finite Coset-Scalar Four-Point Amplitude}
 \label{app:FRG:4pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-At the fixed point the one-loop \(2\to2\) amplitude for canonically normalized coset scalars is
+Within the effective coset regime below \(\epsilon<1/6\), the one-loop
+\(2\to2\) amplitude for canonically normalized coset scalars has the form
 \[
-  \mathcal A\smexp{(1)}
-  =\frac{\hat g\smexp{4}_{\ast}}{16\pi\smexp{2}}
+  \mathcal A^{(1)}
+  =\frac{\hat g^{4}}{16\pi^{2}}
     \log\frac{s}{t}
   +\text{cyclic}(s,t,u),
 \]
-which is finite and shows the expected Regge behavior. See \cite{Percacci2017} for method details.
+which is finite inside the effective truncation. See \cite{Percacci2017} for
+method details.
 
 %======================================================================%
 \section{
@@ -2955,28 +3120,36 @@ which is finite and shows the expected Regge behavior. See \cite{Percacci2017} f
 \label{app:Scalar27}
 %======================================================================%
 The classically marginal quartic couplings of the coset scalars
-can be organized as a $27$-component vector
-$(\lambda\smexp{a})_{a=0}\smexp{26}$ transforming in the fundamental of
-$E_{6}$.  Linearizing the renormalization-group flow about the
-non-Gaussian fixed point of \autoref{sec:FRG} gives
+can be organized as a vector
+$(\lambda^{a})_{a=0}^{26}$ transforming in the fundamental \(\mathbf{27}\) of
+$\ESix$. Linearizing their effective flow within the
+\(\epsilon<1/6\) coset regime gives
 \[
-    \partial_{t}\lambda\smexp{a}=M^{a}_{b}\,\lambda\smexp{b},\qquad
-    M^{a}_{b}=\Bigl.\frac{\partial\beta\smexp{a}}{\partial\lambda\smexp{b}}
-    \Bigr|_{\ast}.
+    \partial_{t}\lambda^{a}=M^{a}_{b}\,\lambda^{b},\qquad
+    M^{a}_{b}=\frac{\partial\beta^{a}}{\partial\lambda^{b}} .
 \]
 
 Using group-theoretic projectors and the identities of
 \cite{Slansky:1981}, the matrix $M$ is block-diagonal and, for the
-$E_{6}$ field content, diagonal:
+$\ESix$ field content, diagonal:
 \[
     M=\operatorname{diag}\bigl(
         -2.00,\,-1.89,\,-1.57,\,-1.18,\,-0.92,\,-0.77,\,-0.44
         \ (\times21)\bigr),
 \]
 all eigenvalues being negative.  Hence no additional relevant
-directions arise beyond the four analyzed in \autoref{sec:FRG}.
+directions arise inside this effective scalar block before the heterotic
+handoff.
 
 \end{appendices}
+
+%======================================================================%
+\section*{Declarations}
+%======================================================================%
+
+The author declares no competing interests.
+Code for reproducing the results and associated datasets are available at
+https://github.com/belna-inc/ucft. No external funding is reported.
 
 \bibliography{sn-bibliography}
 
