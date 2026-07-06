@@ -34,11 +34,11 @@
 \aliascntresetthe{lemma}
 \providecommand*{\lemmaautorefname}{Lemma}
 
-% Axiom
-\newaliascnt{axiom}{theorem}
-\newtheorem{axiom}[axiom]{Axiom}
-\aliascntresetthe{axiom}
-\providecommand*{\axiomautorefname}{Axiom}
+% Postulate
+\newaliascnt{postulate}{theorem}
+\newtheorem{postulate}[postulate]{Postulate}
+\aliascntresetthe{postulate}
+\providecommand*{\postulateautorefname}{Postulate}
 
 % Corollary
 \newaliascnt{corollary}{theorem}
@@ -105,7 +105,7 @@
 \email{brandon@belna.org}
 
 \abstract{
-We formulate Universal Coset Field Theory (UCFT) as an axiomatic four-dimensional
+We formulate Universal Coset Field Theory (UCFT) as an postulateatic four-dimensional
 operator-algebraic quantum field theory whose local observable net is
 conditionally rigidly determined by the Albert algebra $\Albert$ and the compact
 EIII geometry of type $\ESix$. The theory is represented by an
@@ -152,7 +152,7 @@ spectral determinant, swampland}
 \section{Introduction}
 %======================================================================%
 
-\subsection{Motivation}
+
 
 Exceptional algebraic structures recur throughout high-energy physics. The
 exceptional Jordan (Albert) algebra $\Albert$ of $3\times3$ Hermitian octonionic
@@ -177,7 +177,7 @@ language of algebraic quantum field theory. The primary object of UCFT is a
 net \(\mathcal O\mapsto\mathfrak A(\mathcal O)\) of local observable
 \(C^{*}\)-algebras on the reconstructed four-dimensional spacetime. Once the
 Albert structure, the compact EIII coset geometry, and the quantum
-kinematical axiom are fixed, the coset representation of this net has no
+kinematical postulate are fixed, the coset representation of this net has no
 independent gravitational input. No graviton field, no spacetime metric, and no
 gravitational action are postulated in that sector. A spacetime-filling
 representation of the EIII coset induces its metric by pull-back
@@ -187,9 +187,7 @@ radiatively, at one loop, in the Sakharov--Adler sense
 fundamental in UCFT: it is an induced low-energy structure in a representation
 of the local observable algebra.
 
-\subsection{Overview}
-
-The construction rests on two axioms. The first axiom posits a maximally
+The construction rests on two postulates. The first postulate posits a maximally
 symmetric Albert structure; the second posits the usual quantum-mechanical
 kinematics of a Hilbert-space representation with unitary dynamics. The local
 observable net is then represented by an $\ESix$-invariant symmetry-breaking
@@ -233,10 +231,8 @@ commutative spectral subalgebra of the coset observable algebra: if the shifted
 zeta divisor admits a positive Galois-equivariant realization in that
 subalgebra, then the Riemann hypothesis follows.
 
-\section{Outline}
-
-The paper is organized as follows. \autoref{sec:AxiomsAlbertSSB} states the
-axioms, formulates the operator-algebraic QFT, recalls the Albert algebra and
+The paper is organized as follows. \autoref{sec:PostulatesAlbertSSB} states the
+postulates, formulates the operator-algebraic QFT, recalls the Albert algebra and
 its $\ESix$ symmetry, and constructs the symmetry-breaking potential and its
 vacuum manifold.
 \autoref{sec:EmergentFields} derives the emergent four-dimensional geometry and
@@ -256,29 +252,26 @@ them explicit. \autoref{sec:Conclusion} closes with a summary of what has been e
 Proofs and technical computations are collected in the appendices.
 
 %======================================================================%
-\section{Axioms, the Albert Algebra, and Spontaneous Symmetry Breaking}
-\label{sec:AxiomsAlbertSSB}
+\section{Postulates, the Albert Algebra, and Spontaneous Symmetry Breaking}
+\label{sec:PostulatesAlbertSSB}
 %======================================================================%
-This section states the axioms, formulates the local observable net, recalls
+This section states the postulates, formulates the local observable net, recalls
 the Albert algebra and the compact $\ESix$ symmetry used in the coset
 representation, constructs the algebraic symmetry-breaking potential, and
 counts the resulting $32$ Goldstone directions.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Axioms}\label{subsec:Axioms}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{axiom}[Maximally symmetric vacuum]\label{ax:AxiomI}
+\begin{postulate}[Maximally symmetric vacuum]\label{ax:PostulateI}
 There is a distinguished state $\Phi\in\Albert$ fixed by the full exceptional
 symmetry selected by the Albert algebra.
-\end{axiom}
-\begin{axiom}[Universal Hilbert-Space Dynamics]\label{ax:AxiomII}
+\end{postulate}
+\begin{postulate}[Universal Hilbert-Space Dynamics]\label{ax:PostulateII}
 Physical states $\psi\in\mathcal H$ evolve through a one-parameter family
 $\{U(t)\}_{t\in\mathbb R}$ of unitary operators satisfying
 $U(0)=\mathrm{Id}$, $U(t+s)=U(t)U(s)$, and strong continuity.
-\end{axiom}
+\end{postulate}
 
 \begin{remark}
-\autoref{ax:AxiomII} provides the kinematical Hilbert space and the
+\autoref{ax:PostulateII} provides the kinematical Hilbert space and the
 one-parameter family of unitary operators. The local observable algebra is
 specified in \autoref{subsec:OperatorAlgebraicQFT}. Whenever we later write a
 functional integral, we treat it as a formal generator of connected Green
@@ -288,7 +281,7 @@ correlation functions \cite{GlimmJaffe:1987}.
 \end{remark}
 
 
-No additional axioms are introduced. The compact real form of type \(\ESix\)
+No additional postulates are introduced. The compact real form of type \(\ESix\)
 acts on the regular EIII stratum with stabilizer
 \[
   H=\SOTenXUOne,
@@ -297,11 +290,6 @@ acts on the regular EIII stratum with stabilizer
 \]
 and the restrictions of the Albert invariants \(Q\) and \(N\) separate the
 compact \(\ESix\)-orbits on this stratum.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Operator-Algebraic Quantum Field Theory}
-\label{subsec:OperatorAlgebraicQFT}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 UCFT is formulated as an operator-algebraic Euclidean QFT. Let
 \(\mathsf{Reg}_{4}\) denote the directed set of bounded regular regions in the
@@ -336,11 +324,11 @@ The quasi-local observable algebra of UCFT is the inductive-limit
   \overline{\bigcup_{\mathcal O\in\mathsf{Reg}_{4}}\mathfrak A(\mathcal O)}
   ^{\|\cdot\|}.
 \]
-The one-parameter unitary group in \autoref{ax:AxiomII} acts by automorphisms
+The one-parameter unitary group in \autoref{ax:PostulateII} acts by automorphisms
 \(\alpha_t(A)=U(t)AU(t)^{-1}\) of \(\mathfrak A\), and its self-adjoint
 generator is the Hamiltonian of the GNS representation associated with the
 vacuum state \(\omega\). Thus the functional integral used below is not an
-additional axiom; it is a Euclidean device for computing the correlation
+additional postulate; it is a Euclidean device for computing the correlation
 functions of this operator-algebraic theory.
 
 For the zeta sector, the relevant object is a commutative spectral subalgebra
@@ -353,38 +341,6 @@ positive self-adjoint coset mass operator, the algebra
 is obtained by continuous functional calculus. The Riemann-hypothesis criterion
 in \autoref{sec:ZetaSector} is precisely a statement about when the arithmetic
 zeta divisor is realized inside this positive spectral subalgebra.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The Albert Algebra}
-\label{subsec:Albert}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Detailed expositions of the Albert algebra and its $\ESix$ symmetry are given in
-\cite{Jacobson:1968,Springer:2000,McCrimmon:2004} and in Appendix
-\ref{app:Albert}. Here we recall the definitions and the properties needed for
-the coset construction.
-
-\begin{definition}[Jordan algebra {\cite{Jacobson:1968}}]
-Let $F$ be a field with $\operatorname{char} F \neq 2$.  
-A \emph{Jordan algebra} is a commutative algebra $(A,\circ)$ satisfying
-\[
-  a\circ(b\circ a^{2}) \;=\;(a\circ b)\circ a^{2},
-  \quad a,b\in A.
-\]
-\end{definition}
-
-\begin{definition}[Albert algebra {\cite{Albert:1934,McCrimmon:2004}}]
-The \emph{Albert algebra} is
-\[
-  \Albert=\{X\in M_{3}(\Oct) : X=X^{\dagger}\},
-  \quad
-  X\circ Y=\frac12\,(XY+YX).
-\]
-\end{definition}
-
-\begin{theorem}\label{thm:JordanDim}
-The Albert algebra is a $27$-dimensional real Jordan algebra.
-\end{theorem}
 
 \begin{theorem}[Quadratic and cubic invariants]\label{thm:Invs}
 $\Albert$ admits  
@@ -413,13 +369,22 @@ if and only if there exists $g\in\ESix$ such that $g\cdot X = Y$.
 
 \begin{corollary}[Existence of an $\SOTenXUOne$ Stabilizer]
 \label{cor:Isotropy}
-There exists $X_{0}\in J_{3}(\mathbb{O})$ with
-$\mathrm{Stab}_{\ESix}(X_{0})\cong \SOTen\times \UOne$.
+In the projectivized complex Albert representation
+\(\mathbb P(J_3(\mathbb O)_{\mathbb C})\), there exists a point
+\([X_0]\) whose \(\ESix\)-stabilizer is \(\SOTenXUOne\).
 \end{corollary}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Polynomial Symmetry-Breaking Potential}\label{subsec:PolyPot}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}
+Let \(V=J_3(\mathbb O)_{\mathbb C}\) be the minimal \(27\)-dimensional
+representation of \(\ESix\). The projectivization \(\mathbb P(V)\)
+contains the closed highest-weight orbit of \(\ESix\). By the standard
+description of the compact Hermitian symmetric space EIII, the stabilizer
+of a highest-weight line \([X_0]\in\mathbb P(V)\) is the maximal-rank
+subgroup \(\Spin(10)\cdot \UOne\), denoted in the global convention of
+this paper by \(\SOTenXUOne\). Hence the orbit is
+\(\ESix/(\SOTenXUOne)\).
+\end{proof}
+
 Set
 \[
   I_{2}(X)=Q(X),
@@ -475,9 +440,6 @@ $\ESix\cdot X_{0}$; the additional term is nonnegative and vanishes on the same
 level set. Hence $V=0$ precisely on the orbit and is positive elsewhere.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dimension and Vacuum Manifold}\label{subsec:Vacuum}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{theorem}[Dimension count]\label{thm:DimCount}
 \[
   \dim \ESix=78,
@@ -519,10 +481,6 @@ recovered by continuation, and how the transverse directions combine with
 $\SOTenXUOne$ gauge connections and fermionic coherent states to furnish the
 matter content.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Emergent Spacetime}
-\label{subsec:EmergentSpacetime}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Choose a local coordinate patch
 $$
   \{\phi^{\alpha} (x)\}_{\alpha=0}^{31},\quad
@@ -632,12 +590,6 @@ the emergence of a preferred frame and the $H$-irreducibility of the coset
 scalars.
 \end{remark}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Low-Energy Field Content}
-\label{subsec:FieldContent}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 With the vierbein $e_{\mu}^{a}(x)$ invertible and
 \autoref{thm:EmergentRiemannian} establishing a non-degenerate induced metric
 (Lorentzian after continuation, \autoref{rmk:Continuation}),
@@ -742,11 +694,6 @@ matter fluctuations and identify the coset mass spectrum. The Planck scale is
 then set by the $\sigma$-model decay constant and the ultraviolet
 regularization.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Maurer-Cartan Form and Invariant Metric}
-\label{subsec:MC}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Let $g(x)\in \ESix$ be a local coset representative.  
 The left-invariant Maurer-Cartan form is
 \begin{equation}\label{eq:MC}
@@ -781,11 +728,6 @@ negative definite, so $\mathfrak g_{\alpha\beta}$ is positive definite.
 \begin{proof}
 See appendix for a short Schur-lemma argument.
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Classical \texorpdfstring{$\sigma$}{Sigma}-Model Action}
-\label{subsec:action}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 By the coset construction of nonlinear realizations \cite{CWZ69}, the
 broken generators \(X_{\alpha}\) furnish local coordinates
@@ -844,7 +786,7 @@ with equality only for vanishing covariant derivative.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Schwinger Functions, Induced Gravity, and Mass Spectrum}
+
 \label{subsec:quantization}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -946,7 +888,7 @@ scalars, each of mass $m^{2}=f^{2}\mu^{2}$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Higher-Curvature Operators}
+
 \label{subsec:highercurv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -968,7 +910,7 @@ Since $a_{4} \propto f^{0}$ while $M_{\mathrm{Pl}}^{2} \propto f^{2}$, one has $
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Hierarchy of Physical Scales}
+
 \label{subsec:scales}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1017,7 +959,7 @@ a finite truncation, identify the domain in which that truncation is valid, and
 determine the grand-unified matching scale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Setup}
+
 \label{subsec:FRGsetup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We work with the Wetterich equation
@@ -1064,11 +1006,6 @@ is interpreted as a signal that the effective coset variables are no longer the
 correct coordinates beyond the cutoff, provided the heterotic matching
 conditions are satisfied.
 \end{remark}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{One-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
-\label{subsec:BetaOne}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 At one loop, the running of the gauge, scalar, and gravitational
 couplings is determined by the field content listed in
@@ -1134,10 +1071,6 @@ Collecting the three directions, we have
     \beta_{\kappa}=2\kappa+\frac{5}{48\pi^{2}}\kappa^{2}.
 \end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Two-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
-\label{subsec:BetaTwo}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Coset-scalar self-interactions and Yukawa diagrams enter at two loops. Keeping
 the leading structures in the truncation gives
 \begin{equation}\label{eq:TwoLoop}
@@ -1164,7 +1097,7 @@ Yukawa correction cannot balance them at positive coupling. These signs are
 the entire input to the fixed-point analysis of the next subsection.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Effective Fixed-Point Analysis}
+
 \label{subsec:FixedPoint}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{theorem}[No positive-coupling non-Gaussian coset fixed point]
@@ -1209,7 +1142,7 @@ provide its own interacting ultraviolet fixed point beyond \(\epsilon=1/6\).
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{GUT Matching Scale}
+
 \label{subsec:GUTscale}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Running the gauge couplings downward,
@@ -1229,7 +1162,7 @@ With the plain non-supersymmetric Standard-Model one-loop coefficients
 scale, not a prediction of the nonsupersymmetric coset truncation alone.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Irrelevance of Higher Operators}
+
 \label{subsec:HigherIrrel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}\label{lem:Irrel}
@@ -1285,7 +1218,7 @@ limits.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Heterotic Ultraviolet Handoff}
+
 \label{subsec:UVComplete}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1336,7 +1269,7 @@ zeta divisor is forced to lie in \(\mathbb R_{\ge0}\), which is equivalent to
 the Riemann hypothesis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Completed Zeta Factor}
+
 \label{subsec:CompletedZetaFactor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1376,7 +1309,7 @@ and nonnegative in the coset spectrum. The definitions below make
 this spectral identification precise.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Finite Adelic Orbit Data}
+
 \label{subsec:FiniteAdelicOrbitData}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1429,7 +1362,7 @@ The corresponding archimedean oscillator is
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Spectral Determinant Realization}
+
 \label{subsec:ZetaSpectralDeterminant}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1466,7 +1399,7 @@ programs of Connes and Berry--Keating
 coordinate \(\lambda=(s-\frac12)^2\).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prime-Orbit Trace}
+
 \label{subsec:PrimeOrbitTrace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1588,7 +1521,7 @@ For \(\Re(\frac12+\sqrt{\lambda})>1\), this becomes
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Riemann Hypothesis as a Coset Positivity Theorem}
+
 \label{subsec:RHMassSpectrum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1621,7 +1554,7 @@ hypothesis follows \cite{Titchmarsh1986}.
 
 \begin{theorem}[Riemann Hypothesis as Coset Positivity]
 \label{thm:NoTachyonRH}
-Assume the Albert--EIII axioms and suppose the zeta divisor is realized by the
+Assume the Albert--EIII postulates and suppose the zeta divisor is realized by the
 positive UCFT coset spectral data in the sense of
 \autoref{subsec:UCFTZetaMatching}. Then the Riemann hypothesis holds.
 Equivalently, the determinant has no tachyonic or complex mass-squared zeros:
@@ -1651,7 +1584,7 @@ mass-squared zeros occur.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Coset Spectral Realization}
+
 \label{subsec:UCFTZetaMatching}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1763,7 +1696,7 @@ hypothesis would not contradict anything proved here.
 \end{remark}
 
 \begin{theorem}[Coset Spectral Criterion for the Riemann Hypothesis]
-Assume the Albert--EIII axioms. If there exists a Galois-equivariant spectral realization
+Assume the Albert--EIII postulates. If there exists a Galois-equivariant spectral realization
 \[
 \Theta:\mathcal A_{\zeta}\xrightarrow{\sim}\mathcal A_{\mathrm{UCFT}},
 \]
@@ -1823,24 +1756,14 @@ Since this holds for every nontrivial zero \(\rho\), the Riemann hypothesis
 follows.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Continuous Coset Bridge}
-\label{subsec:ContinuousCosetBridge}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 The criterion of \autoref{subsec:UCFTZetaMatching} is rigid at its endpoints:
 it demands a single $*$-isomorphism identifying the arithmetic divisor with
 the coset spectrum exactly. For approximation arguments---in particular for
 any attempt to build a realization level by level from the finite adelic data
 of \autoref{subsec:FiniteAdelicOrbitData}---a deformation-adapted formulation
-is preferable. This subsection therefore replaces the single isomorphism by a
+is preferable. We therefore replaces the single isomorphism by a
 continuous family of operators interpolating between the coset endpoint and
-the arithmetic endpoint. The hypotheses change character: no isomorphism of
-spectral algebras is assumed, and the arithmetic endpoint is constrained only
-through its determinant divisor; in exchange, self-adjointness and
-nonnegativity are imposed along the entire family. The conclusion is
-identical. We first fix the topology in which spectral divisors are allowed
-to move.
+the arithmetic endpoint.
 
 \begin{definition}[Locally finite divisor topology]
 Let \(\operatorname{Div}_{\mathrm{loc}}(\mathbb C)\) denote the space of
@@ -1951,7 +1874,7 @@ for all \(b\in B\).
 \end{definition}
 
 \begin{theorem}[Continuous Coset Criterion for the Riemann Hypothesis]
-Assume the Albert--EIII axioms. If a positive continuous Albert--zeta
+Assume the Albert--EIII postulates. If a positive continuous Albert--zeta
 realization exists, then the Riemann hypothesis holds.
 \end{theorem}
 
@@ -2036,11 +1959,6 @@ purpose of this section is to formulate the string-theory interface, identify a
 concrete $\mathbb Z_{12}$ heterotic candidate, and state the resulting
 Albert--EIII swampland criterion. It is not a proof of an exact holographic
 duality.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Heterotic Interface and Local Matching}
-\label{sec:Holographic}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Fix an $\E_{8}\times E_{8}$ heterotic background on
 $\mathbb R^{1,3}\times X$ with $X$ a six-dimensional internal space whose
@@ -2160,11 +2078,6 @@ is compatible with a formulation in which no fundamental visible-sector
 graviton is postulated.
 \end{remark}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The \texorpdfstring{$\mathbb Z_{12}$}{Z12} Asymmetric-Orbifold Realization}
-\label{sec:Z12}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 We now consider a heterotic compactification intended to meet the criteria of
 \autoref{sec:Holographic}: a $\mathbb Z_{12}$ asymmetric orbifold of the
 $\E_{8}\times E_{8}$ heterotic string \cite{DHVW:1985,Narain:1986} whose visible
@@ -2273,11 +2186,6 @@ to define a consistent string background whose low-energy visible sector is the
 coset theory.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The Albert--EIII Swampland Criterion}
-\label{sec:Swampland}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 The results above give a relative swampland criterion. We do not claim
 that all non-coset vacua are inconsistent. The statement is restricted to the
 Albert-selected heterotic class: within that class, a vacuum can realize the
@@ -2312,7 +2220,7 @@ realizing the coset correspondence.
 The argument is by necessity together with the contrapositive.
 
 Albert selection fixes the complex exceptional type
-to $\ESix$ (\autoref{sec:AxiomsAlbertSSB}); choosing the compact real form gives the
+to $\ESix$ (\autoref{sec:PostulatesAlbertSSB}); choosing the compact real form gives the
 compact $\ESix$ structure used in the EIII target and guarantees a
 positive-definite invariant metric (\autoref{thm:uniqueMetric}).
 
@@ -2608,7 +2516,7 @@ four-dimensional model.
 We have formulated UCFT as a four-dimensional operator-algebraic quantum field
 theory determined, conditionally but rigidly, by a single exceptional datum: the
 Albert algebra with its compact
-$\ESix$ symmetry. Two axioms select the EIII coset sector, and from that
+$\ESix$ symmetry. Two postulates select the EIII coset sector, and from that
 point the kinematics admit no further choices. The vacuum orbit is
 $\MCosetInline$; its $32$ Goldstone directions form the irreducible
 $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ with a unique positive
@@ -2626,12 +2534,7 @@ at one loop rather than postulated.
 \label{app:Albert}
 %======================================================================%
 
-This appendix supplies proofs regarding the Albert algebra deferred from \autoref{sec:AxiomsAlbertSSB}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dimension and Jordan Identity}
-\label{app:Albert:JordanDim}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This appendix supplies proofs regarding the Albert algebra deferred from \autoref{sec:PostulatesAlbertSSB}.
 
 \begin{proof}[Proof of \autoref{thm:JordanDim}]
 Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}^{2}=-1$ for $i\ge1$.  
@@ -2655,13 +2558,8 @@ $a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$
 holds for every special Jordan algebra; it follows from the alternative law of the octonions \cite{McCrimmon:2004}.  Hence $\Albert$ is indeed a $27$-dimensional Jordan algebra.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Quadratic and Cubic Invariants}
-\label{app:Albert:Invs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{proof}[Proof of \autoref{thm:Invs}]
-For $X$ as above set
+For $X$ as above, set
 \[
   Q(X)=\Tr(X^{2}), 
   \quad
@@ -2679,11 +2577,6 @@ $
 for every $g\in\Str(\Albert)$ with multiplicative character $\lambda(g)\in\mathbb R^{\times}$ \cite{Jacobson:1968}. In particular, the subgroup with $\lambda(g)=1$ preserves both forms.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exceptional Type \texorpdfstring{$\ESix$}{E6}}
-\label{app:Albert:E6}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{proof}[Proof of \autoref{thm:E6}]
 Let $\Str^{0}(\Albert)$ denote the connected component of the identity in
 $\Str(\Albert)$. Jacobson's construction \cite{Jacobson:1968} realizes the
@@ -2697,11 +2590,6 @@ text uses the simply connected compact real form of the same complex Lie type
 for the EIII homogeneous space; this is the group denoted $\ESix$ throughout
 the coset construction.
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Orbit Classification}
-\label{app:Albert:OrbitClass}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lemma}\label{lem:OrbitInv}
 If $g\in \ESix$ and $X\in\Albert$ then
@@ -2723,21 +2611,7 @@ an element of $\ESix$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{An \texorpdfstring{$\SOTenXUOne$}{SO(10) x U(1)} Stabilizer}
-\label{app:Albert:Isotropy}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{proof}[Proof of \autoref{cor:Isotropy}]
-The compact group of type $\ESix$ has the maximal-rank subgroup
-$\Spin(10)\times\UOne$ \cite{Slansky:1981}. Choosing $X_{0}$ in the
-corresponding regular orbit gives stabilizer Lie algebra
-$\mathfrak{so}(10)\oplus\mathfrak u(1)$ of dimension $45+1=46$. With the
-global convention used in this paper, the stabilizer is denoted
-$\SOTenXUOne$.
-\end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Coercivity of the Symmetry-Breaking Potential}
 \label{app:Albert:Coercive}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2782,7 +2656,7 @@ Equality implies
 This appendix supplies proofs for \autoref{lem:Rank4} and \autoref{thm:EmergentRiemannian} from \autoref{sec:EmergentFields}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Rank-Four Embedding}
+
 \label{app:Lorentz:Rank4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2823,7 +2697,7 @@ complement \(\mathfrak p_{m}(x)\) has dimension \(28\).
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Euclidean Signature and Continuation}\label{app:Lorentz:Lorentz}
+\label{app:Lorentz:Lorentz}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Proof of \autoref{thm:EmergentRiemannian}]
@@ -2872,7 +2746,7 @@ coset metric, the one-loop induced Einstein--Hilbert term, and the mass
 spectrum of the coset scalars.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Invariant Metric on the Coset}
+
 \label{app:Gravity:Metric}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2893,7 +2767,7 @@ completing the proof.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{BRST Complex and Functional Determinants}
+
 \label{app:Gravity:BRST}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2959,18 +2833,6 @@ equation of motion reproduces the usual gauge-fixing term
   (2\xi)^{-1}(\mathcal F_{i})^{2}
 \)
 and leaves the ghost operator \(\Delta_{\text{ghost}}\) defined above.
-
-
-The quadratic expansion of \(S_{\text{BRST}}\) about a background
-\(\bar\Phi\) is recorded in \eqref{eq:QuadraticBRST}; its functional
-determinants supply the one-loop effective action used in the next
-subsection to derive the induced Einstein-Hilbert term.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{One-Loop Induced Einstein-Hilbert Term}
-\label{app:Gravity:InducedEH}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}[Proof of \autoref{thm:inducedEH}]
 Let \(\bar\Phi(x)\) be a fixed classical background and define the full
@@ -3104,7 +2966,7 @@ Vector ghost (Grassmann) & 2 & $\,\dfrac16\,R$ & \rule{0pt}{2.2em} $-\dfrac{11}{
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mass Spectrum of the Coset Scalars}
+
 \label{app:Gravity:Mass28}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3161,7 +3023,7 @@ and projection rules, and the derivations of the one- and two-loop
 $\beta$-functions quoted in the main text.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Wetterich Equation and Regulator Choice}
+
 \label{app:FRG:Wetterich}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We adopt the background-field functional RG \cite{Wetterich1993,Morris1994}.  
@@ -3197,7 +3059,7 @@ $\Gamma_{k}$ \cite{Litim:2001}.
 Physical observables, such as critical exponents and $S$-matrix elements, are unaffected by the choice of $R_{k}$; any change is absorbed by finite redefinitions of couplings.  Explicit regulator-variation checks for the present truncation reproduce the standard $\sim1\%$ scheme uncertainty.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dimensionless Couplings and Projection Rules}
+
 \label{app:FRG:Dimless}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3250,12 +3112,6 @@ Differentiation of \eqref{eq:DimlessDef} gives the projection rules
 Hence the task reduces to computing the four anomalous
 dimensions \(\{\eta_{f},\,\eta_{g},\,\eta_{y},\,\eta_{M}\}\) from the trace on
 the right of the Wetterich equation.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{One-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
-\label{app:FRG:OneLoop}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For a simple algebra $\mathfrak g$ with adjoint index
 $C_{A}$, fundamental index $T_{R}$, $n_{F}$ Weyl fermions and $n_{S}$
@@ -3322,12 +3178,6 @@ Inserting these values into the projection identities
 \eqref{eq:ProjGauge} reproduces the one-loop
 $\beta$-functions \eqref{eq:OneLoop} quoted in the main text.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Two-Loop \texorpdfstring{$\beta$}{Beta}-Functions}
-\label{app:FRG:TwoLoop}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Coset-scalar self-interactions and Yukawa diagrams enter at two loops.
 A background-field expansion with the Litim regulator produces the
 coefficients listed in \autoref{tab:TwoLoopCoeffs}, which gives both
@@ -3371,7 +3221,7 @@ $2.85\times10^{-2}$ \\[9pt] \hline
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stability Matrix on the Nonphysical Branch}
+
 \label{app:FRG:Stability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3401,7 +3251,7 @@ audit of the printed truncation; it is not evidence for an autonomous
 positive-coupling asymptotic-safety fixed point.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Finite Coset-Scalar Four-Point Amplitude}
+
 \label{app:FRG:4pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
