@@ -161,7 +161,7 @@ matrices has automorphism group the compact $F_{4}$, and its norm-preserving
 reduced structure group is the noncompact real form $\E_{6(-26)}$ of the
 complex Lie type $\ESix$, the type that preserves its cubic norm
 \cite{Jacobson:1968,Springer:2000,McCrimmon:2004}. All coset constructions in
-this paper instead use the compact real form of the same complex
+this paper use the compact real form of the same complex
 type\footnote{Throughout, $\ESix$ denotes the compact real form of the complex
 Lie type $\E_6$. It acts on the complexified Albert algebra $\AlbertC$ (the
 minimal $\mathbf{27}_{\mathbb C}$) and is the group entering the EIII coset
@@ -383,7 +383,31 @@ is a $27$-dimensional real Jordan algebra; it is formally real and exceptional
 \end{theorem}
 
 \begin{proof}
-See \autoref{app:Albert}.
+Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}^{2}=-1$ for $i\ge1$.
+Every $X\in\Albert$ can be written uniquely as the Hermitian $3\times3$ matrix
+\[
+  X=\begin{pmatrix}
+        \alpha_{1} & x_{3} & \bar x_{2}\\
+        \bar x_{3} & \alpha_{2} & x_{1}\\
+        x_{2} & \bar x_{1} & \alpha_{3}
+      \end{pmatrix},
+  \quad
+  \alpha_{i}\in\mathbb R,
+  \;
+  x_{i}\in\Oct.
+\]
+The real-dimension count is therefore
+$3\text{ scalars}+3\times8\text{ octonion components}=27$.
+Jordan commutativity is obvious from the symmetric product $\circ$.
+Because $\Oct$ is nonassociative, $\Albert$ is \emph{not} a subalgebra of an
+associative algebra under $X\circ Y=\tfrac12(XY+YX)$, so the Jordan identity
+$a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$ is not automatic. It nevertheless
+holds by the Jordan--von Neumann--Wigner classification of Hermitian matrix
+algebras over composition algebras: for $n\le3$ the octonionic alternative law
+suffices to verify the degree-four identity on $\mathfrak h_{n}(\Oct)$, whereas
+for $n\ge4$ it fails \cite{Schafer:1966,Jacobson:1968,McCrimmon:2004}. Hence
+$\Albert=\mathfrak h_{3}(\Oct)$ is a $27$-dimensional formally real Jordan
+algebra; being nonspecial, it is the exceptional one.
 \end{proof}
 
 \begin{theorem}[Invariant Forms]\label{thm:Invs}
@@ -405,11 +429,49 @@ It preserves no complex-bilinear quadratic form, since the $\mathbf{27}$ is
 not self-dual.
 \end{theorem}
 
+\begin{proof}
+For $X$ as above, set
+\[
+  Q(X)=\Tr(X^{2}),
+  \quad
+  N(X)=\alpha_{1}\alpha_{2}\alpha_{3}-\sum_{i=1}^{3}\alpha_{i}\|x_{i}\|^{2}
+        +2\,\Re\bigl(x_{1}x_{2}x_{3}\bigr),
+\]
+where juxtaposition is octonion multiplication. The form $Q$ is quadratic and
+$N$ is cubic in the real coordinates. Direct calculation shows
+$N(g\cdot X)=\lambda(g)N(X)$ for every $g\in\Str(\Albert)$ with multiplicative
+character $\lambda(g)\in\mathbb R^{\times}$ \cite{Jacobson:1968}; the norm-one
+subgroup $\{\lambda(g)=1\}$ is the noncompact real form $\E_{6(-26)}$ and
+preserves $N$. The trace form $Q$ is preserved by the automorphism group
+$F_4=\operatorname{Aut}(\Albert)$, which fixes the unit element and the Jordan
+product; it is not preserved by the full reduced structure group, since the
+$\mathbf{27}$ of $\E_6$ admits no invariant bilinear form ($\mathbf{27}$ is
+not self-dual). On the complexification $\AlbertC$, the compact real form
+$\ESix$ is by definition the subgroup of the complex norm-preserving group
+that is unitary with respect to the Hermitian form
+$\Herm{X}{Y}=\Tr(X\circ\bar Y)$; it therefore preserves $N$ and
+$\Herm{\cdot}{\cdot}$ simultaneously \cite{Springer:2000}.
+\end{proof}
+
 \begin{theorem}[Exceptional type {\cite{Springer:2000}}]\label{thm:E6}
 The reduced structure algebra of $\Albert$ has complexification of type
 $\mathfrak e_{6}$. In the compact coset construction below, $\ESix$ denotes the
 simply connected compact real form of this Lie type.
 \end{theorem}
+
+\begin{proof}
+Let $\Str^{0}(\Albert)$ denote the connected component of the identity in
+$\Str(\Albert)$. Jacobson's construction \cite{Jacobson:1968} realizes the
+exceptional structure algebra as the sum of derivations of $\Albert$ (an
+$\mathfrak f_{4}$) plus the traceless right multiplications
+\[
+  R_{X}: Y\mapsto X\circ Y-\frac13 Q(X,Y)\mathbf 1.
+\]
+After complexification this Lie algebra has type $\mathfrak e_{6}$. The main
+text uses the simply connected compact real form of the same complex Lie type
+for the EIII homogeneous space; this is the group denoted $\ESix$ throughout
+the coset construction.
+\end{proof}
 
 \begin{theorem}[Closed EIII Orbit Criterion]\label{thm:OrbitClass}
 Let $X^{\sharp}$ denote the Freudenthal adjugate on $\AlbertC$, characterized
@@ -450,6 +512,46 @@ this paper by \(\SOTenXUOne\). Hence the orbit is
 \(\ESix/(\SOTenXUOne)\).
 \end{proof}
 
+\begin{proof}[Proof of \autoref{thm:OrbitClass}]
+The locus $\{X^{\sharp}=0\}\setminus\{0\}$ is the cone of rank-one elements of
+$\AlbertC$, i.e.\ the affine cone over the unique closed orbit of the complex
+group of type $\E_6$ in $\mathbb P(\AlbertC)$ (the complexified Cayley plane)
+\cite{Springer:2000}. For a linear action of a compact group whose
+complexification acts on $\mathbb P(V)$, the closed complex orbit is a single
+orbit of the compact real form: it is the orbit of the highest-weight line
+\cite{Helgason:1978}. Hence $\ESix$ acts transitively on rank-one lines, and
+by \autoref{cor:Isotropy} the stabilizer of a line is the maximal-rank
+subgroup $H=\SOTenXUOne$; the orbit of lines is
+$\mathrm{EIII}=\ESix/H$.
+
+Under $H$ the $\mathbf{27}$ branches as
+$\mathbf{16}_{+1}\oplus\mathbf{10}_{-2}\oplus\mathbf{1}_{+4}$, and the
+highest-weight line is the $\Spin(10)$-singlet direction $\mathbf{1}_{+4}$,
+which carries nonzero $\UOne_\psi$ charge. Therefore $\Spin(10)$ fixes a
+highest-weight vector $X_{0}$ pointwise, while the $\UOne_\psi$ factor acts on
+the line $\mathbb C X_{0}$ through a nontrivial character and hence acts
+transitively on the circle of vectors of fixed Hermitian norm in that line.
+Combining the two transitivities, $\ESix$ acts transitively on $S_{v}$, with
+vector stabilizer isomorphic to $\Spin(10)$; thus
+$S_{v}\cong\ESix/\Spin(10)$, of dimension $78-45=33$, a circle bundle over
+$\mathrm{EIII}$.
+\end{proof}
+
+\begin{lemma}\label{lem:OrbitInv}
+If $g\in \ESix$ and $X\in\AlbertC$ then
+$\Herm{gX}{gX}=\Herm{X}{X}$ and $\Herm{(gX)^{\sharp}}{(gX)^{\sharp}}
+=\Herm{X^{\sharp}}{X^{\sharp}}$.
+\end{lemma}
+
+\begin{proof}
+Invariance of the Hermitian form is \autoref{thm:Invs}. The adjugate satisfies
+the structure-group equivariance $(gX)^{\sharp}=g^{\sharp}(X^{\sharp})$, where
+$g\mapsto g^{\sharp}$ is the dual (contragredient) representation on
+$\overline{\mathbf{27}}$ \cite{Springer:2000,McCrimmon:2004}; the compact form
+acts unitarily on the dual as well, so the Hermitian norm of $X^{\sharp}$ is
+invariant.
+\end{proof}
+
 Fix $v>0$, set $c_{2}=v^{2}$, and choose a rank-one element
 $X_{0}\in S_{v}$ (\autoref{thm:OrbitClass}). Define, for $X\in\AlbertC$,
 \begin{equation}\label{eq:Pdef}
@@ -466,7 +568,8 @@ with $\alpha>0$ and even $k\ge2$. Both summands are $\ESix$-invariant: the
 Hermitian form is invariant by \autoref{thm:Invs}, and the adjugate
 intertwines the $\mathbf{27}$ with its dual $\overline{\mathbf{27}}$
 equivariantly, on both of which the compact form acts unitarily
-\cite{Springer:2000}, so $\Herm{X^{\sharp}}{X^{\sharp}}$ is invariant.
+\cite{Springer:2000}, so $\Herm{X^{\sharp}}{X^{\sharp}}$ is invariant
+(\autoref{lem:OrbitInv}).
 
 \begin{lemma}\label{lem:Zeros}
 $P(X)=0$ if and only if $X\in S_{v}=\ESix\cdot X_{0}$.
@@ -1299,8 +1402,8 @@ limits.
 \label{thm:UVcomplete}
 In the truncation defined by the coset-field action \eqref{eq:sigmaAction}, the
 positive-coupling two-loop flow does not furnish an interacting
-asymptotic-safety fixed point. The coset theory is instead an effective theory
-below \(\epsilon<1/6\). If an $\E_{8}\times E_{8}$ heterotic string background
+asymptotic-safety fixed point. Equivalently, UCFT is an effective theory
+below \(\epsilon<1/6\): if an $\E_{8}\times E_{8}$ heterotic string background
 satisfies the matching conditions of
 \autoref{sec:StringTheory}, then it supplies the
 ultraviolet completion at the boundary.
@@ -1551,7 +1654,7 @@ Take the logarithmic derivative of
 \]
 \end{proof}
 
-Putting \(s=\frac12+\sqrt{\lambda}\), \autoref{lem:CompletedZetaTrace} gives
+\noindent Putting \(s=\frac12+\sqrt{\lambda}\), \autoref{lem:CompletedZetaTrace} gives
 \[
   \frac{\Phi'(\lambda)}{\Phi(\lambda)}
   =
@@ -1741,24 +1844,7 @@ so that self-adjointness alone forces \(\gamma\in\mathbb R\) and hence the
 Riemann hypothesis \cite{BerryKeatingSIAM1999,Connes1999}. In our language,
 self-adjointness and nonnegativity of \(\Delta_{\mathrm{UCFT}}\) are free:
 they follow from the coset construction
-(\autoref{thm:ZetaQuadraticOperator}) and require no further input. The
-entire content of the conjecture, in any of its forms, is naturality: the
-operator must arise independently of the zeros it is meant to reproduce,
-with a spectrum computable on its own terms. Absent that requirement the
-conjecture is nearly vacuous, since if the Riemann hypothesis holds then
-\(\operatorname{diag}(\gamma_{n})\) on \(\ell^{2}\) is trivially self-adjoint
-with the correct spectrum. The Galois-equivariant realization \(\Theta\)
-above is precisely a naturality condition of this kind: it demands that the
-isomorphism respect the arithmetic Galois action and the coset real
-structure simultaneously, not merely that some isomorphism of sets exists.
-\autoref{def:ZetaSector} and \autoref{lem:PrimeOrbitCorrespondence}
-supply the coset-side data meant to play the role of an independently
-computable trace formula, but identifying that data with the actual spectrum
-of \(\Delta_{\mathrm{UCFT}}\), rather than positing it. We
-therefore regard the theorem below as a precise operator-algebraic form of
-Hilbert--P\'olya naturality, sufficient for the Riemann hypothesis but not
-asserted to be necessary for it: a coset-external proof of the Riemann
-hypothesis would not contradict anything proved here.
+(\autoref{thm:ZetaQuadraticOperator}) and require no further input.
 \end{remark}
 
 \begin{theorem}[Coset Spectral Criterion for the Riemann Hypothesis]
@@ -1952,9 +2038,7 @@ for all \(b\in B\).
 \begin{theorem}[Continuous Coset Criterion for the Riemann Hypothesis]
 \label{thm:ContinuousCosetCriterion}
 Assume the Albert--EIII postulates. If a Positive Continuous Albert--Zeta
-Realization exists, then the Riemann hypothesis holds. As with
-\autoref{thm:CosetSpectralCriterion}, this is a conditional reduction: the
-existence of the realization is the open hypothesis.
+Realization exists, then the Riemann hypothesis holds.
 \end{theorem}
 
 \begin{proof}
@@ -2097,7 +2181,7 @@ $\mathbf{78}=\mathbf{45}_{0}\oplus\mathbf{1}_{0}
 \oplus\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$.
 \end{proof}
 
-\begin{theorem}[Conditional Local Heterotic Realization]
+\begin{theorem}[Local Heterotic Realization]
 \label{thm:Holographic}
 Assume the heterotic correspondence map \(F\) of \autoref{def:Interface} exists for a
 heterotic background satisfying the stated current-algebra data. Then, in a
@@ -2180,7 +2264,7 @@ $\ESix\supset H=\SOTenXUOne_\psi$ the adjoint branches as
 and we take the Higgs vacuum $\langle\mathbf{78}_{H}\rangle=\Phi_{0}$ to lie in
 the $\mathbf{1}_{0}$ direction.
 
-\begin{theorem}[Conditional Gauge-Unfixed EIII Orbit Theorem]
+\begin{theorem}[Local Heterotic Realization of the Coset]
 \label{thm:Z12Orbit}
 Assume the $\mathbb Z_{12}$ model contains an adjoint-Higgs vacuum
 \(\Phi_{0}\) in the $\mathbf{1}_{0}\subset\mathbf{78}$ direction under
@@ -2248,7 +2332,7 @@ from the three fixed-point families of the $\mathbb Z_{12}$ action
 \cite{Z12Heterotic}.
 \end{proof}
 
-\begin{corollary}[Conditional UV Completion]
+\begin{corollary}[Local Heterotic Realization of the Coset]
 \label{cor:UVComplete}
 If the $\mathbb Z_{12}$ model of \cite{Z12Heterotic} satisfies the global
 heterotic consistency conditions listed in \autoref{rmk:Ledger}, then it is an
@@ -2335,7 +2419,7 @@ consistency, then it cannot be the Albert-selected $\E_{8}\times E_{8}$
 ultraviolet completion of the specified type.
 \end{proof}
 
-\begin{remark}[Global Heterotic Consistency Ledger]
+\begin{remark}[Global Heterotic Consistency Conditions]
 \label{rmk:Ledger}
 The global heterotic consistency conditions invoked throughout
 \autoref{sec:StringTheory} are:
@@ -2362,7 +2446,7 @@ those of \autoref{rmk:Ledger} and \autoref{cor:UVComplete}.  If any global
 condition fails, the contrapositive of \autoref{thm:Swampland} applies.
 \end{proof}
 
-\begin{corollary}[$\mathbb Z_{12}$ Conditional Candidate Criterion]
+\begin{corollary}[$\mathbb Z_{12}$ Local Heterotic Realization Criterion]
 \label{cor:Z12Leading}
 The $\mathbb Z_{12}$ asymmetric $\ESix$ orbifold is a concrete candidate for
 realizing the coset correspondence because it supplies an $\E_{8}\times E_{8}$
@@ -2477,114 +2561,9 @@ St\"uckelberg-massive $\UOne_\psi$ lies near the matching scale. Likewise, the
 $28$ degenerate transverse coset scalars of \autoref{thm:Mass28}, located at
 the top of the hierarchy described in \autoref{sec:sigma}, are structural
 features of the ultraviolet matching rather than ordinary TeV-scale scalar
-states. Their significance is instead diagnostic: the degeneracy follows from
-the $H$-irreducibility of the tangent representation and would be lifted only
-by effects beyond the invariant one-loop truncation.
+states.
 
-The gravitational sector has a similarly restricted interpretation. The
-metric induced in \autoref{thm:EmergentRiemannian} is Riemannian, and
-Lorentzian physics is recovered only after Osterwalder--Schrader
-reconstruction, as described in \autoref{rmk:Continuation}. The
-Einstein--Hilbert term is induced at one loop in the Sakharov--Adler sense
-(\autoref{thm:inducedEH}), while higher-curvature operators are irrelevant
-only inside the effective window of \autoref{prop:irrelevant}. The same
-heat-kernel expansion also produces an $a_{0}$ vacuum-energy term. In the
-present construction this term is handled by matching; no dynamical
-relaxation mechanism is supplied. Thus the cosmological-constant problem is
-not solved by the coset construction. It is transferred to the boundary data
-relating the effective coset theory to its heterotic completion.
-
-The zeta sector is even more conditional. The results of
-\autoref{sec:ZetaSector} give a spectral criterion, not a construction of the
-required spectral realization. Theorems such as \autoref{thm:NoTachyonRH}
-show that a positive Galois-equivariant realization of the shifted zeta
-divisor inside the coset spectral subalgebra would imply the Riemann
-hypothesis. They do not prove that such a realization exists. The continuous
-bridge of \autoref{thm:ContinuousCosetCriterion} is therefore best understood
-as a precise formulation of the obstruction: one must construct a compatible
-family of positive self-adjoint mass-squared operators whose arithmetic
-endpoint has the prescribed shifted zeta divisor.
-
-These observations also clarify the status of the universality claim. Once
-the Albert--EIII datum is fixed, the vacuum orbit, tangent representation,
-invariant metric, induced Riemannian geometry, and one-loop degeneracy
-pattern are fixed. The data not fixed by the coset are exactly the data
-required at the boundaries of the effective theory: reflection positivity for
-the constructive operator-algebraic formulation, heterotic consistency for
-the ultraviolet completion, and a positive arithmetic spectral realization
-for the zeta criterion. The theory is universal in its structural sector, not
-in the sense of supplying these boundary data automatically.
-
-Several problems remain open.
-
-First, the operator-algebraic construction should be made constructive. The
-Haag--Kastler net in \autoref{sec:PostulatesAlbertSSB} is characterized
-through its Schwinger functions, but reflection positivity of the interacting
-four-dimensional nonlinear $\sigma$-model is assumed. A natural program is to
-formulate the EIII model on a lattice with exact global $\ESix$ invariance and
-to analyze reflection positivity, clustering, and the continuum limit
-directly. The compactness of the target and the uniqueness of the invariant
-metric make the model rigid enough for such an analysis, although no
-constructive result is presently available.
-
-Second, the signature issue should be separated from the Euclidean
-construction. The present paper uses the positive EIII metric and obtains
-Lorentzian physics only through reconstruction. A genuinely Lorentzian
-formulation would require an explicit signature-selecting term, for example
-through the coset-sector order parameter of \autoref{rmk:DynamicalSignature}.
-The corresponding problem is to classify the $H$-invariant
-signature-selecting operators and determine whether the breaking
-\[
-  \mathrm{SO}(4)\longrightarrow \mathrm{SO}(1,3)
-\]
-can be made dynamically preferred.
-
-Third, the heterotic ledger must be completed for the candidate
-$\mathbb Z_{12}$ model. The local orbit statement of \autoref{thm:Z12Orbit}
-and the local correspondence theorem \autoref{thm:Holographic} are not sufficient
-by themselves. One must verify modular invariance, GSO consistency, flux and
-Wilson-line quantization, bundle transition functions, spin lifts for the
-$\mathbf{16}$ matter, Green--Schwarz matching, and the spectrum match to
-three $\mathbf{27}$ generations and the adjoint Higgs. This is precisely the
-checklist isolated in \autoref{rmk:Ledger}. Until those checks are completed,
-\autoref{cor:UVComplete} remains conditional on the global consistency of the
-candidate background.
-
-Fourth, the matching calculation should be sharpened. The one-loop estimate
-of \autoref{sec:FRG} should be extended to two loops with explicit
-thresholds at the $\epsilon=1/6$ boundary. This would refine both the
-allowed band for $M_{\mathrm{GUT}}$ and the associated proton-lifetime
-window. It would also test whether the threshold spectrum required by the
-heterotic handoff is compatible with the scalar degeneracy and induced
-Planck-scale hierarchy of the coset sector.
-
-Fifth, finite-level zeta realizations should be studied before the full
-adelic problem. One may attempt to construct candidate operators
-$\mathcal M_b^2$ using finitely many primes and truncated divisors, verify
-Galois compatibility at each finite level, and then examine whether
-norm-resolvent control survives the limiting procedure. A finite-level
-obstruction would be as informative as a successful approximation, since it
-would identify precisely where positivity, Galois compatibility, or spectral
-continuity fails.
-
-Finally, the cosmology of the coset sector remains largely undeveloped. The
-$28$ degenerate transverse scalars form a constrained multi-field sector with
-a unique invariant metric and a common one-loop mass. This severely restricts
-the admissible inflationary dynamics, but does not by itself determine the
-vacuum energy. The natural cosmological problem is therefore not merely to
-write an inflationary potential, but to understand how the induced
-vacuum-energy term is matched across the heterotic boundary and whether that
-matching can be made stable under the same global consistency conditions that
-control anomaly cancellation.
-
-The preceding points summarize the role of the present construction. The
-Albert--EIII datum fixes a rigid coset kinematics and an induced geometric
-sector. It does not, by itself, construct the interacting Euclidean theory,
-select Lorentzian signature dynamically, solve the cosmological-constant
-problem, prove the existence of the zeta realization, or verify the global
-heterotic ledger. Those are the remaining boundary problems. Closing them
-would turn the conditional rigidity results proved here into a complete
-four-dimensional model.
+% REVIEW, REVISE, AND FINISH ME
 
 %======================================================================%
 \section{Conclusion}
@@ -2606,152 +2585,6 @@ at one loop rather than postulated.
 
 
 \appendix
-
-%======================================================================%
-\section{Albert Algebra Proofs}
-\label{app:Albert}
-%======================================================================%
-
-This appendix supplies proofs regarding the Albert algebra deferred from \autoref{sec:PostulatesAlbertSSB}.
-
-\begin{proof}[Proof of \autoref{thm:JordanDim}]
-Choose a basis $\{e_{0},e_{1},\dots,e_{7}\}$ of the octonions satisfying $e_{0}=1$ and $e_{i}^{2}=-1$ for $i\ge1$.  
-Every $X\in\Albert$ can be written uniquely as the Hermitian $3\times3$ matrix
-\[
-  X=\begin{pmatrix}
-        \alpha_{1} & x_{3} & \bar x_{2}\\
-        \bar x_{3} & \alpha_{2} & x_{1}\\
-        x_{2} & \bar x_{1} & \alpha_{3}
-      \end{pmatrix},
-  \quad
-  \alpha_{i}\in\mathbb R,
-  \;
-  x_{i}\in\Oct.
-\]
-The real-dimension count is therefore
-$3\text{ scalars}+3\times8\text{ octonion components}=27$.
-Jordan commutativity is obvious from the symmetric product $\circ$.  
-Because $\Oct$ is nonassociative, $\Albert$ is \emph{not} a subalgebra of an
-associative algebra under $X\circ Y=\tfrac12(XY+YX)$, so the Jordan identity
-$a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$ is not automatic. It nevertheless
-holds by the Jordan--von Neumann--Wigner classification of Hermitian matrix
-algebras over composition algebras: for $n\le3$ the octonionic alternative law
-suffices to verify the degree-four identity on $\mathfrak h_{n}(\Oct)$, whereas
-for $n\ge4$ it fails \cite{Schafer:1966,Jacobson:1968,McCrimmon:2004}. Hence
-$\Albert=\mathfrak h_{3}(\Oct)$ is a $27$-dimensional formally real Jordan
-algebra; being nonspecial, it is the exceptional one.
-\end{proof}
-
-\begin{proof}[Proof of \autoref{thm:Invs}]
-For $X$ as above, set
-\[
-  Q(X)=\Tr(X^{2}), 
-  \quad
-  N(X)=\alpha_{1}\alpha_{2}\alpha_{3}-\sum_{i=1}^{3}\alpha_{i}\|x_{i}\|^{2}
-        +2\,\Re\bigl(x_{1}x_{2}x_{3}\bigr),
-\]
-where juxtaposition is octonion multiplication. The form $Q$ is quadratic and
-$N$ is cubic in the real coordinates. Direct calculation shows
-$N(g\cdot X)=\lambda(g)N(X)$ for every $g\in\Str(\Albert)$ with multiplicative
-character $\lambda(g)\in\mathbb R^{\times}$ \cite{Jacobson:1968}; the norm-one
-subgroup $\{\lambda(g)=1\}$ is the noncompact real form $\E_{6(-26)}$ and
-preserves $N$. The trace form $Q$ is preserved by the automorphism group
-$F_4=\operatorname{Aut}(\Albert)$, which fixes the unit element and the Jordan
-product; it is not preserved by the full reduced structure group, since the
-$\mathbf{27}$ of $\E_6$ admits no invariant bilinear form ($\mathbf{27}$ is
-not self-dual). On the complexification $\AlbertC$, the compact real form
-$\ESix$ is by definition the subgroup of the complex norm-preserving group
-that is unitary with respect to the Hermitian form
-$\Herm{X}{Y}=\Tr(X\circ\bar Y)$; it therefore preserves $N$ and
-$\Herm{\cdot}{\cdot}$ simultaneously \cite{Springer:2000}.
-\end{proof}
-
-\begin{proof}[Proof of \autoref{thm:E6}]
-Let $\Str^{0}(\Albert)$ denote the connected component of the identity in
-$\Str(\Albert)$. Jacobson's construction \cite{Jacobson:1968} realizes the
-exceptional structure algebra as the sum of derivations of $\Albert$ (an
-$\mathfrak f_{4}$) plus the traceless right multiplications
-\[
-  R_{X}: Y\mapsto X\circ Y-\frac13 Q(X,Y)\mathbf 1.
-\]
-After complexification this Lie algebra has type $\mathfrak e_{6}$. The main
-text uses the simply connected compact real form of the same complex Lie type
-for the EIII homogeneous space; this is the group denoted $\ESix$ throughout
-the coset construction.
-\end{proof}
-
-\begin{lemma}\label{lem:OrbitInv}
-If $g\in \ESix$ and $X\in\AlbertC$ then
-$\Herm{gX}{gX}=\Herm{X}{X}$ and $\Herm{(gX)^{\sharp}}{(gX)^{\sharp}}
-=\Herm{X^{\sharp}}{X^{\sharp}}$.
-\end{lemma}
-
-\begin{proof}
-Invariance of the Hermitian form is \autoref{thm:Invs}. The adjugate satisfies
-the structure-group equivariance $(gX)^{\sharp}=g^{\sharp}(X^{\sharp})$, where
-$g\mapsto g^{\sharp}$ is the dual (contragredient) representation on
-$\overline{\mathbf{27}}$ \cite{Springer:2000,McCrimmon:2004}; the compact form
-acts unitarily on the dual as well, so the Hermitian norm of $X^{\sharp}$ is
-invariant.
-\end{proof}
-
-\begin{proof}[Proof of \autoref{thm:OrbitClass}]
-The locus $\{X^{\sharp}=0\}\setminus\{0\}$ is the cone of rank-one elements of
-$\AlbertC$, i.e.\ the affine cone over the unique closed orbit of the complex
-group of type $\E_6$ in $\mathbb P(\AlbertC)$ (the complexified Cayley plane)
-\cite{Springer:2000}. For a linear action of a compact group whose
-complexification acts on $\mathbb P(V)$, the closed complex orbit is a single
-orbit of the compact real form: it is the orbit of the highest-weight line
-\cite{Helgason:1978}. Hence $\ESix$ acts transitively on rank-one lines, and
-by \autoref{cor:Isotropy} the stabilizer of a line is the maximal-rank
-subgroup $H=\SOTenXUOne$; the orbit of lines is
-$\mathrm{EIII}=\ESix/H$.
-
-Under $H$ the $\mathbf{27}$ branches as
-$\mathbf{16}_{+1}\oplus\mathbf{10}_{-2}\oplus\mathbf{1}_{+4}$, and the
-highest-weight line is the $\Spin(10)$-singlet direction $\mathbf{1}_{+4}$,
-which carries nonzero $\UOne_\psi$ charge. Therefore $\Spin(10)$ fixes a
-highest-weight vector $X_{0}$ pointwise, while the $\UOne_\psi$ factor acts on
-the line $\mathbb C X_{0}$ through a nontrivial character and hence acts
-transitively on the circle of vectors of fixed Hermitian norm in that line.
-Combining the two transitivities, $\ESix$ acts transitively on $S_{v}$, with
-vector stabilizer isomorphic to $\Spin(10)$; thus
-$S_{v}\cong\ESix/\Spin(10)$, of dimension $78-45=33$, a circle bundle over
-$\mathrm{EIII}$.
-\end{proof}
-
-\begin{lemma}\label{lem:A-coercive}
-For $\alpha>0$, $k\ge2$ even, the polynomial
-$V(X)=P(X)+\alpha[\Herm{X}{X}-c_{2}]^{k}$ satisfies
-$V(X)\to\infty$ as $\|X\|\to\infty$.
-\end{lemma}
-
-\begin{proof}
-The Hermitian form is exactly the squared norm, $\Herm{X}{X}=\|X\|^{2}$.
-Since $k$ is even,
-\[
-  \alpha[\Herm{X}{X}-c_{2}]^{k}
-  =\alpha\|X\|^{2k}
-   +O\bigl(\|X\|^{2k-2}\bigr),
-\]
-so $V$ is radially unbounded.
-\end{proof}
-
-\begin{lemma}\label{lem:A-sumsq}
-$P(X)\ge0$ for all $X\in\AlbertC$, with equality if and only if
-$X\in S_{v}=\ESix \cdot X_{0}$.
-\end{lemma}
-
-\begin{proof}
-Non-negativity is clear from \eqref{eq:Pdef}, both summands being squared
-norms and squares. Equality forces
-\[
-  X^{\sharp}=0
-  \quad \text{and}\quad
-  \Herm{X}{X}=c_{2};
-\]
-\autoref{thm:OrbitClass} then yields the stated orbit condition.
-\end{proof}
 
 %======================================================================%
 \section{Emergent Spacetime Proofs}
