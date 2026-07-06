@@ -82,7 +82,7 @@
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Oct}{\mathbb{O}}
 \newcommand{\Albert}{\mathbb{A}}
-\newcommand{\SOTen}{\SO{10}}
+\newcommand{\SOTen}{\Spin(10)}
 \newcommand{\UOne}{\U{1}}
 \newcommand{\ESix}{\E_{6}}
 \newcommand{\SOTenXUOne}{\SOTen \times \UOne}
@@ -633,17 +633,6 @@ correlation functions by Osterwalder--Schrader reconstruction
 frame, exactly as in Euclidean quantum gravity.
 \end{remark}
 
-\begin{remark}[Dynamical Signature: Outlook]\label{rmk:DynamicalSignature}
-An alternative, more ambitious route keeps the theory in Lorentzian signature
-from the outset by installing the signature as an order parameter: a
-distinguished coset-sector gradient condensate
-$\langle e_{\mu}^{a}\rangle$ that spontaneously breaks the internal frame
-rotations $\mathrm{SO}(4)\to\mathrm{SO}(1,3)$. This requires an explicit
-signature-selecting term beyond the definite coset metric and is not needed for
-the results proved here; we record it as a direction for future work
-(\autoref{sec:sigma} uses only the Euclidean construction above).
-\end{remark}
-
 \begin{remark}[Emergent Spacetime and Rigidity]\label{rmk:Emergent}
 The image of $\mathbb R^{4}$ inside $\M$ is the physical spacetime
 manifold, and its metric \eqref{eq:InducedMetric} emerges from the field
@@ -682,7 +671,10 @@ hence
 \(
   C_{A}=46
 \)
-massless gauge bosons, each with two physical polarizations.
+gauge bosons. The $45$ $\Spin(10)$ bosons are massless, each with two physical
+polarizations; the $\UOne_\psi$ boson acquires a St\"uckelberg mass once the
+overall phase mode is absorbed (\autoref{cor:VacuumManifold},
+\autoref{sec:Discussion}).
 
 The truncation contains a single left-handed Weyl multiplet in the chiral
 spinor
@@ -848,10 +840,23 @@ Lorentz invariance imposed and with a single left-handed Weyl fermion
 \end{equation}
 The dimensionless couplings \(g\) and \(y\), together with the decay
 constant \(f\), depend on the renormalization scale; their flow is
-studied in \autoref{sec:FRG}.
+studied in \autoref{sec:FRG}. Equation \eqref{eq:sigmaAction} is displayed in
+Lorentzian signature; the Euclidean functional integral \eqref{eq:pathIntegral}
+employs its Wick-rotated form \(S_{\mathrm E}\), obtained by continuation onto
+the Riemannian induced background of \autoref{thm:EmergentRiemannian}
+(\(\sqrt{-g}\to\sqrt{g}\),
+\(\mathrm{e}^{\mathrm{i}S}\to\mathrm{e}^{-S_{\mathrm E}}\)), in accordance with
+\autoref{rmk:Continuation}. The Yukawa term is schematic: for a single
+\(\mathbf{16}_{+1}\) there is no \(\Spin(10)\)-invariant cubic
+\(\bar\psi\phi\psi\), since neither \(\mathbf{16}\) nor \(\overline{\mathbf{16}}\)
+occurs in \(\mathbf{16}\otimes\mathbf{16}
+=\mathbf{10}\oplus\mathbf{120}\oplus\mathbf{126}\); it is defined only on
+completion of the matter to a full \(\mathbf{27}\), or replaced by the standard
+derivative coupling of matter to the Goldstone current, and plays no role in
+the coset kinematics or the induced-gravity result below.
 
 \begin{lemma}\label{lem:positivity}
-For $f^{2}>0$, the Euclidean scalar kinetic term in
+For $f^{2}>0$, the Euclidean continuation of the scalar kinetic term in
 \eqref{eq:sigmaAction} is positive definite.
 \end{lemma}
 \begin{proof}
@@ -863,14 +868,14 @@ Since $\mathfrak g_{\alpha\beta}$ is positive definite on the broken subspace,
 with equality only for vanishing covariant derivative.
 \end{proof}
 
-The nonlinear sigma model action \eqref{eq:sigmaAction} determines the
-Euclidean Schwinger functions of the coset representation. Gauge redundancy
-under local \(\SOTenXUOne\) is fixed by the Faddeev-Popov procedure
-\cite{FP67}, and the formal generating functional is
+The nonlinear sigma model action \eqref{eq:sigmaAction}, continued to Euclidean
+signature, determines the Euclidean Schwinger functions of the coset
+representation. Gauge redundancy under local \(\SOTenXUOne\) is fixed by the
+Faddeev-Popov procedure \cite{FP67}, and the formal generating functional is
 \begin{equation}\label{eq:pathIntegral}
   Z =
   \int \mathcal D\phi\,\mathcal D A\,\mathcal D\psi\;
-    \exp\bigl[-S[\phi,\,A,\,\psi]\bigr].
+    \exp\bigl[-S_{\mathrm E}[\phi,\,A,\,\psi]\bigr].
 \end{equation}
 When these Schwinger functions satisfy reflection positivity, Euclidean
 invariance, symmetry, and clustering, Osterwalder--Schrader reconstruction
@@ -915,10 +920,18 @@ regulator-independent.
 One-loop quantum fluctuations induce an Einstein-Hilbert term
 \begin{equation}\label{eq:EH}
   \Gamma^{ (1)} \supset \frac12 M_{\mathrm{Pl}}^{ 2} \int d^{4}x\, \sqrt{-g}\, R,
-  \quad
-  M_{\mathrm{Pl}}^{2} = \frac{N_{s} f^{2}}{(4\pi)^{2}} \log\frac{\Lambda^{2}}{\mu^{2}},
 \end{equation}
-where $N_{s} = 32$ is the number of Goldstone scalars, $\Lambda$ the cutoff, and $\mu$ the renormalization scale.
+generated radiatively rather than postulated. The contribution of the
+$N_{s}=32$ Goldstone scalars alone is
+\[
+  M_{\mathrm{Pl},\,\mathrm{scalar}}^{2}
+  = \frac{N_{s} f^{2}}{(4\pi)^{2}} \log\frac{\Lambda^{2}}{\mu^{2}}>0,
+\]
+with $\Lambda$ the cutoff and $\mu$ the renormalization scale. The full
+coefficient receives additional contributions from the Weyl and gauge sectors
+(\autoref{tab:SDWcoeffs}), whose relative sign is scheme dependent; the
+invariant content of the theorem is the one-loop origin of the term, not the
+numerical value of $M_{\mathrm{Pl}}^{2}$.
 \end{theorem}
 
 \begin{proof}
@@ -926,19 +939,22 @@ See \autoref{app:Gravity}, which follows Sakharov's induced-gravity
 argument and employs the heat-kernel coefficients listed in
 \autoref{tab:SDWcoeffs}. The numerical coefficient in \eqref{eq:EH} is
 truncation- and scheme-dependent; the invariant content of the theorem is the
-one-loop origin and the positivity of the induced $M_{\mathrm{Pl}}^{2}$.
+one-loop origin of the term. The scalar-sector contribution is positive, while
+the sign of the full coefficient depends on the Weyl and gauge sectors and is
+scheme-dependent.
 \end{proof}
 
 \begin{theorem}[Mass Spectrum]
 \label{thm:Mass28}
 The one-loop effective potential is $H$-invariant, and $\mathfrak m$ is
-$H$-irreducible (\autoref{lem:Irrep}); hence its Hessian at the vacuum is a
-single scalar,
+$H$-irreducible (\autoref{lem:Irrep}); hence, by Schur's lemma, its Hessian at
+the vacuum is a multiple of the identity,
 \[
-  \Hess V(X_{0})=f^{2}\mu^{2}\,\mathbf 1_{32},
-  \qquad
-  m^{2}=f^{2}\mu^{2}>0.
+  \Hess V(X_{0})=m^{2}\,\mathbf 1_{32}.
 \]
+If the one-loop correction is stabilizing, so that $m^{2}>0$, the common
+(pseudo-Goldstone) mass is $m^{2}=f^{2}\mu^{2}$ in the normalization of
+\eqref{eq:sigmaAction}.
 On a spacetime-filling background the four longitudinal directions
 $\mathfrak p_{0}$ of \autoref{lem:Rank4} are the tetrad (gravitational) degrees
 of freedom; the remaining $28$ transverse fluctuations $\mathfrak p_{m}$ are
@@ -1090,7 +1106,13 @@ representation reads \cite{MachacekVaughn:1984}
   -\frac16\,T_{R}n_{S}.
 \]
 Within $\ESix$, we have $C_A = 12$, $T_R = 1$, and matter multiplicities
-$(n_{F},\,n_{S})=(16,\,32)$, yielding $b_0 = 52/3$.
+$(n_{F},\,n_{S})=(16,\,32)$, yielding $b_0 = 52/3$. These coefficients are
+convention- and scheme-dependent bookkeeping for the printed reduced
+$\beta$-system: the value mixes the $\ESix$ normalization $C_A=12$ with a unit
+matter index $T_R=1$, and the coupling that runs below the coset scale is that
+of the unbroken $H=\SOTenXUOne$ rather than $\ESix$. Only the qualitative
+structure of the flow---not the numerical value or a convention-independent
+sign of $b_0$---enters what follows.
 
 Throughout the paper, we trade the dimensionless gauge coupling
 $g^{2}(k)$ for the canonically rescaled
@@ -1368,7 +1390,7 @@ octonions. Its finite adelic completion is
 \end{definition}
 
 \begin{definition}[Zeta Sector]
-\label{def:ZetaSector}\label{thm:FiniteZetaOrbit}
+\label{def:ZetaSector}
 The \emph{zeta sector} \(\mathcal H_\zeta\subset\mathcal H\) is the closed
 Hilbert subspace selected, under the coset correspondence, by
 \(J_{\mathbb A_f}\) together with a one-dimensional automorphic character (the
@@ -1411,8 +1433,9 @@ self-adjoint mass-squared operator
 \end{theorem}
 
 \begin{proof}
-This is the Friedrichs extension theorem applied to the closed semibounded
-quadratic form on \(\mathcal H_\zeta\).
+This is the first representation theorem for closed, densely defined,
+semibounded quadratic forms (Kato), which specializes to the Friedrichs
+extension when the form is that of a semibounded symmetric operator.
 \end{proof}
 
 \begin{definition}[Zeta Determinant Realization]
@@ -1728,7 +1751,7 @@ with the correct spectrum. The Galois-equivariant realization \(\Theta\)
 above is precisely a naturality condition of this kind: it demands that the
 isomorphism respect the arithmetic Galois action and the coset real
 structure simultaneously, not merely that some isomorphism of sets exists.
-\autoref{thm:FiniteZetaOrbit} and \autoref{lem:PrimeOrbitCorrespondence}
+\autoref{def:ZetaSector} and \autoref{lem:PrimeOrbitCorrespondence}
 supply the coset-side data meant to play the role of an independently
 computable trace formula, but identifying that data with the actual spectrum
 of \(\Delta_{\mathrm{UCFT}}\), rather than positing it. We
@@ -2608,9 +2631,15 @@ Every $X\in\Albert$ can be written uniquely as the Hermitian $3\times3$ matrix
 The real-dimension count is therefore
 $3\text{ scalars}+3\times8\text{ octonion components}=27$.
 Jordan commutativity is obvious from the symmetric product $\circ$.  
-The Jordan identity
-$a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$
-holds for every special Jordan algebra; it follows from the alternative law of the octonions \cite{McCrimmon:2004}.  Hence $\Albert$ is indeed a $27$-dimensional Jordan algebra.
+Because $\Oct$ is nonassociative, $\Albert$ is \emph{not} a subalgebra of an
+associative algebra under $X\circ Y=\tfrac12(XY+YX)$, so the Jordan identity
+$a\circ(b\circ a^{2})=(a\circ b)\circ a^{2}$ is not automatic. It nevertheless
+holds by the Jordan--von Neumann--Wigner classification of Hermitian matrix
+algebras over composition algebras: for $n\le3$ the octonionic alternative law
+suffices to verify the degree-four identity on $\mathfrak h_{n}(\Oct)$, whereas
+for $n\ge4$ it fails \cite{Schafer:1966,Jacobson:1968,McCrimmon:2004}. Hence
+$\Albert=\mathfrak h_{3}(\Oct)$ is a $27$-dimensional formally real Jordan
+algebra; being nonspecial, it is the exceptional one.
 \end{proof}
 
 \begin{proof}[Proof of \autoref{thm:Invs}]
@@ -2976,10 +3005,10 @@ and the Seeley--DeWitt coefficients of
 \[
   \Gamma^{(1)}
   \supset
-  \frac12 M_{\mathrm{Pl}}^{2}
+  \frac12 M_{\mathrm{Pl},\,\mathrm{scalar}}^{2}
   \int d^{4}x\,\sqrt{-g}\,R,
 \qquad
-  M_{\mathrm{Pl}}^{2}
+  M_{\mathrm{Pl},\,\mathrm{scalar}}^{2}
   =\frac{N_{s}f^{2}}{(4\pi)^{2}}
    \log \frac{\Lambda^{2}}{\mu^{2}}.
 \]
@@ -3052,13 +3081,13 @@ therefore commutes with the \(H\)-action. Since \(\mathfrak m\cong\mathfrak p\)
 carries an irreducible representation of \(H\) of complex type
 (\autoref{lem:Irrep}), an invariant endomorphism lies in the commutant
 \(\mathbb C=\operatorname{span}\{\mathbf 1,J\}\); symmetry of the Hessian with
-respect to the invariant metric excludes the antisymmetric \(J\)-part, so
+respect to the invariant metric excludes the antisymmetric \(J\)-part, so it is
+a multiple of the identity,
 \[
-  \Hess V_{\mathrm{eff}}(X_{0}) = m^{2}\,\mathbf1_{32},
-  \qquad
-  m^{2}=f^{2}\mu^{2}>0,
+  \Hess V_{\mathrm{eff}}(X_{0}) = m^{2}\,\mathbf1_{32}.
 \]
-a single eigenvalue fixed by the FRG flow; no
+Assuming the one-loop correction is stabilizing, \(m^{2}=f^{2}\mu^{2}>0\) is the
+single common eigenvalue fixed by the FRG flow; no
 \(H\)-invariant \(4+28\) splitting of the mass matrix exists. On a non-degenerate
 spacetime-filling background the four directions
 \(\mathfrak p_{0}=\Im\,\mathrm d\phi\) of \autoref{lem:Rank4} are singled out by
@@ -3223,7 +3252,7 @@ Collecting \eqref{eq:appOneLoop:b0}--\eqref{eq:appOneLoop:etay}, one finds
   \eta_{f}=0,\quad
   \eta_{g}= \frac{b_{0}}{24\pi^{2}}\hat g^{2},\quad
   \eta_{y}= 2b_{y}\hat y^{2},\quad
-  \eta_{M}= -\frac{5}{48\pi^{2}}\kappa.
+  \eta_{M}= +\frac{5}{48\pi^{2}}\kappa.
 \]
 Inserting these values into the projection identities
 \eqref{eq:ProjGauge} reproduces the one-loop
