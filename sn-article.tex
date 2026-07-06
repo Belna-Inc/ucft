@@ -772,7 +772,7 @@ for $h(x)\in H$.  The adjoint of $\mathfrak h$ contains
 $45$ generators of $\mathfrak{so}(10)$ and one of $\mathfrak u(1)$,
 hence
 \(
-  C_{A}=46
+  N_{\mathrm{gauge}}=46
 \)
 gauge bosons. The $45$ $\Spin(10)$ bosons are massless, each with two physical
 polarizations; the $\UOne_\psi$ boson acquires a St\"uckelberg mass once the
@@ -823,7 +823,7 @@ Sector & $H$ representation & Spin & Real d.o.f.\ & Multiplicity $n$ \\
 \midrule
 Coset scalars & $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ & $0$ & $32$ & $n_{S}$ \\
 Chiral fermions & $\mathbf{16}_{+1}$ & $\tfrac12$ & $32$ & $n_{F}$ \\
-Gauge bosons & $\mathrm{adj}_{H}$ & $1$ & $92$ & $C_{A}$ \\
+Gauge bosons & $\mathrm{adj}_{H}$ & $1$ & $92$ & $N_{\mathrm{gauge}}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1222,7 +1222,7 @@ $g^{2}(k)$ for the canonically rescaled
 \[
   \hat g^{2}(k)=\frac{k^{2}}{f^{2}}\,g^{2}(k),
 \]
-so that $\hat g^{2}$ has engineering dimension $2$.
+so that $\hat g^{2}$ has dimension $2$.
 Using
 \(
   \beta_{\hat g^{2}} = 2\,\hat g^{2}\,\beta_{g}/g
@@ -1842,9 +1842,11 @@ conjecture: the proposal that the ordinates \(\gamma\) of the nontrivial
 zeros \(\rho=\frac12+i\gamma\) are the spectrum of a self-adjoint operator,
 so that self-adjointness alone forces \(\gamma\in\mathbb R\) and hence the
 Riemann hypothesis \cite{BerryKeatingSIAM1999,Connes1999}. In our language,
-self-adjointness and nonnegativity of \(\Delta_{\mathrm{UCFT}}\) are free:
-they follow from the coset construction
-(\autoref{thm:ZetaQuadraticOperator}) and require no further input.
+self-adjointness of \(\Delta_{\mathrm{UCFT}}\) follows from the semibounded
+closed-form construction (\autoref{thm:ZetaQuadraticOperator}), and its
+nonnegativity is imposed as structural input
+(\autoref{def:UCFTSpectralAlgebra}); neither is the hard part. The hard part is
+the arithmetic realization.
 \end{remark}
 
 \begin{theorem}[Coset Spectral Criterion for the Riemann Hypothesis]
@@ -2190,7 +2192,9 @@ action of the visible $\ESix$-breaking sector of the heterotic model is mapped b
 $F$ onto the coset action of \autoref{sec:EmergentFields}, with the induced
 Einstein--Hilbert term of \autoref{sec:sigma} providing the gravitational
 sector.  Under this map the Green--Schwarz axion \cite{GreenSchwarz:1984} of the
-heterotic background is identified with the $\UOne_\psi$ Goldstone mode of $\M$.
+heterotic background is identified with the $\UOne_\psi$ circle-fiber (phase)
+mode of $S_{v}$---the Goldstone absorbed by the St\"uckelberg mechanism
+(\autoref{cor:VacuumManifold})---rather than with a coordinate on $\M$ itself.
 \end{theorem}
 
 \begin{proof}
@@ -2220,7 +2224,7 @@ Adjoint Higgs orbit $\E_{6}\cdot\langle\mathbf{78}_H\rangle$ & Vacuum manifold $
 Visible matter $\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$    & Goldstone tangent space $T\M$ \\
 Sigma-model metric on visible moduli          & EIII metric $\mathfrak g=f^{2}(-K)$ \\
 $\SOTen\times\UOne_\psi$ Ka\v{c}--Moody currents & Isometry generators of $\M$ \\
-Green--Schwarz axion                          & $\UOne_\psi$ Goldstone mode \\
+Green--Schwarz axion                          & $\UOne_\psi$ circle-fiber (phase) mode of $S_{v}$ \\
 No fundamental visible graviton               & Induced (Sakharov--Adler) gravity \\
 \bottomrule
 \end{tabular}
@@ -2479,14 +2483,17 @@ subject to the checklist of \autoref{cor:Z12Test}.
 \label{sec:Discussion}
 %======================================================================%
 
-The passage from the coset sector to observable physics is constrained first
-by anomaly cancellation. This is already a point at which the coset
-truncation is not, by itself, a complete four-dimensional theory. The
-low-energy field content in \autoref{tab:FieldContent} gauges
-$H=\SOTenXUOne_\psi$ and contains chiral matter in a single
-$\mathbf{16}_{+1}$. Although the $\SOTen$ factor is anomaly-free in four
-dimensions, the abelian factor is not. A lone $\mathbf{16}_{+1}$ leaves
-mixed and abelian anomalies of types
+The passage from the coset sector to observable physics is constrained first by
+anomaly cancellation. This is already a point at which the coset truncation is
+not, by itself, a complete four-dimensional theory. The low-energy field content
+in \autoref{tab:FieldContent} gauges
+\[
+  H=\SOTen\cdot \UOne_{\psi}
+\]
+with the global quotient convention fixed in \autoref{rmk:RealForms}, and
+contains chiral matter in a single \(\mathbf{16}_{+1}\). Although the
+\(\SOTen\) factor is anomaly-free in four dimensions, the abelian factor is
+not. A lone \(\mathbf{16}_{+1}\) leaves mixed and abelian anomalies of types
 \[
   [\SOTen]^2\,\UOne_\psi,\qquad
   [\UOne_\psi]^3,\qquad
@@ -2502,84 +2509,173 @@ These anomalies cancel identically for a complete
   \oplus
   \mathbf{1}_{+4}.
 \]
-Thus the phenomenological interpretation of the truncation must be made
-through the heterotic boundary, where anomaly cancellation is supplied by
-one of two mechanisms.
+Thus the phenomenological interpretation of the truncation must be made through
+the heterotic boundary, where anomaly cancellation is supplied by additional
+ultraviolet data.
 
-The first possibility is the four-dimensional Green--Schwarz mechanism
-\cite{GreenSchwarz:1984,DineSeibergWitten:1987}. By
-\autoref{thm:Holographic}, the $\UOne_\psi$ Goldstone mode of $\M$ is
-identified with the Green--Schwarz axion of the heterotic background. Its
-induced couplings to $\Tr(F\wedge F)$ shift under $\UOne_\psi$ and cancel
-the residual anomalies listed above. The same mechanism gives a
-St\"uckelberg mass, of order $g f$, to the $\UOne_\psi$ gauge boson. Below
-this scale the effective gauge group is the anomaly-free $\SOTen$, and the
-breaking chain of \autoref{cor:BreakingChain} proceeds in the usual
-grand-unified manner.
+There are two compatible ways this can occur. The first is a four-dimensional
+Green--Schwarz mechanism \cite{GreenSchwarz:1984,DineSeibergWitten:1987}. In
+the unprojectivized rank-one orbit
+\[
+  S_v\simeq \ESix/\Spin(10),
+\]
+there is a circle-fiber phase over
+\[
+  \M=\ESix/(\Spin(10)\cdot\UOne_\psi).
+\]
+This phase is not one of the \(32\) Goldstone coordinates of the projective
+EIII base \(\M\); rather, it is the \(\UOne_\psi\)-charged fiber direction
+removed in passing from \(S_v\) to \(\M\). Under the heterotic matching of
+\autoref{thm:Holographic}, this circle-fiber phase may be matched to the
+four-dimensional Green--Schwarz axion, or else supplemented by the universal
+heterotic axion with the same anomalous shift. Its induced couplings to
+\(\Tr(F\wedge F)\) shift under \(\UOne_\psi\) and cancel the residual mixed,
+abelian, and gravitational anomalies. The same mechanism gives a Stueckelberg
+mass, of order \(g f\) up to threshold normalization, to the \(\UOne_\psi\)
+gauge boson. Below this scale the effective gauge group is the anomaly-free
+\(\SOTen\), and the breaking chain of \autoref{cor:BreakingChain} proceeds in
+the usual grand-unified manner.
 
-The second possibility is spectrum completion. In the $\mathbb Z_{12}$
-realization of \cite{Z12Heterotic}, the chiral matter appears in three complete
-$\mathbf{27}$ generations. The four-dimensional chiral spectrum is then
-anomaly-free without relying on the anomalous $\UOne_\psi$ cancellation
-alone, while the Green--Schwarz mechanism remains part of the universal
-heterotic anomaly descent. In this sense, the coset truncation fixes the
-representation-theoretic seed of one family, whereas family replication and
-complete anomaly cancellation are properties of the ultraviolet completion.
+The second possibility is spectrum completion. In the \(\mathbb Z_{12}\)
+realization of \cite{Z12Heterotic}, the chiral matter appears in complete
+\(\mathbf{27}\) generations. The four-dimensional chiral spectrum is then
+anomaly-free at the level of complete \(\ESix\)-multiplets, while the
+Green--Schwarz mechanism remains part of the universal heterotic anomaly
+descent. In this sense, the coset truncation fixes the representation-theoretic
+seed of one family, whereas family replication and complete anomaly
+cancellation are properties of the ultraviolet completion.
 
-The resulting phenomenology is therefore that of an $\SOTen$ grand unified
+The resulting phenomenology is therefore that of an \(\SOTen\) grand unified
 theory subject to heterotic matching. The matching scale obtained in
 \autoref{sec:FRG} is
 \[
   M_{\mathrm{GUT}}\simeq 2\times 10^{16}\,\mathrm{GeV},
 \]
 with the qualification that this scale is a consistency output of the
-heterotic handoff, not a prediction of the nonsupersymmetric coset flow
-alone. Dimension-six gauge-boson exchange then gives proton-decay channels
-with partial lifetimes in the range
+heterotic handoff, not a prediction of the nonsupersymmetric coset flow alone.
+Dimension-six gauge-boson exchange then gives proton-decay channels with
+partial lifetimes parametrically in the range
 \[
   10^{35}\text{--}10^{37}\,\mathrm{yr},
 \]
 with the lower part of this interval within the projected reach of
 next-generation searches \cite{NathFileviezPerez:2007}. The precise lifetime
 depends on the threshold spectrum at the matching scale, the normalization of
-the unified coupling, and the hadronic matrix elements entering the decay
-amplitudes. The construction should therefore be read as restricting a
-proton-decay window, rather than predicting a single lifetime.
+the unified coupling, the heavy gauge-boson masses, and the hadronic matrix
+elements entering the decay amplitudes. The construction should therefore be
+read as restricting a proton-decay window, rather than predicting a single
+lifetime.
 
 Neutrino physics provides a second standard phenomenological channel. Each
-$\mathbf{16}$ contains a right-handed neutrino, so a seesaw mechanism becomes
-available after $\SOTen$ breaking. The Majorana scale is not fixed by the
+\(\mathbf{16}\) contains a right-handed neutrino, so a seesaw mechanism becomes
+available after \(\SOTen\) breaking. The Majorana scale is not fixed by the
 Albert--EIII kinematics; it depends on the ultraviolet completion and on the
-operators responsible for the descent from $\SOTen$ to the Standard Model
+operators responsible for the descent from \(\SOTen\) to the Standard Model
 gauge group. Nevertheless, the embedding constrains the allowed charge
 assignments and places the neutrino sector in the same unified multiplet
 structure as the charged matter fields.
 
-The heavy states associated with the first breaking step are not expected to
-be directly accessible at low energy. The $Z'_{\psi}$ associated with the
-St\"uckelberg-massive $\UOne_\psi$ lies near the matching scale. Likewise, the
-$28$ degenerate transverse coset scalars of \autoref{thm:Mass28}, located at
-the top of the hierarchy described in \autoref{sec:sigma}, are structural
-features of the ultraviolet matching rather than ordinary TeV-scale scalar
-states.
+The heavy states associated with the first breaking step are not expected to be
+directly accessible at low energy. The \(Z'_{\psi}\) associated with the
+Stueckelberg-massive \(\UOne_\psi\) lies near the matching scale. Likewise, the
+\(28\) transverse coset scalars of \autoref{thm:Mass28}, located at the top of
+the hierarchy described in \autoref{sec:sigma}, are structural features of the
+ultraviolet matching rather than ordinary TeV-scale scalar states. Their
+degeneracy is a consequence of the \(H\)-irreducibility of the EIII isotropy
+representation, conditional on the stabilizing one-loop hypothesis used in
+\autoref{thm:Mass28}; their precise mass scale is therefore part of the
+effective matching data rather than an independently measurable low-energy
+prediction.
 
-% REVIEW, REVISE, AND FINISH ME
+The main conclusion is that UCFT should not be read as a complete autonomous
+four-dimensional model with all low-energy data fixed by the coset alone. The
+unconditional part of the construction is the exceptional representation theory:
+the compact \(\ESix\) action on \(\AlbertC\), the EIII vacuum orbit, the
+\(\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}\) isotropy representation,
+and the unique positive invariant coset metric. The conditional part begins
+when this representation-theoretic data is promoted to a quantum field theory:
+Osterwalder--Schrader reconstruction, induced gravity, anomaly cancellation,
+heterotic matching, and the zeta spectral realization all require additional
+hypotheses. Under those hypotheses, the coset sector supplies a rigid algebraic
+skeleton for four-dimensional geometry, grand-unified matter, and arithmetic
+spectral constraints; without them, it remains an effective Albert--EIII
+truncation awaiting ultraviolet completion.
 
 %======================================================================%
 \section{Conclusion}
 \label{sec:Conclusion}
 %======================================================================%
 
-We have formulated UCFT as a four-dimensional operator-algebraic quantum field
-theory determined, conditionally but rigidly, by a single exceptional datum: the
-Albert algebra with its compact
-$\ESix$ symmetry. Two postulates select the EIII coset sector, and from that
-point the kinematics admit no further choices. The vacuum orbit is
-$\MCosetInline$; its $32$ Goldstone directions form the irreducible
-$\mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}$ with a unique positive
-invariant metric; spacetime geometry arises as the first fundamental form of
-a spacetime-filling configuration; and the Einstein--Hilbert term is induced
-at one loop rather than postulated.
+We have formulated Universal Coset Field Theory as a conditional
+operator-algebraic framework organized by the compact EIII geometry of type
+\(\ESix\) and by the complexified Albert algebra \(\AlbertC\). The central
+unconditional input is representation-theoretic: the compact real form
+\(\ESix\) acts on the minimal \(\mathbf{27}_{\mathbb C}\), the closed
+projective orbit of a rank-one line is
+\[
+  \M=\ESix/(\Spin(10)\cdot\UOne),
+\]
+and the corresponding isotropy representation has complexification
+\[
+  \mathbf{16}_{-3}\oplus\overline{\mathbf{16}}_{+3}.
+\]
+Consequently the coset has real dimension \(32\), carries a unique positive
+\(\ESix\)-invariant metric up to scale, and supplies a rigid exceptional
+geometric arena for four-dimensional field theory.
+
+Within this arena, a spacetime-filling coset configuration induces a
+four-dimensional Riemannian metric by pull-back. Thus the metric is not an
+independent datum of the coset sector; it is the first fundamental form of the
+map from the four-dimensional parameter manifold into EIII. The Lorentzian
+theory is obtained only after imposing the usual Osterwalder--Schrader
+conditions on the Euclidean Schwinger functions and reconstructing the
+corresponding Hilbert-space representation. In this sense, UCFT treats
+spacetime geometry as emergent from the coset representation of the local
+observable algebra, while keeping the analytic reconstruction problem explicit.
+
+The one-loop effective action then realizes the Sakharov--Adler mechanism:
+heat-kernel coefficients generate an Einstein--Hilbert term in the effective
+action. The invariant statement is the radiative origin of this term. Its
+renormalized coefficient, and hence the precise value of the induced Planck
+scale, remains dependent on the regulator, spectrum, and ultraviolet matching
+data. Similarly, the degeneracy of the transverse coset scalars follows from
+the \(H\)-irreducibility of the EIII isotropy representation, while their
+positive mass scale depends on the stabilizing one-loop hypothesis and the
+chosen normalization of the effective truncation.
+
+The renormalization-group analysis supports the interpretation of the
+four-dimensional coset model as an effective theory below its matching
+boundary, rather than as a complete autonomous ultraviolet fixed point. The
+heterotic sector is therefore not an optional phenomenological embellishment,
+but the place where anomaly cancellation, family completion, threshold data,
+and global consistency conditions enter. In particular, the single
+\(\mathbf{16}_{+1}\) coset truncation is not by itself an anomaly-free gauged
+\(\SOTen\cdot\UOne_\psi\) theory. Completion to full \(\mathbf{27}\)
+multiplets, or a Green--Schwarz/Stueckelberg mechanism matched to the
+heterotic axionic sector, is required for a consistent four-dimensional
+interpretation.
+
+The arithmetic sector has an analogous logical status. The zeta construction
+does not give an unconditional proof of the Riemann hypothesis. Rather, it
+identifies a precise conditional Hilbert--Pólya criterion internal to the
+positive spectral algebra of the theory: if the shifted zeta divisor is
+realized by a positive self-adjoint UCFT spectral operator in the prescribed
+Galois-equivariant way, then all nontrivial zeros of the completed zeta
+function lie on the critical line. The mathematical content is therefore a
+conditional spectral reduction, not an unconstructed claim of existence.
+
+The resulting picture is a rigid but explicitly conditional framework. The
+Albert--EIII data determine the exceptional coset geometry, the
+\(\Spin(10)\cdot\UOne\) branching, the \(32\)-dimensional Goldstone sector,
+and the unique positive invariant metric. Quantum reconstruction, induced
+gravity, anomaly cancellation, heterotic completion, and arithmetic spectral
+realization require additional hypotheses. Under those hypotheses, UCFT
+provides a unified algebraic setting in which four-dimensional geometry,
+grand-unified matter structure, and zeta-spectral constraints arise from one
+exceptional coset representation. Without those hypotheses, the construction
+should be read more modestly as an effective Albert--EIII truncation whose
+ultraviolet completion and spectral realization remain explicit matching
+problems.
 
 \begin{appendices}
 
@@ -2822,7 +2918,11 @@ the one-loop effective action is
     + \cdots.
 \]
 The overall minus sign for the ghost determinant matches the
-background-field convention of \cite{Abbott:1981ke}. Using the proper-time representation \cite{Hawking:1977},
+background-field convention of \cite{Abbott:1981ke}. All determinants here are
+evaluated in Euclidean signature (\autoref{tab:SDWcoeffs}); the factors
+$\sqrt{-g}$ in the induced action denote the Lorentzian form recovered after the
+continuation of \autoref{rmk:Continuation}. Using the proper-time representation
+\cite{Hawking:1977},
 \[
   \log\det(-\Delta)
   = -\int_{\mu^{-2}}^{\Lambda^{-2}}
